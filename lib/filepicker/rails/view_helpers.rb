@@ -25,7 +25,7 @@ module Filepicker
       def filepicker_image_tag(url, options={})
         image_tag(filepicker_image_url(url, options),
           width: options[:w],
-          height: options[:w],
+          height: options[:h],
 
           alt: options[:alt])
       end
