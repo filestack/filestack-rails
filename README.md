@@ -48,7 +48,7 @@ of an iframe on the page.
 
 ### Displaying an image:
 
-    <%= filepicker_image_tag @user.avatar_url, w: 160, h: 160, fit: 'clip'
+    <%= filepicker_image_tag @user.avatar_url, w: 160, h: 160, fit: 'clip' %>
 
 See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
 
