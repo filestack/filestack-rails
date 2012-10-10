@@ -22,8 +22,10 @@ module Filepicker
       end
 
       # Allows options to be passed to filepicker_image_url and then falls back to normal Rails options for image_tag
-
+      # If specifying html width, height, pass it down to filepicker for optimization
       def filepicker_image_tag(url, options={})
+        options[:w] ||= options[:width] if options[:width].present?
+        options[:h] ||= options[:height] if options[:height].present?
         image_tag(filepicker_image_url(url, options), options)
       end
 
