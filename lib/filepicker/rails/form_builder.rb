@@ -18,6 +18,8 @@ module Filepicker
           'data-fp-option-multiple' => false,
 
           'data-fp-option-services' => Array(options[:services]).join(","),
+          
+          'value' => options[:value]
         }
 
         type = options[:dragdrop] ? 'filepicker-dragdrop' : 'filepicker'
