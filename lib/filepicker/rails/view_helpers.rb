@@ -21,13 +21,10 @@ module Filepicker
         button_tag(text, options)
       end
 
+      # Allows options to be passed to filepicker_image_url and then falls back to normal Rails options for image_tag
 
       def filepicker_image_tag(url, options={})
-        image_tag(filepicker_image_url(url, options),
-          width: options[:w],
-          height: options[:h],
-
-          alt: options[:alt])
+        image_tag(filepicker_image_url(url, options), options)
       end
 
       # w - Resize the image to this width.
