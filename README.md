@@ -38,12 +38,16 @@ Set your API Key in config/application.rb:
     <% end %>
 
 Full options list:
+
 * button_text - The text of the upload button.
 * button_class - The class of the upload button.
 * mimetypes - The file types you want to support for this upload. Ex: "image/png,text/*"
 * container - Where to show the file picker dialog can be "modal", "window" or the
 of an iframe on the page.
 * services - What services your users can upload to. Ex: "BOX, COMPUTER, FACEBOOK".
+* dragdrop - (true or false) Whether or not to all drag-and-drop uploads
+* drag_text - The text of the dragdrop pane.
+* drag_class - The class of the dragdrop pane.
 
 
 ### Displaying an image:
