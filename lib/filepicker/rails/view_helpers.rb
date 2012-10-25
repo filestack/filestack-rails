@@ -3,7 +3,7 @@ module Filepicker
 
     module ViewHelpers
       def filepicker_js_include_tag
-        javascript_include_tag "//api.filepicker.io/v0/filepicker.js"
+        javascript_include_tag "//api.filepicker.io/v1/filepicker.js"
       end
 
       def filepicker_save_button(text, url, mimetype, options = {})
@@ -22,14 +22,14 @@ module Filepicker
       end
 
       # Allows options to be passed to filepicker_image_url and then falls back to normal Rails options for image_tag
-
+      # If specifying html width, height, pass it down to filepicker for optimization
       def filepicker_image_tag(url, options={})
         image_tag(filepicker_image_url(url, options), options)
       end
 
-      # w - Resize the image to this width.
+      # width - Resize the image to this width.
       #
-      # h - Resize the image to this height.
+      # height - Resize the image to this height.
       #
       # fit - Specifies how to resize the image. Possible values are:
       #       clip: Resizes the image to fit within the specified parameters without
@@ -39,6 +39,7 @@ module Filepicker
       #       scales: Resizes the image to fit the specified parameters exactly by
       #               scaling the image to the desired size
       #       Defaults to "clip".
+      # align - Determines how the image is aligned when resizing and using the "fit" parameter. Check API for details.
       #
       # crop - Crops the image to a specified rectangle. The input to this parameter
       #        should be 4 numbers for 'x,y,width,height' - for example,
@@ -65,8 +66,7 @@ module Filepicker
       #                 and horizontal with a comma. The default behavior
       #                 is bottom,right
       def filepicker_image_url(url, options = {})
-        query_params = options.slice(:w,:h,:fit,:crop,:format,:quality,
-          :watermark,:watersize,:waterposition).to_query
+        query_params = options.slice(:width, :height, :fit, :align, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
         [url, "/convert?", query_params].join
       end
 
