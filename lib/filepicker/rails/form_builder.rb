@@ -21,7 +21,9 @@ module Filepicker
 
           'data-fp-drag-text' => options.fetch(:drag_text, "Or drop files here"),
 
-          'data-fp-drag-class' => options[:drag_class]
+          'data-fp-drag-class' => options[:drag_class],
+
+          'onchange' => options[:onchange]
         }
 
         type = options[:dragdrop] ? 'filepicker-dragdrop' : 'filepicker'
