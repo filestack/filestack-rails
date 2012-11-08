@@ -48,6 +48,7 @@ of an iframe on the page.
 * dragdrop - (true or false) Whether or not to all drag-and-drop uploads
 * drag_text - The text of the dragdrop pane.
 * drag_class - The class of the dragdrop pane.
+* onchange - The onchange event
 
 
 ### Displaying an image:
