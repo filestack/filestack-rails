@@ -71,4 +71,4 @@ of an iframe on the page.
 
 ### Demo
 
-See a simple demo app [repo](https://github.com/maxtilford/filepicker-rails-demo) and [running on heroku](http://filepicker-rails-demo.herokuapp.com)
+See a simple demo app [repo](https://github.com/maxtilford/filepicker-rails-demo)
