@@ -23,7 +23,9 @@ module Filepicker
 
           'data-fp-drag-class' => options[:drag_class],
 
-          'onchange' => options[:onchange]
+          'onchange' => options[:onchange],
+          
+          'value' => options[:value]
         }
 
         type = options[:dragdrop] ? 'filepicker-dragdrop' : 'filepicker'
