@@ -28,7 +28,7 @@ Set your API Key in config/application.rb:
 ### First create a migration to add the field that will hold your filepicker.io URL  
 Run the Rails migration generator from the command line:      
     
-    $rails g migration AddNameOfAttrForFilepickerUrlToUser  
+    $ rails g migration AddNameOfAttrForFilepickerUrlToUser  
     
 Then add a column to the model's table of type :string:    
 
