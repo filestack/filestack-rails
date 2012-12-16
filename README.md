@@ -25,13 +25,31 @@ Set your API Key in config/application.rb:
     config.filepicker_rails.api_key = "Your filepicker.io API Key"
 
 ## Usage
+### First create a migration to add the field that will hold your filepicker.io URL  
+Run the Rails migration generator from the command line:      
+    
+    $rails g migration AddNameOfAttrForFilepickerUrlToUser  
+    
+Then add a column to the model's table of type :string:    
 
+    class AddNameOfAttrForFilepickerUrlToUser < ActiveRecord::Migration
+        def up
+            add_column :user, :filepicker_url, :string
+        end
+
+        def down
+            remove_column :user, :filepicker_url
+        end
+    end  
+    
+    
+    
 ### Adding an upload field to your form:
 
     <%= form_for @user do |f| %>
       <div>
-        <%= f.label :avatar_url, "Upload Your Avatar:" %>
-        <%= f.filepicker_field :avatar_url %> <!-- User#avatar_url is a regular string column -->
+        <%= f.label :filepicker_url, "Upload Your Avatar:" %>
+        <%= f.filepicker_field :filepicker_url %> <!-- User#filepicker_url is a regular string column -->
       </div>
 
       <%= f.submit %>
@@ -53,14 +71,14 @@ of an iframe on the page.
 
 ### Displaying an image:
 
-    <%= filepicker_image_tag @user.avatar_url, w: 160, h: 160, fit: 'clip' %>
+    <%= filepicker_image_tag @user.filepicker_url, w: 160, h: 160, fit: 'clip' %>
 
 See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
 
 
 ### Allowing the user to download a file (or upload it to any of the supported services)
 
-    <%= filepicker_save_button "Save", @user.avatar_url, "image/jpg" %>
+    <%= filepicker_save_button "Save", @user.filepicker_url, "image/jpg" %>
 
 Full options list:
 
