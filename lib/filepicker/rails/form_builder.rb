@@ -25,6 +25,8 @@ module Filepicker
 
           'onchange' => options[:onchange],
           
+          'class' => options[:class],
+          
           'value' => options[:value]
         }
 
