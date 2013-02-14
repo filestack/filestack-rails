@@ -59,15 +59,15 @@ Full options list:
 
 * button_text - The text of the upload button.
 * button_class - The class of the upload button.
-* mimetypes - The file types you want to support for this upload. Ex: "image/png,text/*"
+* mimetypes - The file types you want to support for this upload. Ex: "image/png,text/*".
 * container - Where to show the file picker dialog can be "modal", "window" or the
 of an iframe on the page.
 * multiple - (true or false) Whether or not multiple uploads can be saved at once.
 * services - What services your users can upload to. Ex: "BOX, COMPUTER, FACEBOOK".
-* dragdrop - (true or false) Whether or not to all drag-and-drop uploads
+* dragdrop - (true or false) Whether or not to all drag-and-drop uploads.
 * drag_text - The text of the dragdrop pane.
 * drag_class - The class of the dragdrop pane.
-* onchange - The onchange event
+* onchange - The onchange event.
 
 
 ### Displaying an image:
