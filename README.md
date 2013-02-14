@@ -62,6 +62,7 @@ Full options list:
 * mimetypes - The file types you want to support for this upload. Ex: "image/png,text/*"
 * container - Where to show the file picker dialog can be "modal", "window" or the
 of an iframe on the page.
+* multiple - (true or false) Whether or not multiple uploads can be saved at once.
 * services - What services your users can upload to. Ex: "BOX, COMPUTER, FACEBOOK".
 * dragdrop - (true or false) Whether or not to all drag-and-drop uploads
 * drag_text - The text of the dragdrop pane.
