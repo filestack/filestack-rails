@@ -29,6 +29,7 @@ module Filepicker
           
           'value' => options[:value]
         }
+        input_options.merge!('data-fp-debug' => true) if ::Rails.env.test?
 
         type = options[:dragdrop] ? 'filepicker-dragdrop' : 'filepicker'
 
