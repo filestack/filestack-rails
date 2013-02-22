@@ -27,9 +27,9 @@ module Filepicker
         image_tag(filepicker_image_url(url, options), options)
       end
 
-      # width - Resize the image to this width.
+      # w - Resize the image to this width.
       #
-      # height - Resize the image to this height.
+      # h - Resize the image to this height.
       #
       # fit - Specifies how to resize the image. Possible values are:
       #       clip: Resizes the image to fit within the specified parameters without
@@ -66,7 +66,7 @@ module Filepicker
       #                 and horizontal with a comma. The default behavior
       #                 is bottom,right
       def filepicker_image_url(url, options = {})
-        query_params = options.slice(:width, :height, :fit, :align, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
+        query_params = options.slice(:w, :h, :fit, :align, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
         [url, "/convert?", query_params].join
       end
 
