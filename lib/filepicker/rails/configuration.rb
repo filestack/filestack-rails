@@ -2,6 +2,7 @@ module Filepicker
   module Rails
     class Configuration
       attr_writer :api_key, :secret_key
+
       def api_key
         @api_key or raise "Set config.filepicker_rails.api_key"
       end
@@ -11,7 +12,7 @@ module Filepicker
       end
 
       def default_expiry
-        600
+        @default_expiry ||= 600
       end
     end
   end

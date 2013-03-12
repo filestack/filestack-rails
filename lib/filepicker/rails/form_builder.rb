@@ -7,7 +7,7 @@ module Filepicker
 
         input_options = retrive_legacy_filepicker_options(options)
         input_options['data-fp-apikey'] ||= ::Rails.application.config.filepicker_rails.api_key
-        input_options.merge(secure_filepicker) unless input_options['data-fp-policy'].present?
+        input_options.merge!(secure_filepicker) unless input_options['data-fp-policy'].present?
 
         ActionView::Helpers::InstanceTag.new(@object_name, method, @template)
           .to_input_field_tag(type, input_options)
