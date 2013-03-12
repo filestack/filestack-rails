@@ -21,14 +21,10 @@ module Filepicker
       end
 
       private
-      def check_required!
-        @expiry or raise 'Expiration date not provided'
-      end
-
       def json_policy
-        check_required!
-
         hash = Hash.new
+
+        @expiry ||= Time.now.to_i + ::Rails.application.config.filepicker_rails.default_expiry
 
         [:expiry, :call, :handle, :maxsize, :minsize].each do |input|
           hash[input] = send(input) unless send(input).nil?

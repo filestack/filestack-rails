@@ -35,7 +35,6 @@ module Filepicker
       def secure_filepicker
         return {} unless ::Rails.application.config.filepicker_rails.secret_key.present?
         grant = Policy.new
-        grant.expiry = Time.now.to_i + ::Rails.application.config.filepicker_rails.default_expiry
         grant.call = [:pick, :store]
 
         {
