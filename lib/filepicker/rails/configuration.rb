@@ -9,6 +9,10 @@ module Filepicker
       def secret_key
         @secret_key
       end
+
+      def default_expiry
+        600
+      end
     end
   end
 end
