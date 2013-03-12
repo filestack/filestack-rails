@@ -6,6 +6,12 @@ module Filepicker
     class Policy
       attr_accessor :expiry, :call, :handle, :maxsize, :minsize
 
+      def initialize(options = {})
+        [:expiry, :call, :handle, :maxsize, :minsize].each do |input|
+          send("#{input}=", options[input]) unless options[input].nil?
+        end
+      end
+
       def policy
         Base64.urlsafe_encode64(json_policy)
       end
