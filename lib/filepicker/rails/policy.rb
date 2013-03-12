@@ -1,5 +1,5 @@
 require 'base64'
-require 'digest/sha2'
+require 'openssl'
 
 module Filepicker
   module Rails
@@ -11,9 +11,7 @@ module Filepicker
       end
 
       def signature
-        signature = Digest::SHA2.new
-        signature.update(json_policy)
-        signature.to_s
+        OpenSSL::HMAC.hexdigest('sha256', ::Rails.application.config.filepicker_rails.secret_key, policy)
       end
 
       private
