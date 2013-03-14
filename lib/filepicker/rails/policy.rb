@@ -4,10 +4,10 @@ require 'openssl'
 module Filepicker
   module Rails
     class Policy
-      attr_accessor :expiry, :call, :handle, :maxsize, :minsize
+      attr_accessor :expiry, :call, :handle, :maxsize, :minsize, :path
 
       def initialize(options = {})
-        [:expiry, :call, :handle, :maxsize, :minsize].each do |input|
+        [:expiry, :call, :handle, :maxsize, :minsize, :path].each do |input|
           send("#{input}=", options[input]) unless options[input].nil?
         end
       end
@@ -26,7 +26,7 @@ module Filepicker
 
         @expiry ||= Time.now.to_i + ::Rails.application.config.filepicker_rails.default_expiry
 
-        [:expiry, :call, :handle, :maxsize, :minsize].each do |input|
+        [:expiry, :call, :handle, :maxsize, :minsize, :path].each do |input|
           hash[input] = send(input) unless send(input).nil?
         end
 
