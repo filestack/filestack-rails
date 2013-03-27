@@ -25,12 +25,12 @@ Set your API Key in config/application.rb:
     config.filepicker_rails.api_key = "Your filepicker.io API Key"
 
 ## Usage
-### First create a migration to add the field that will hold your filepicker.io URL  
-Run the Rails migration generator from the command line:      
-    
-    $ rails g migration AddNameOfAttrForFilepickerUrlToUser  
-    
-Then add a column to the model's table of type :string:    
+### First create a migration to add the field that will hold your filepicker.io URL
+Run the Rails migration generator from the command line:
+
+    $ rails g migration AddNameOfAttrForFilepickerUrlToUser
+
+Then add a column to the model's table of type :string:
 
     class AddNameOfAttrForFilepickerUrlToUser < ActiveRecord::Migration
         def up
@@ -40,10 +40,10 @@ Then add a column to the model's table of type :string:
         def down
             remove_column :user, :filepicker_url
         end
-    end  
-    
-    
-    
+    end
+
+
+
 ### Adding an upload field to your form:
 
     <%= form_for @user do |f| %>
@@ -68,6 +68,28 @@ of an iframe on the page.
 * drag_class - The class of the dragdrop pane.
 * onchange - The onchange event
 
+### Accessing FilePicker File with OnChange:
+
+When the dialog finishes uploading the file, the javascript code in the onchange field will be run with a special 'event' variable. The variable has a fpfiles (or if not multiple, also fpfile) attribute with information about the files (jQuery users: look under event.originalEvent).
+
+Example fpfiles object:
+```` javascript
+[{
+    url: 'https://...',
+    data: {
+        filename: 'filename.txt',
+        size: 100,
+        type: 'text/plain'
+    }
+},{
+    url: 'https://...',
+    data: {
+        filename: 'filename2.jpg',
+        size: 9000,
+        type: 'image/jpeg'
+    }
+}]
+````
 
 ### Displaying an image:
 
