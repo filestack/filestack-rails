@@ -31,9 +31,7 @@ module Filepicker
         }
 
         type = options[:dragdrop] ? 'filepicker-dragdrop' : 'filepicker'
-
-        ActionView::Helpers::InstanceTag.new(@object_name, method, @template)
-          .to_input_field_tag(type, input_options)
+        ActionView::Helpers::Tags::TextField.new(@object_name, method, @template).render
       end
     end
   end
