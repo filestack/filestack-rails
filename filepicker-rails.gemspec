@@ -3,8 +3,8 @@ require File.expand_path('../lib/filepicker/rails/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Max Tilford"]
   gem.email         = ["maxtilford@gmail.com"]
-  gem.description   = %q{Makes integrating filepicker.io with rails easy}
-  gem.summary       = %q{Makes integrating filepicker.io with rails easy}
+  gem.description   = %q{Makes integrating filepicker.io with rails 4 easy}
+  gem.summary       = %q{Makes integrating filepicker.io with rails 4 easy}
   gem.homepage      = "https://github.com/maxtilford/filepicker-rails"
 
   gem.files         = `git ls-files`.split($\)
