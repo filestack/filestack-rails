@@ -16,4 +16,5 @@ Gem::Specification.new do |gem|
 
   gem.required_rubygems_version = ">= 1.3.6"
   gem.add_dependency "railties", ">= 3.1.0", "< 5.0"
+  gem.add_dependency 'multi_json', '~> 1.6'
 end
