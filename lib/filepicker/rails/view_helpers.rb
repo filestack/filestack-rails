@@ -69,6 +69,30 @@ module Filepicker
         query_params = options.slice(:w, :h, :fit, :align, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
         [url, "/convert?", query_params].join
       end
+      
+      # similar to form builder but for the situation that you are using
+      # form_tag instad of form_for
+      def filepicker_field(object, method, options = {})
+        input_options = {
+          'data-fp-apikey' => ::Rails.application.config.filepicker_rails.api_key,
+          'data-fp-button-text' => options.fetch(:button_text, "Pick File"),
+          'data-fp-button-class' => options[:button_class],
+          'data-fp-mimetypes' => options[:mimetypes],
+          'data-fp-maxSize' => options[:max_size],
+          'data-fp-option-container' => options[:container],
+          'data-fp-option-multiple' => false,
+          'data-fp-option-services' => Array(options[:services]).join(","),
+          'data-fp-drag-text' => options.fetch(:drag_text, "Or drop files here"),
+          'data-fp-drag-class' => options[:drag_class],
+          'onchange' => options[:onchange]
+        }
+    
+        type = options[:dragdrop] ? 'filepicker-dragdrop' : 'filepicker'
+    
+        ActionView::Helpers::InstanceTag.new(@object_name, method, @template)
+        .to_input_field_tag(type, input_options)
+      end
+
 
     end
   end
