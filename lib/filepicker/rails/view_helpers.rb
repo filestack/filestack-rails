@@ -69,7 +69,7 @@ module Filepicker
         query_params = options.slice(:w, :h, :fit, :align, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
         [url, "/convert?", query_params].join
       end
-      
+
       # similar to form builder but for the situation that you are using
       # form_tag instad of form_for
       def filepicker_field(object, method, options = {})
@@ -86,9 +86,9 @@ module Filepicker
           'data-fp-drag-class' => options[:drag_class],
           'onchange' => options[:onchange]
         }
-    
+
         type = options[:dragdrop] ? 'filepicker-dragdrop' : 'filepicker'
-    
+
         ActionView::Helpers::InstanceTag.new(@object_name, method, @template)
         .to_input_field_tag(type, input_options)
       end
