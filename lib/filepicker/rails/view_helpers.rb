@@ -84,6 +84,8 @@ module Filepicker
           'data-fp-option-services' => Array(options[:services]).join(","),
           'data-fp-drag-text' => options.fetch(:drag_text, "Or drop files here"),
           'data-fp-drag-class' => options[:drag_class],
+          'data-fp-signature' => options[:signature]
+          'data-fp-policy' => options[:policy]
           'onchange' => options[:onchange]
         }
 
