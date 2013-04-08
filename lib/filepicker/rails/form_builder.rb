@@ -25,6 +25,7 @@ module Filepicker
             :services     => 'data-fp-services',
             :drag_text    => 'data-fp-drag-text',
             :drag_class   => 'data-fp-drag-class',
+            :multiple     => 'data-fp-multiple',
             :onchange     => 'onchange',
             :class        => 'class',
             :value        => 'value'
