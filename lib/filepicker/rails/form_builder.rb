@@ -10,7 +10,11 @@ module Filepicker
         input_options.merge!(secure_filepicker) unless input_options['data-fp-policy'].present?
 
         input_options['type'] = type
-        ActionView::Helpers::Tags::TextField.new(@object_name, method, @template).tag('input', input_options)
+        if ::Rails.version.to_i >= 4
+          ActionView::Helpers::Tags::TextField.new(@object_name, method, @template).tag('input', input_options)
+        else
+          ActionView::Helpers::InstanceTag.new(@object_name, method, @template).to_input_field_tag(type, input_options)
+        end
       end
 
       private
