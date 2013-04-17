@@ -17,16 +17,18 @@ module Filepicker
 
       def retrive_legacy_filepicker_options(options)
         mappings = {
-            :button_text  => 'data-fp-button-text',
-            :button_class => 'data-fp-button-class',
-            :mimetypes    => 'data-fp-mimetypes',
-            :container    => 'data-fp-container',
-            :services     => 'data-fp-services',
-            :drag_text    => 'data-fp-drag-text',
-            :drag_class   => 'data-fp-drag-class',
-            :onchange     => 'onchange',
-            :class        => 'class',
-            :value        => 'value'
+            :button_text    => 'data-fp-button-text',
+            :button_class   => 'data-fp-button-class',
+            :mimetypes      => 'data-fp-mimetypes',
+            :container      => 'data-fp-container',
+            :services       => 'data-fp-services',
+            :drag_text      => 'data-fp-drag-text',
+            :drag_class     => 'data-fp-drag-class',
+            :store_path     => 'data-fp-store-path',
+            :store_location => 'data-fp-store-location',
+            :onchange       => 'onchange',
+            :class          => 'class',
+            :value          => 'value'
         }
 
         Hash[options.map {|k, v| [mappings[k] || k, v] }]
