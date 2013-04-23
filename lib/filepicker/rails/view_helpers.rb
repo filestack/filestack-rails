@@ -24,7 +24,7 @@ module Filepicker
       # Allows options to be passed to filepicker_image_url and then falls back to normal Rails options for image_tag
       # If specifying html width, height, pass it down to filepicker for optimization
       def filepicker_image_tag(url, options={})
-        image_tag(filepicker_image_url(url, options), options)
+        image_tag(filepicker_image_url(url, options))
       end
 
       # w - Resize the image to this width.
