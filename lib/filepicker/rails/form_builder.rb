@@ -4,10 +4,11 @@ module Filepicker
 
       def filepicker_field(method, options = {})
         type = options.delete(:dragdrop) ? 'filepicker-dragdrop' : 'filepicker'
+        security_options = options.delete(:security)
 
         input_options = retrive_legacy_filepicker_options(options)
         input_options['data-fp-apikey'] ||= ::Rails.application.config.filepicker_rails.api_key
-        input_options.merge!(secure_filepicker) unless input_options['data-fp-policy'].present?
+        input_options.merge!(secure_filepicker(security_options)) unless input_options['data-fp-policy'].present?
 
         input_options['type'] = type
         if ::Rails.version.to_i >= 4
@@ -38,10 +39,9 @@ module Filepicker
         Hash[options.map {|k, v| [mappings[k] || k, v] }]
       end
 
-      def secure_filepicker
+      def secure_filepicker(options)
         return {} unless ::Rails.application.config.filepicker_rails.secret_key.present?
-        grant = Policy.new
-        grant.call = [:pick, :store]
+        grant = Policy.new({ :call => [:pick, :store] }.merge(options))
 
         {
             'data-fp-policy' => grant.policy,
