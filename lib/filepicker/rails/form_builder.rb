@@ -10,6 +10,7 @@ module Filepicker
         input_options.merge!(secure_filepicker) unless input_options['data-fp-policy'].present?
 
         input_options['type'] = type
+
         if ::Rails.version.to_i >= 4
           ActionView::Helpers::Tags::TextField.new(@object_name, method, @template).tag('input', input_options)
         else
@@ -30,6 +31,7 @@ module Filepicker
             :drag_class     => 'data-fp-drag-class',
             :store_path     => 'data-fp-store-path',
             :store_location => 'data-fp-store-location',
+            :multiple       => 'data-fp-multiple',
             :onchange       => 'onchange',
             :class          => 'class',
             :value          => 'value'
