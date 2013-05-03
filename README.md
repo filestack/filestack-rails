@@ -6,7 +6,9 @@ Adds form, image_tag, and download/save helpers to help you get up and running w
 
 Add this line to your application's Gemfile:
 
-    gem 'filepicker-rails'
+```ruby
+gem 'filepicker-rails'
+```
 
 And then execute:
 
@@ -18,11 +20,15 @@ Or install it yourself as:
 
 Add the filepicker.io javascript library to your layout:
 
-    <%= filepicker_js_include_tag %>
+```erb
+<%= filepicker_js_include_tag %>
+```
 
 Set your API Key in config/application.rb:
 
-    config.filepicker_rails.api_key = "Your filepicker.io API Key"
+```ruby
+config.filepicker_rails.api_key = "Your filepicker.io API Key"
+```
 
 ## Usage
 ### First create a migration to add the field that will hold your filepicker.io URL
@@ -32,29 +38,31 @@ Run the Rails migration generator from the command line:
 
 Then add a column to the model's table of type :string:
 
-    class AddNameOfAttrForFilepickerUrlToUser < ActiveRecord::Migration
-        def up
-            add_column :user, :filepicker_url, :string
-        end
+```ruby
+class AddNameOfAttrForFilepickerUrlToUser < ActiveRecord::Migration
+  def up
+    add_column :user, :filepicker_url, :string
+  end
 
-        def down
-            remove_column :user, :filepicker_url
-        end
-    end
-
+  def down
+    remove_column :user, :filepicker_url
+  end
+end
+```
 
 
 ### Adding an upload field to your form:
 
-    <%= form_for @user do |f| %>
-      <div>
-        <%= f.label :filepicker_url, "Upload Your Avatar:" %>
-        <%= f.filepicker_field :filepicker_url %> <!-- User#filepicker_url is a regular string column -->
-      </div>
+```erb
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label :filepicker_url, "Upload Your Avatar:" %>
+    <%= f.filepicker_field :filepicker_url %> <!-- User#filepicker_url is a regular string column -->
+  </div>
 
-      <%= f.submit %>
-    <% end %>
-
+  <%= f.submit %>
+<% end %>
+```
 Full options list:
 
 * button_text - The text of the upload button.
@@ -74,7 +82,7 @@ of an iframe on the page.
 When the dialog finishes uploading the file, the javascript code in the onchange field will be run with a special 'event' variable. The variable has a fpfiles (or if not multiple, also fpfile) attribute with information about the files (jQuery users: look under event.originalEvent).
 
 Example fpfiles object:
-```` javascript
+```javascript
 [{
     url: 'https://...',
     data: {
@@ -90,18 +98,22 @@ Example fpfiles object:
         type: 'image/jpeg'
     }
 }]
-````
+```
 
 ### Displaying an image:
 
-    <%= filepicker_image_tag @user.filepicker_url, w: 160, h: 160, fit: 'clip' %>
+```erb
+<%= filepicker_image_tag @user.filepicker_url, w: 160, h: 160, fit: 'clip' %>
+```
 
 See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
 
 
 ### Allowing the user to download a file (or upload it to any of the supported services)
 
-    <%= filepicker_save_button "Save", @user.filepicker_url, "image/jpg" %>
+```erb
+<%= filepicker_save_button "Save", @user.filepicker_url, "image/jpg" %>
+```
 
 Full options list:
 
