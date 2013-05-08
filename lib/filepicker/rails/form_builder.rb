@@ -12,7 +12,7 @@ module Filepicker
         input_options['type'] = type
 
         if ::Rails.version.to_i >= 4
-          ActionView::Helpers::Tags::TextField.new(@object_name, method, @template).tag('input', input_options)
+          ActionView::Helpers::Tags::TextField.new(@object_name, method, @template, input_options).render
         else
           ActionView::Helpers::InstanceTag.new(@object_name, method, @template).to_input_field_tag(type, input_options)
         end
