@@ -5,7 +5,7 @@ require 'rake/testtask'
 desc 'Default: run unit tests.'
 task default: :test
 
-desc 'Test the simple_form plugin.'
+desc 'Test the filepicker-rails plugin.'
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.libs << 'test'
