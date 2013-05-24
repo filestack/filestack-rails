@@ -41,6 +41,8 @@ module Filepicker
       #       Defaults to "clip".
       # align - Determines how the image is aligned when resizing and using the "fit" parameter. Check API for details.
       #
+      # cache - Specifies if the image should be cached or not.
+      #
       # crop - Crops the image to a specified rectangle. The input to this parameter
       #        should be 4 numbers for 'x,y,width,height' - for example,
       #        'crop=10,20,200,250' would select the 200x250 pixel rectangle starting
@@ -66,7 +68,7 @@ module Filepicker
       #                 and horizontal with a comma. The default behavior
       #                 is bottom,right
       def filepicker_image_url(url, options = {})
-        query_params = options.slice(:w, :h, :fit, :align, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
+        query_params = options.slice(:w, :h, :fit, :align, :cache, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
         [url, "/convert?", query_params].join
       end
 
