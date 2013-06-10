@@ -25,6 +25,7 @@ module Filepicker
             :button_text    => 'data-fp-button-text',
             :button_class   => 'data-fp-button-class',
             :mimetypes      => 'data-fp-mimetypes',
+            :extensions     => 'data-fp-extensions',
             :container      => 'data-fp-container',
             :services       => 'data-fp-services',
             :drag_text      => 'data-fp-drag-text',
