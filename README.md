@@ -67,6 +67,7 @@ Full options list:
 
 * button_text - The text of the upload button.
 * button_class - The class of the upload button.
+* extensions - The extensions of file types you want to support for this upload. Ex: ".png,.jpg".
 * mimetypes - The file types you want to support for this upload. Ex: "image/png,text/*".
 * container - Where to show the file picker dialog can be "modal", "window" or the
 of an iframe on the page.
