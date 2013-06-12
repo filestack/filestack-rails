@@ -77,6 +77,11 @@ of an iframe on the page.
 * drag_text - The text of the dragdrop pane.
 * drag_class - The class of the dragdrop pane.
 * onchange - The onchange event.
+* store_access - Should the underlying file be publicly available on its S3 link. Options are "public" and "private", defaults to 'private'.
+* store_path - The path to store the file at within the specified file store.
+* store_location - Can only be 'S3'
+
+
 
 ### Accessing FilePicker File with OnChange:
 
