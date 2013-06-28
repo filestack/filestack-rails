@@ -1,6 +1,7 @@
+require 'rails/railtie'
+
 module Filepicker
   module Rails
-
     class Railtie < ::Rails::Railtie
 
       config.filepicker_rails = Filepicker::Rails::Configuration.new
