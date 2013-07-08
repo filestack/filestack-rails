@@ -73,6 +73,8 @@ Full options list:
 of an iframe on the page.
 * multiple - (true or false) Whether or not multiple uploads can be saved at once.
 * services - What services your users can upload to. Ex: "BOX, COMPUTER, FACEBOOK".
+* store_path - The path to store the file at within the specified file store. 
+* store_location - The file is not copied by default. It remains in the original location. If you wish you have the file copied onto your own storage, you can specify where we should put the copy. The only value at the moment is "S3".
 * dragdrop - (true or false) Whether or not to allow drag-and-drop uploads.
 * drag_text - The text of the dragdrop pane.
 * drag_class - The class of the dragdrop pane.
