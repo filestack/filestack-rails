@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'timecop'
 
 describe FilepickerRails::FormHelper do
 
@@ -88,6 +89,26 @@ describe FilepickerRails::FormHelper do
       it "have correct input with 'value'" do
         html = %{<input data-fp-apikey="123filepickerapikey" type="filepicker" value="avatar" />}
         expect(filepicker_field(:filepicker_url, value: "avatar")).to eq(html)
+      end
+
+      describe "policy" do
+
+        before do
+          Timecop.freeze(Time.local(1990))
+          Rails.application.config.filepicker_rails.secret_key = 'filepicker123secretkey'
+        end
+
+        after do
+          Timecop.return
+        end
+
+        it "have correct input with policy" do
+          html = %{<input data-fp-apikey="123filepickerapikey"}
+          html << %{ data-fp-policy="eyJleHBpcnkiOjYzMTE1OTgwMCwiY2FsbCI6WyJwaWNrIiwic3RvcmUiXX0="}
+          html << %{ data-fp-signature="f8e01a0b8f3fbc1dec7997d9e831eb02156b50f9cb7e482efe3b680fa7762d45"}
+          html << %{ type="filepicker" />}
+          expect(filepicker_field(:filepicker_url)).to eq(html)
+        end
       end
     end
   end
