@@ -14,6 +14,11 @@ describe FilepickerRails::FormHelper do
 
     context "with options" do
 
+      it "have correct input with 'dragdrop'" do
+        html = %{<input data-fp-apikey="123filepickerapikey" type="filepicker-dragdrop" />}
+        expect(filepicker_field(:filepicker_url, dragdrop: true)).to eq(html)
+      end
+
       it "have correct input with 'button_text'" do
         html = %{<input data-fp-apikey="123filepickerapikey" data-fp-button-text="upload" type="filepicker" />}
         expect(filepicker_field(:filepicker_url, button_text: "upload")).to eq(html)
