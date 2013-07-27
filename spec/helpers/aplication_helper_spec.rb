@@ -80,4 +80,66 @@ describe FilepickerRails::ApplicationHelper do
       end
     end
   end
+
+  describe "#filepicker_image_url" do
+
+    context "only with url" do
+
+      it "have correct url" do
+        expect(filepicker_image_url("foo")).to eq('foo/convert?')
+      end
+    end
+
+    context "with options" do
+
+      it "have correct url with a invalid param" do
+        expect(filepicker_image_url("foo", wrong: 'top')).to eq('foo/convert?')
+      end
+
+      it "have correct url with 'w'" do
+        expect(filepicker_image_url("foo", w: 160)).to eq('foo/convert?w=160')
+      end
+
+      it "have correct url with 'h'" do
+        expect(filepicker_image_url("foo", h: 60)).to eq('foo/convert?h=60')
+      end
+
+      it "have correct url with 'fit'" do
+        expect(filepicker_image_url("foo", fit: 'clip')).to eq('foo/convert?fit=clip')
+      end
+
+      it "have correct url with 'align'" do
+        expect(filepicker_image_url("foo", align: 'faces')).to eq('foo/convert?align=faces')
+      end
+
+      it "have correct url with 'cache'" do
+        expect(filepicker_image_url("foo", cache: true)).to eq('foo/convert?cache=true')
+      end
+
+      it "have correct url with 'crop'" do
+        expect(filepicker_image_url("foo", crop: '20,30,400,200')).to eq('foo/convert?crop=20%2C30%2C400%2C200')
+      end
+
+      it "have correct url with 'format'" do
+        expect(filepicker_image_url("foo", format: 'png')).to eq('foo/convert?format=png')
+      end
+
+      it "have correct url with 'quality'" do
+        expect(filepicker_image_url("foo", quality: 80)).to eq('foo/convert?quality=80')
+      end
+
+      it "have correct url with 'watermark'" do
+        url = 'foo/convert?watermark=http%3A%2F%2Fwww.google.com%2Fimages%2Fsrpr%2Flogo4w.png'
+        expect(filepicker_image_url("foo", watermark: 'http://www.google.com/images/srpr/logo4w.png')).to eq(url)
+      end
+
+      it "have correct url with 'watersize'" do
+        expect(filepicker_image_url("foo", watersize: 70)).to eq('foo/convert?watersize=70')
+      end
+
+      it "have correct url with 'waterposition'" do
+        expect(filepicker_image_url("foo", waterposition: 'top')).to eq('foo/convert?waterposition=top')
+      end
+    end
+  end
 end
