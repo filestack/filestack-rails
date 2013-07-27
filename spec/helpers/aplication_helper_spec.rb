@@ -54,4 +54,30 @@ describe FilepickerRails::ApplicationHelper do
       end
     end
   end
+
+  describe "#filepicker_image_tag" do
+
+    context "only with url" do
+
+      it "have correct image tag" do
+        expect(filepicker_image_tag("foo")).to eq(%{<img alt="Convert?" src="/images/foo/convert?" />})
+      end
+    end
+
+    context "with image_options" do
+
+      it "have correct image tag" do
+        html = %{<img alt="Convert?h=160&amp;w=160" src="/images/foo/convert?h=160&amp;w=160" />}
+        expect(filepicker_image_tag("foo", w: 160, h: 160)).to eq(html)
+      end
+    end
+
+    context "with image_tag_options" do
+
+      it "have correct image tag" do
+        html = %{<img alt="Foo image" src="/images/foo/convert?" />}
+        expect(filepicker_image_tag("foo", {}, alt: "Foo image")).to eq(html)
+      end
+    end
+  end
 end
