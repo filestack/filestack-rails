@@ -8,7 +8,7 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
-require "filepicker_rails"
+require "filepicker-rails"
 
 module Dummy
   class Application < Rails::Application

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    filepicker_rails (0.0.1)
+    filepicker-rails (0.0.1)
       rails (~> 4.0.0)
 
 GEM
@@ -97,7 +97,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  filepicker_rails!
+  filepicker-rails!
   rspec-rails
   sqlite3
   timecop
