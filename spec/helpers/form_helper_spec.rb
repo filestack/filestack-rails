@@ -3,7 +3,7 @@ require 'timecop'
 
 describe FilepickerRails::FormHelper do
 
-  describe "#filepicker_js_include_tag" do
+  describe "#filepicker_field" do
 
     context "without options" do
 
