@@ -99,6 +99,7 @@ describe FilepickerRails::FormHelper do
         end
 
         after do
+          Rails.application.config.filepicker_rails.secret_key = nil
           Timecop.return
         end
 
