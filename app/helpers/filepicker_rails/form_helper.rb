@@ -31,6 +31,7 @@ module FilepickerRails
             :drag_class     => 'data-fp-drag-class',
             :store_path     => 'data-fp-store-path',
             :store_location => 'data-fp-store-location',
+            :store_access   => 'data-fp-store-access',
             :multiple       => 'data-fp-multiple',
             :onchange       => 'onchange',
             :class          => 'class',

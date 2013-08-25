@@ -71,6 +71,11 @@ describe FilepickerRails::FormHelper do
         expect(filepicker_field(:filepicker_url, store_location: "S3")).to eq(html)
       end
 
+      it "have correct input with 'store_access'" do
+        html = %{<input data-fp-apikey="123filepickerapikey" data-fp-store-access="public" type="filepicker" />}
+        expect(filepicker_field(:filepicker_url, store_access: "public")).to eq(html)
+      end
+
       it "have correct input with 'multiple'" do
         html = %{<input data-fp-apikey="123filepickerapikey" data-fp-multiple="true" type="filepicker" />}
         expect(filepicker_field(:filepicker_url, multiple: true)).to eq(html)
