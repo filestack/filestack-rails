@@ -7,6 +7,7 @@ module FilepickerRails
       input_options = retrive_legacy_filepicker_options(options)
       input_options['data-fp-apikey'] ||= ::Rails.application.config.filepicker_rails.api_key
       input_options.merge!(secure_filepicker) unless input_options['data-fp-policy'].present?
+      input_options['type'] = type
 
       if ::Rails.version.to_i >= 4
         tag = ActionView::Helpers::Tags::TextField.new(@object_name, method, @template, objectify_options(input_options))
