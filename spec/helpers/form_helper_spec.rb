@@ -120,7 +120,7 @@ describe FilepickerRails::FormHelper do
       describe "policy" do
 
         before do
-          Timecop.freeze(Time.local(1990))
+          Timecop.freeze(Time.zone.parse("2012-09-19 12:59:27"))
           Rails.application.config.filepicker_rails.secret_key = 'filepicker123secretkey'
         end
 
@@ -131,8 +131,8 @@ describe FilepickerRails::FormHelper do
 
         it "have correct input with policy" do
           html = %{<input data-fp-apikey="123filepickerapikey"}
-          html << %{ data-fp-policy="eyJleHBpcnkiOjYzMTE1OTgwMCwiY2FsbCI6WyJwaWNrIiwic3RvcmUiXX0="}
-          html << %{ data-fp-signature="f8e01a0b8f3fbc1dec7997d9e831eb02156b50f9cb7e482efe3b680fa7762d45"}
+          html << %{ data-fp-policy="eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicGljayIsInN0b3JlIl19"}
+          html << %{ data-fp-signature="7bbfb03a94967056d4c98140a3ce188ec7a5b575d2cd86fe5528d7fafb3387c3"}
           html << %{ id="user_filepicker_url" name="user[filepicker_url]" type="filepicker" />}
           expect(form.filepicker_field(:filepicker_url)).to eq(html)
         end
