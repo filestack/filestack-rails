@@ -1,4 +1,5 @@
 # Filepicker::Rails
+[![Travis CI][travis_ci_badge]][travis_ci]
 
 Adds form, image_tag, and download/save helpers to help you get up and running with [filepicker.io](http://filepicker.io) in Rails.
 
@@ -129,3 +130,6 @@ of an iframe on the page.
 ### Demo
 
 See a simple demo app [repo](https://github.com/maxtilford/filepicker-rails-demo)
+
+[travis_ci]: http://travis-ci.org/Ink/filepicker-rails
+[travis_ci_badge]: https://secure.travis-ci.org/Ink/filepicker-rails.png
