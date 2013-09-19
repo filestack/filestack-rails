@@ -10,6 +10,8 @@
 - Add specs <3
 - Add to Travis CI
 - Create CHANGELOG
+- Create CONTRIBUTING
+- Add versioning, issue, contributing and credits sections on README
 
 ### bug fixes
 
