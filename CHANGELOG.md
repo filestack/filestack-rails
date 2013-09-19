@@ -13,6 +13,7 @@
 - Create CONTRIBUTING
 - Add versioning, issue, contributing and credits sections on README
 - Add rubygems badge
+- Add codeclimate badge
 
 ### bug fixes
 
