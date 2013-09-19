@@ -2,6 +2,7 @@
 [![RubyGems][gem_version_badge]][ruby_gems]
 [![Travis CI][travis_ci_badge]][travis_ci]
 [![Code Climate][code_climate_badge]][code_climate]
+[![Coveralls][coveralls_badge]][coveralls]
 
 Adds form, image_tag, and download/save helpers to help you get up and running with [filepicker.io](http://filepicker.io) in Rails.
 
@@ -155,4 +156,6 @@ Thank you to all the [contributors](https://github.com/Ink/filepicker-rails/grap
 [travis_ci_badge]: https://secure.travis-ci.org/Ink/filepicker-rails.png
 [code_climate]: https://codeclimate.com/github/Ink/filepicker-rails
 [code_climate_badge]: https://codeclimate.com/github/Ink/filepicker-rails.png
+[coveralls]: https://coveralls.io/r/Ink/filepicker-rails
+[coveralls_badge]: https://coveralls.io/repos/Ink/filepicker-rails/badge.png?branch=master
 

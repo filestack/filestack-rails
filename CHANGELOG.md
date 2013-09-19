@@ -14,6 +14,7 @@
 - Add versioning, issue, contributing and credits sections on README
 - Add rubygems badge
 - Add codeclimate badge
+- Add coveralls badge
 
 ### bug fixes
 
