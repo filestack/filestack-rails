@@ -1,4 +1,5 @@
 # Filepicker::Rails
+[![RubyGems][gem_version_badge]][ruby_gems]
 [![Travis CI][travis_ci_badge]][travis_ci]
 
 Adds form, image_tag, and download/save helpers to help you get up and running with [filepicker.io](http://filepicker.io) in Rails.
@@ -147,6 +148,8 @@ Please see [CONTRIBUTING.md](https://github.com/Ink/filepicker-rails/blob/master
 
 Thank you to all the [contributors](https://github.com/Ink/filepicker-rails/graphs/contributors).
 
+[gem_version_badge]: https://badge.fury.io/rb/filepicker-rails.png
+[ruby_gems]: http://rubygems.org/gems/filepicker-rails
 [travis_ci]: http://travis-ci.org/Ink/filepicker-rails
 [travis_ci_badge]: https://secure.travis-ci.org/Ink/filepicker-rails.png
 

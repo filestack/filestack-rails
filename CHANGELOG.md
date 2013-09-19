@@ -12,6 +12,7 @@
 - Create CHANGELOG
 - Create CONTRIBUTING
 - Add versioning, issue, contributing and credits sections on README
+- Add rubygems badge
 
 ### bug fixes
 
