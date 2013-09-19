@@ -131,5 +131,22 @@ of an iframe on the page.
 
 See a simple demo app [repo](https://github.com/maxtilford/filepicker-rails-demo)
 
+## Versioning
+
+Filepicker::Rails follow the [Semantic Versioning](http://semver.org/).
+
+## Issues
+
+If you have problems, please create a [Github Issue](https://github.com/Ink/filepicker-rails/issues).
+
+## Contributing
+
+Please see [CONTRIBUTING.md](https://github.com/Ink/filepicker-rails/blob/master/CONTRIBUTING.md) for details.
+
+## Credits
+
+Thank you to all the [contributors](https://github.com/Ink/filepicker-rails/graphs/contributors).
+
 [travis_ci]: http://travis-ci.org/Ink/filepicker-rails
 [travis_ci_badge]: https://secure.travis-ci.org/Ink/filepicker-rails.png
+
