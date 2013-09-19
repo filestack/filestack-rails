@@ -1,8 +1,8 @@
 # Filepicker::Rails
 [![RubyGems][gem_version_badge]][ruby_gems]
 [![Travis CI][travis_ci_badge]][travis_ci]
-[![Code Climate][code_climate_badge]][code_climate]
 [![Coveralls][coveralls_badge]][coveralls]
+[![Code Climate][code_climate_badge]][code_climate]
 
 Adds form, image_tag, and download/save helpers to help you get up and running with [filepicker.io](http://filepicker.io) in Rails.
 
