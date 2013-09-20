@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    filepicker-rails (0.0.1)
+    filepicker-rails (1.0.0)
       rails (>= 3.2)
 
 GEM
