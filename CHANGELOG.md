@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 (unreleased)
+
+### misc
+
+- Add license to gemspec
+
 ## 1.0.0 (September 20, 2013)
 
 ### features
