@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/Ink/filepicker-rails"
   s.summary     = "Makes integrating filepicker.io with rails 4 easy"
   s.description = "Makes integrating filepicker.io with rails 4 easy"
+  s.license     = 'MIT'
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
