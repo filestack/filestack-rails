@@ -34,8 +34,16 @@ Set your API Key in config/application.rb:
 config.filepicker_rails.api_key = "Your filepicker.io API Key"
 ```
 
+Set your CDN Path in config/production.rb ([CDN usage](https://developers.inkfilepicker.com/docs/cdn/)):
+
+```ruby
+config.filepicker_rails.cdn_host = "Your CDN host name"
+```
+
 ## Usage
+
 ### First create a migration to add the field that will hold your filepicker.io URL
+
 Run the Rails migration generator from the command line:
 
     $ rails g migration AddNameOfAttrForFilepickerUrlToUser
@@ -54,7 +62,6 @@ class AddNameOfAttrForFilepickerUrlToUser < ActiveRecord::Migration
 end
 ```
 
-
 ### Adding an upload field to your form:
 
 ```erb
@@ -67,6 +74,7 @@ end
   <%= f.submit %>
 <% end %>
 ```
+
 Full options list:
 
 * button_text - The text of the upload button.
@@ -115,7 +123,6 @@ Example fpfiles object:
 ```
 
 See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
-
 
 ### Allowing the user to download a file (or upload it to any of the supported services)
 
