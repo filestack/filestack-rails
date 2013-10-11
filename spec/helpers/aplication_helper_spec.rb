@@ -145,8 +145,7 @@ describe FilepickerRails::ApplicationHelper do
     context "with cdn host" do
 
       it "have url with cdn host" do
-        ::Rails.application.config.filepicker_rails.stub(cdn_host: "//cdn.example.com")
-
+        Rails.application.config.filepicker_rails.cdn_host = "//cdn.example.com"
         expect(filepicker_image_url("https://www.filepicker.io/foo")).to eq("//cdn.example.com/foo/convert?")
       end
     end
