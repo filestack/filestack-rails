@@ -60,5 +60,17 @@ describe FilepickerRails::Configuration do
       expect(configuration.default_expiry).to eq(600)
     end
   end
+
+  describe "#cdn_host" do
+
+    it "have defined value" do
+      configuration.cdn_host = "https://cdn.example.com"
+      expect(configuration.cdn_host).to eq("https://cdn.example.com")
+    end
+
+    it "have a default value" do
+      expect(configuration.cdn_host).to eq(nil)
+    end
+  end
 end
 
