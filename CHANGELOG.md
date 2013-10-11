@@ -2,6 +2,10 @@
 
 ## 1.0.1 (unreleased)
 
+### features
+
+- Add option to use a CDN
+
 ### misc
 
 - Add license to gemspec
