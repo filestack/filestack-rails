@@ -99,6 +99,12 @@ describe FilepickerRails::FormHelper do
         expect(form.filepicker_field(:filepicker_url, multiple: true)).to eq(html)
       end
 
+      it "have correct input with 'max_size'" do
+        html = %{<input data-fp-apikey="123filepickerapikey" data-fp-maxSize="10"}
+        html << %{ id="user_filepicker_url" name="user[filepicker_url]" type="filepicker" />}
+        expect(form.filepicker_field(:filepicker_url, max_size: 10)).to eq(html)
+      end
+
       it "have correct input with 'onchange'" do
         html = %{<input data-fp-apikey="123filepickerapikey" id="user_filepicker_url"}
         html << %{ name="user[filepicker_url]" onchange="track()" type="filepicker" />}

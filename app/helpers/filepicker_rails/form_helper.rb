@@ -34,6 +34,7 @@ module FilepickerRails
             :store_location => 'data-fp-store-location',
             :store_access   => 'data-fp-store-access',
             :multiple       => 'data-fp-multiple',
+            :max_size       => 'data-fp-maxSize',
             :onchange       => 'onchange',
             :class          => 'class',
             :value          => 'value'

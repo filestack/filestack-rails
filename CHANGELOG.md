@@ -5,6 +5,7 @@
 ### features
 
 - Add option to use a CDN
+- Add option for max file size
 
 ### misc
 
