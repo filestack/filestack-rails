@@ -4,7 +4,7 @@ module FilepickerRails
     def filepicker_field(method, options = {})
       type = options.delete(:dragdrop) ? 'filepicker-dragdrop' : 'filepicker'
 
-      input_options = retrive_legacy_filepicker_options(options)
+      input_options = retrieve_legacy_filepicker_options(options)
       input_options['data-fp-apikey'] ||= ::Rails.application.config.filepicker_rails.api_key
       input_options.merge!(secure_filepicker) unless input_options['data-fp-policy'].present?
       input_options['type'] = type
@@ -20,7 +20,7 @@ module FilepickerRails
 
     private
 
-      def retrive_legacy_filepicker_options(options)
+      def retrieve_legacy_filepicker_options(options)
         mappings = {
             :button_text    => 'data-fp-button-text',
             :button_class   => 'data-fp-button-class',
