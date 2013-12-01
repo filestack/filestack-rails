@@ -10,6 +10,7 @@
 ### misc
 
 - Add license to gemspec
+- Improved README with a bit more documentation for onchange callback
 
 ## 1.0.0 (September 20, 2013)
 
