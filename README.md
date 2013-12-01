@@ -95,7 +95,22 @@ of an iframe on the page.
 
 ### Accessing FilePicker File with OnChange:
 
-When the dialog finishes uploading the file, the javascript code in the onchange field will be run with a special 'event' variable. The variable has a fpfiles (or if not multiple, also fpfile) attribute with information about the files (jQuery users: look under event.originalEvent).
+Javascript code in the onchange field acts as a callback, which is
+called on upload completion. You can specify onchange either in the ERB
+template (as shown below), or unobtrusively via jQuery's change event.
+
+```erb
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label :filepicker_url, "Upload Your Avatar:" %>
+    <%= f.filepicker_field :filepicker_url, onchange: 'onPhotoUpload(event)' %> 
+  </div>
+
+  <%= f.submit %>
+<% end %>
+```
+
+The callback is called with a special 'event' variable. The variable has a fpfiles (or if not multiple, also fpfile) attribute with information about the files (jQuery users: look under event.originalEvent).
 
 Example fpfiles object:
 ```javascript
