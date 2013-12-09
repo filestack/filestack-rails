@@ -7,6 +7,10 @@
 - Add option to use a CDN
 - Add option for max file size
 
+### improvements
+
+- Running specs on rails 3.2.x and 4.0
+
 ### misc
 
 - Add license to gemspec

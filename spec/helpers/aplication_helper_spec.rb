@@ -4,8 +4,14 @@ describe FilepickerRails::ApplicationHelper do
 
   describe "#filepicker_js_include_tag" do
 
-    it "have correct output" do
-      expect(filepicker_js_include_tag).to eq(%{<script src="//api.filepicker.io/v1/filepicker.js"></script>})
+    it "be a script tag" do
+      regex = %r{\A<script.*></script>\z}
+       expect(filepicker_js_include_tag).to match(regex)
+    end
+
+    it "has correct src attribute" do
+      attribute = %{src="//api.filepicker.io/v1/filepicker.js"}
+      expect(filepicker_js_include_tag).to include(attribute)
     end
   end
 
