@@ -34,6 +34,12 @@ Set your API Key in config/application.rb:
 config.filepicker_rails.api_key = "Your filepicker.io API Key"
 ```
 
+Set your Secret Key in config/application.rb for signed request support:
+
+```ruby
+config.filepicker_rails.secret_key = "Your filepicker.io Secret Key"
+```
+
 Set your CDN Path in config/production.rb ([CDN usage](https://developers.inkfilepicker.com/docs/cdn/)):
 
 ```ruby
@@ -103,7 +109,7 @@ template (as shown below), or unobtrusively via jQuery's change event.
 <%= form_for @user do |f| %>
   <div>
     <%= f.label :filepicker_url, "Upload Your Avatar:" %>
-    <%= f.filepicker_field :filepicker_url, onchange: 'onPhotoUpload(event)' %> 
+    <%= f.filepicker_field :filepicker_url, onchange: 'onPhotoUpload(event)' %>
   </div>
 
   <%= f.submit %>
