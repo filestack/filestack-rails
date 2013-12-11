@@ -28,6 +28,12 @@ Add the filepicker.io javascript library to your layout:
 <%= filepicker_js_include_tag %>
 ```
 
+Require filepicker-rails in config/application.rb:
+
+```ruby
+require "filepicker-rails"
+```
+
 Set your API Key in config/application.rb:
 
 ```ruby
