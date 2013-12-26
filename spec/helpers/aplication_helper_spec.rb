@@ -114,6 +114,10 @@ describe FilepickerRails::ApplicationHelper do
         expect(filepicker_image_url("foo", fit: 'clip')).to eq('foo/convert?fit=clip')
       end
 
+      it "have correct url with 'rotate'" do
+        expect(filepicker_image_url("foo", rotate: 'exif')).to eq('foo/convert?rotate=exif')
+      end
+      
       it "have correct url with 'align'" do
         expect(filepicker_image_url("foo", align: 'faces')).to eq('foo/convert?align=faces')
       end
