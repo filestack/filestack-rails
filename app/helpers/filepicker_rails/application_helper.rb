@@ -42,6 +42,10 @@ module FilepickerRails
     # align - Determines how the image is aligned when resizing and using the "fit" parameter.
     #         Check API for details.
     #
+    # rotate - Rotate the image. Default is no rotation. 
+    #          rotate="exif" will rotate the image automatically based on the exif data in the image. 
+    #          Other valid values are integers between 0 and 359, for degrees of rotation.
+    #
     # cache - Specifies if the image should be cached or not.
     #
     # crop - Crops the image to a specified rectangle. The input to this parameter
@@ -69,7 +73,7 @@ module FilepickerRails
     #                 and horizontal with a comma. The default behavior
     #                 is bottom,right
     def filepicker_image_url(url, options = {})
-      query_params = options.slice(:w, :h, :fit, :align, :cache, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
+      query_params = options.slice(:w, :h, :fit, :align, :rotate, :cache, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
 
       if ::Rails.application.config.filepicker_rails.cdn_host
         uri = URI.parse(url)
