@@ -69,7 +69,7 @@ module FilepickerRails
     #                 and horizontal with a comma. The default behavior
     #                 is bottom,right
     def filepicker_image_url(url, options = {})
-      query_params = options.slice(:w, :h, :fit, :align, :cache, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
+      query_params = options.slice(:w, :h, :fit, :rotate, :align, :cache, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
 
       if ::Rails.application.config.filepicker_rails.cdn_host
         uri = URI.parse(url)
