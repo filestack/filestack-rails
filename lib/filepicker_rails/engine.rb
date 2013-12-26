@@ -8,8 +8,8 @@ module FilepickerRails
     end
 
     initializer 'filepicker_rails.action_controller' do |app|
-      ActiveSupport.on_load(:action_view) do
-        include FilepickerRails::ApplicationHelper
+      ActiveSupport.on_load(:action_controller) do
+        helper FilepickerRails::ApplicationHelper
       end
     end
   end
