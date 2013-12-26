@@ -3,9 +3,9 @@
 ## 1.0.1 (unreleased)
 
 ### features
-
 - Add option to use a CDN
 - Add option for max file size
+- Add option to rotate image 
 
 ### improvements
 
