@@ -11,6 +11,7 @@
 ### improvements
 
 - Running specs on rails 3.2.x and 4.0
+- Only append convert? when is needed
 
 ### misc
 

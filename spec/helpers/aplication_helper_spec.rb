@@ -66,7 +66,7 @@ describe FilepickerRails::ApplicationHelper do
     context "only with url" do
 
       it "have correct image tag" do
-        expect(filepicker_image_tag("foo")).to eq(%{<img alt="Convert?" src="/images/foo/convert?" />})
+        expect(filepicker_image_tag("foo")).to eq(%{<img alt="Foo" src="/images/foo" />})
       end
     end
 
@@ -81,7 +81,7 @@ describe FilepickerRails::ApplicationHelper do
     context "with image_tag_options" do
 
       it "have correct image tag" do
-        html = %{<img alt="Foo image" src="/images/foo/convert?" />}
+        html = %{<img alt="Foo image" src="/images/foo" />}
         expect(filepicker_image_tag("foo", {}, alt: "Foo image")).to eq(html)
       end
     end
@@ -92,14 +92,14 @@ describe FilepickerRails::ApplicationHelper do
     context "only with url" do
 
       it "have correct url" do
-        expect(filepicker_image_url("foo")).to eq('foo/convert?')
+        expect(filepicker_image_url("foo")).to eq('foo')
       end
     end
 
     context "with options" do
 
       it "have correct url with a invalid param" do
-        expect(filepicker_image_url("foo", wrong: 'top')).to eq('foo/convert?')
+        expect(filepicker_image_url("foo", wrong: 'top')).to eq('foo')
       end
 
       it "have correct url with 'w'" do
@@ -117,7 +117,7 @@ describe FilepickerRails::ApplicationHelper do
       it "have correct url with 'align'" do
         expect(filepicker_image_url("foo", align: 'faces')).to eq('foo/convert?align=faces')
       end
-      
+
       it "have correct url with 'rotate'" do
         expect(filepicker_image_url("foo", rotate: 'exif')).to eq('foo/convert?rotate=exif')
       end
@@ -156,7 +156,7 @@ describe FilepickerRails::ApplicationHelper do
 
       it "have url with cdn host" do
         Rails.application.config.filepicker_rails.cdn_host = "//cdn.example.com"
-        expect(filepicker_image_url("https://www.filepicker.io/foo")).to eq("//cdn.example.com/foo/convert?")
+        expect(filepicker_image_url("https://www.filepicker.io/foo")).to eq("//cdn.example.com/foo")
       end
     end
   end

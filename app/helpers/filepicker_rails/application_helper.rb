@@ -42,8 +42,8 @@ module FilepickerRails
     # align - Determines how the image is aligned when resizing and using the "fit" parameter.
     #         Check API for details.
     #
-    # rotate - Rotate the image. Default is no rotation. 
-    #          rotate="exif" will rotate the image automatically based on the exif data in the image. 
+    # rotate - Rotate the image. Default is no rotation.
+    #          rotate="exif" will rotate the image automatically based on the exif data in the image.
     #          Other valid values are integers between 0 and 359, for degrees of rotation.
     #
     # cache - Specifies if the image should be cached or not.
@@ -80,7 +80,11 @@ module FilepickerRails
         url.gsub!("#{uri.scheme}://#{uri.host}", ::Rails.application.config.filepicker_rails.cdn_host)
       end
 
-      [url, "/convert?", query_params].join
+      if query_params.blank?
+        [url, query_params]
+      else
+        [url, "/convert?", query_params]
+      end.join
     end
   end
 end
