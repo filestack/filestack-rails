@@ -1,0 +1,8 @@
+<h1>Welcome#index</h1>
+<%= form_for :user do |f| %>
+  <div>
+    <%= f.label :filepicker_url, "Upload Your Avatar:" %>
+    <%= f.filepicker_field :filepicker_url %>
+  </div>
+  <%= f.submit %>
+<% end %>
