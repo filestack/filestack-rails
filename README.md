@@ -181,7 +181,7 @@ Thank you to all the [contributors](https://github.com/Ink/filepicker-rails/grap
 [gem_version_badge]: https://badge.fury.io/rb/filepicker-rails.png
 [ruby_gems]: http://rubygems.org/gems/filepicker-rails
 [travis_ci]: http://travis-ci.org/Ink/filepicker-rails
-[travis_ci_badge]: https://secure.travis-ci.org/Ink/filepicker-rails.png
+[travis_ci_badge]: https://travis-ci.org/Ink/filepicker-rails.svg?branch=master
 [code_climate]: https://codeclimate.com/github/Ink/filepicker-rails
 [code_climate_badge]: https://codeclimate.com/github/Ink/filepicker-rails.png
 [coveralls]: https://coveralls.io/r/Ink/filepicker-rails
