@@ -172,5 +172,32 @@ describe FilepickerRails::ApplicationHelper do
         end.to_not change { url }
       end
     end
+
+    context 'with policy' do
+
+      before do
+        Timecop.freeze(Time.zone.parse("2012-09-19 12:59:27"))
+        Rails.application.config.filepicker_rails.secret_key = 'filepicker123secretkey'
+      end
+
+      after do
+        Rails.application.config.filepicker_rails.secret_key = nil
+        Timecop.return
+      end
+
+      it 'have policy and signature' do
+        url = 'foo?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicGljayIsInN0b3JlIl19' \
+              '&signature=7bbfb03a94967056d4c98140a3ce188ec7a5b575d2cd86fe5528d7fafb3387c3'
+        expect(filepicker_image_url('foo')).to eq(url)
+      end
+
+      it 'have policy and signature when have some convert option' do
+        url = 'foo/convert' \
+              '?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicGljayIsInN0b3JlIl19' \
+              '&quality=80' \
+              '&signature=7bbfb03a94967056d4c98140a3ce188ec7a5b575d2cd86fe5528d7fafb3387c3'
+        expect(filepicker_image_url('foo', quality: 80)).to eq(url)
+      end
+    end
   end
 end

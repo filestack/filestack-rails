@@ -6,6 +6,10 @@
 
 - Do not modify original url when using cdn
 
+### features
+
+- filepicker_image_tag now works with policies
+
 ## 1.1.0 (March 30, 2014)
 
 ### features

@@ -73,18 +73,73 @@ module FilepickerRails
     #                 and horizontal with a comma. The default behavior
     #                 is bottom,right
     def filepicker_image_url(url, options = {})
-      query_params = options.slice(:w, :h, :fit, :align, :rotate, :cache, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
+      FilepickerImageUrl.new(url, options).execute
+    end
 
-      if ::Rails.application.config.filepicker_rails.cdn_host
-        uri = URI.parse(url)
-        url = url.gsub("#{uri.scheme}://#{uri.host}", ::Rails.application.config.filepicker_rails.cdn_host)
+    class FilepickerImageUrl
+
+      VALID_OPTIONS = [:w, :h, :fit, :align, :rotate, :cache, :crop, :format,
+                       :quality, :watermark, :watersize, :waterposition]
+
+      def initialize(url, options = {})
+        @url, @options = url, options
+        remove_invalid_options
+        apply_cdn_to_url
+        apply_policy
       end
 
-      if query_params.blank?
-        url
-      else
-        [url, "/convert?", query_params].join
+      def execute
+        query_params = options.to_query
+        if has_convert_options?
+          [url, '/convert?', query_params]
+        elsif has_policy?
+          [url,'?', query_params]
+        else
+          [url, query_params]
+        end.join
       end
+
+      private
+
+        attr_reader :url, :options
+
+        def remove_invalid_options
+          options.delete_if{ |o| !VALID_OPTIONS.include?(o) }
+        end
+
+        def cdn_host
+          ::Rails.application.config.filepicker_rails.cdn_host
+        end
+
+        def has_policy?
+          policy_config.any?
+        end
+
+        def has_convert_options?
+          options.keys.any?{ |k| VALID_OPTIONS.include?(k) }
+        end
+
+        def apply_cdn_to_url
+          if cdn_host
+            uri = URI.parse(url)
+            @url = url.gsub("#{uri.scheme}://#{uri.host}", cdn_host)
+          end
+        end
+
+        def apply_policy
+          options.merge!(policy_config)
+        end
+
+        def policy_config
+          return {} unless ::Rails.application.config.filepicker_rails.secret_key.present?
+          grant = Policy.new
+          grant.call = [:pick, :store]
+
+          {
+            'policy' => grant.policy,
+            'signature' => grant.signature
+          }
+        end
     end
   end
 end
