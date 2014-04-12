@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 (Unreleased)
+
+### features
+
+- filepicker_image_tag now works with policies
+
 ## 1.1.0 (March 30, 2014)
 
 ### features
