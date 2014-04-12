@@ -8,10 +8,14 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'pry'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each do |file|
+    require file
+end
 
 RSpec.configure do |config|
   # ## Mock Framework
