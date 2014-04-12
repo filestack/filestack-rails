@@ -4,7 +4,11 @@ require 'timecop'
 describe FilepickerRails::FormHelper do
 
   let!(:form) do
-    ActionView::Helpers::FormBuilder.new(:user, nil, nil, {}, nil)
+    if rails_4_1_x?
+      ActionView::Helpers::FormBuilder.new(:user, nil, nil, {})
+    else
+      ActionView::Helpers::FormBuilder.new(:user, nil, nil, {}, nil)
+    end
   end
 
   describe "#filepicker_field" do
