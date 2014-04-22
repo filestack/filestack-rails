@@ -80,11 +80,28 @@ module FilepickerRails
         url.gsub!("#{uri.scheme}://#{uri.host}", ::Rails.application.config.filepicker_rails.cdn_host)
       end
 
-      if query_params.blank?
+      image_url = if query_params.blank?
         [url, query_params]
       else
         [url, "/convert?", query_params]
       end.join
+
+      filepicker_secure_url image_url
+    end
+
+    def filepicker_secure_url(url, privileges = [])
+      privileges    = privileges.blank? ? [:read, :convert] : privileges
+      uri           = URI.parse(url)
+      file_handle   = uri.path.split('/').delete_if(&:blank?)[2]
+
+      grant         = FilepickerRails::Policy.new handle: file_handle, call: privileges
+
+      decoded_query = URI.decode_www_form(uri.query || '')
+      decoded_query << [:signature, grant.signature]
+      decoded_query << [:policy, grant.policy]
+
+      uri.query     = decoded_query.map{|e| e.join('=') }.join('&')
+      uri.to_s
     end
   end
 end
