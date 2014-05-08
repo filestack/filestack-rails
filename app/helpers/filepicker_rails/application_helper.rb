@@ -77,14 +77,14 @@ module FilepickerRails
 
       if ::Rails.application.config.filepicker_rails.cdn_host
         uri = URI.parse(url)
-        url.gsub!("#{uri.scheme}://#{uri.host}", ::Rails.application.config.filepicker_rails.cdn_host)
+        url = url.gsub("#{uri.scheme}://#{uri.host}", ::Rails.application.config.filepicker_rails.cdn_host)
       end
 
       if query_params.blank?
-        [url, query_params]
+        url
       else
-        [url, "/convert?", query_params]
-      end.join
+        [url, "/convert?", query_params].join
+      end
     end
   end
 end

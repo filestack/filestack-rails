@@ -154,9 +154,22 @@ describe FilepickerRails::ApplicationHelper do
 
     context "with cdn host" do
 
-      it "have url with cdn host" do
+      before do
         Rails.application.config.filepicker_rails.cdn_host = "//cdn.example.com"
-        expect(filepicker_image_url("https://www.filepicker.io/foo")).to eq("//cdn.example.com/foo")
+      end
+
+      let(:url) do
+        "https://www.filepicker.io/foo"
+      end
+
+      it "have url with cdn host" do
+        expect(filepicker_image_url(url)).to eq("//cdn.example.com/foo")
+      end
+
+      it "do not change the original url" do
+        expect do
+          filepicker_image_url(url)
+        end.to_not change { url }
       end
     end
   end

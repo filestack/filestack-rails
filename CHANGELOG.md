@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.1 (Unreleased)
+
+### bug fixes
+
+- Do not modify original url when using cdn
+
 ## 1.1.0 (March 30, 2014)
 
 ### features
