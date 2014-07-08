@@ -1,6 +1,6 @@
 module FilepickerRails
   class Configuration
-    attr_writer :api_key, :default_expiry
+    attr_writer :api_key, :default_expiry, :policy_proc
     attr_accessor :secret_key, :cdn_host
 
     def api_key
@@ -9,6 +9,10 @@ module FilepickerRails
 
     def default_expiry
       @default_expiry ||= 600
+    end
+
+    def policy_proc
+      @policy_proc || Proc.new { Policy.new(call: [:read, :convert]) }
     end
   end
 end

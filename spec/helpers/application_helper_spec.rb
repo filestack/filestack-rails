@@ -177,15 +177,21 @@ describe FilepickerRails::ApplicationHelper do
 
       before do
         Rails.application.config.filepicker_rails.secret_key = 'filepicker123secretkey'
+        Rails.application.config.filepicker_rails.policy_proc = Proc.new do
+          FilepickerRails::Policy.new(
+            expiry: 100.years.since(Time.at(0)).to_i,
+            call: [:read, :convert]
+          )
+        end
       end
 
       after do
         Rails.application.config.filepicker_rails.secret_key = nil
+        Rails.application.config.filepicker_rails.policy_proc = nil
       end
 
       it 'have policy and signature' do
-        expiry = Time.now.to_i
-        FilepickerRails::Policy.any_instance.stub(:expiry).and_return(expiry)
+        expiry = 100.years.since(Time.at(0)).to_i
         json_policy = {expiry: expiry, call: [:read, :convert]}.to_json
         policy = Base64.urlsafe_encode64(json_policy)
         signature = OpenSSL::HMAC.hexdigest('sha256', 'filepicker123secretkey', policy)
@@ -194,8 +200,7 @@ describe FilepickerRails::ApplicationHelper do
       end
 
       it 'have policy and signature when have some convert option' do
-        expiry = Time.now.to_i
-        FilepickerRails::Policy.any_instance.stub(:expiry).and_return(expiry)
+        expiry = 100.years.since(Time.at(0)).to_i
         json_policy = {expiry: expiry, call: [:read, :convert]}.to_json
         policy = Base64.urlsafe_encode64(json_policy)
         signature = OpenSSL::HMAC.hexdigest('sha256', 'filepicker123secretkey', policy)
