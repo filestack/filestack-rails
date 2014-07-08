@@ -78,62 +78,55 @@ module FilepickerRails
 
     class FilepickerImageUrl
 
-      VALID_OPTIONS = [:w, :h, :fit, :align, :rotate, :cache, :crop, :format,
-                       :quality, :watermark, :watersize, :waterposition]
+      CONVERT_OPTIONS = [:w, :h, :fit, :align, :rotate, :crop, :format,
+                         :quality, :watermark, :watersize, :waterposition]
+      VALID_OPTIONS   = CONVERT_OPTIONS + [:cache]
 
       def initialize(url, options = {})
         @url, @options = url, options
-        remove_invalid_options
-        apply_cdn_to_url
-        apply_policy
       end
 
       def execute
-        query_params = options.to_query
-        if has_convert_options?
-          [url, '/convert?', query_params]
-        elsif has_policy?
-          [url,'?', query_params]
+        url_with_path = if convert_options.any?
+          "#{cdn_url}/convert"
         else
-          [url, query_params]
-        end.join
+          cdn_url
+        end
+
+        query_params = all_options.merge(policy_config).to_query
+
+        [url_with_path, query_params.presence].compact.join('?')
       end
 
       private
 
         attr_reader :url, :options
 
-        def remove_invalid_options
-          options.delete_if{ |o| !VALID_OPTIONS.include?(o) }
+        def all_options
+          options.select { |option| VALID_OPTIONS.include?(option) }
+        end
+
+        def convert_options
+          options.select { |option| CONVERT_OPTIONS.include?(option) }
         end
 
         def cdn_host
           ::Rails.application.config.filepicker_rails.cdn_host
         end
 
-        def has_policy?
-          policy_config.any?
-        end
-
-        def has_convert_options?
-          options.keys.any?{ |k| VALID_OPTIONS.include?(k) }
-        end
-
-        def apply_cdn_to_url
+        def cdn_url
           if cdn_host
             uri = URI.parse(url)
-            @url = url.gsub("#{uri.scheme}://#{uri.host}", cdn_host)
+            url.gsub("#{uri.scheme}://#{uri.host}", cdn_host)
+          else
+            url
           end
-        end
-
-        def apply_policy
-          options.merge!(policy_config)
         end
 
         def policy_config
           return {} unless ::Rails.application.config.filepicker_rails.secret_key.present?
           grant = Policy.new
-          grant.call = [:pick, :store]
+          grant.call = [:read, :convert]
 
           {
             'policy' => grant.policy,

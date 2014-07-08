@@ -123,7 +123,7 @@ describe FilepickerRails::ApplicationHelper do
       end
 
       it "have correct url with 'cache'" do
-        expect(filepicker_image_url("foo", cache: true)).to eq('foo/convert?cache=true')
+        expect(filepicker_image_url("foo", cache: true)).to eq('foo?cache=true')
       end
 
       it "have correct url with 'crop'" do
@@ -176,26 +176,30 @@ describe FilepickerRails::ApplicationHelper do
     context 'with policy' do
 
       before do
-        Timecop.freeze(Time.zone.parse("2012-09-19 12:59:27"))
         Rails.application.config.filepicker_rails.secret_key = 'filepicker123secretkey'
       end
 
       after do
         Rails.application.config.filepicker_rails.secret_key = nil
-        Timecop.return
       end
 
       it 'have policy and signature' do
-        url = 'foo?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicGljayIsInN0b3JlIl19' \
-              '&signature=7bbfb03a94967056d4c98140a3ce188ec7a5b575d2cd86fe5528d7fafb3387c3'
+        expiry = Time.now.to_i
+        FilepickerRails::Policy.any_instance.stub(:expiry).and_return(expiry)
+        json_policy = {expiry: expiry, call: [:read, :convert]}.to_json
+        policy = Base64.urlsafe_encode64(json_policy)
+        signature = OpenSSL::HMAC.hexdigest('sha256', 'filepicker123secretkey', policy)
+        url = "foo?#{{policy: policy, signature: signature}.to_param}"
         expect(filepicker_image_url('foo')).to eq(url)
       end
 
       it 'have policy and signature when have some convert option' do
-        url = 'foo/convert' \
-              '?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicGljayIsInN0b3JlIl19' \
-              '&quality=80' \
-              '&signature=7bbfb03a94967056d4c98140a3ce188ec7a5b575d2cd86fe5528d7fafb3387c3'
+        expiry = Time.now.to_i
+        FilepickerRails::Policy.any_instance.stub(:expiry).and_return(expiry)
+        json_policy = {expiry: expiry, call: [:read, :convert]}.to_json
+        policy = Base64.urlsafe_encode64(json_policy)
+        signature = OpenSSL::HMAC.hexdigest('sha256', 'filepicker123secretkey', policy)
+        url = "foo/convert?#{{policy: policy, quality: 80, signature: signature}.to_param}"
         expect(filepicker_image_url('foo', quality: 80)).to eq(url)
       end
     end
