@@ -122,9 +122,6 @@ describe FilepickerRails::ApplicationHelper do
         expect(filepicker_image_url("foo", rotate: 'exif')).to eq('foo/convert?rotate=exif')
       end
 
-      it "have correct url with 'cache'" do
-        expect(filepicker_image_url("foo", cache: true)).to eq('foo?cache=true')
-      end
 
       it "have correct url with 'crop'" do
         expect(filepicker_image_url("foo", crop: '20,30,400,200')).to eq('foo/convert?crop=20%2C30%2C400%2C200')
@@ -149,6 +146,18 @@ describe FilepickerRails::ApplicationHelper do
 
       it "have correct url with 'waterposition'" do
         expect(filepicker_image_url("foo", waterposition: 'top')).to eq('foo/convert?waterposition=top')
+      end
+
+      describe 'cache' do
+
+        it "have correct url with 'cache' only" do
+          expect(filepicker_image_url("foo", cache: true)).to eq('foo?cache=true')
+        end
+
+        it "have correct url with 'cache' and convert option" do
+          url = 'foo/convert?align=faces&cache=true'
+          expect(filepicker_image_url("foo", cache: true, align: 'faces')).to eq(url)
+        end
       end
     end
 
