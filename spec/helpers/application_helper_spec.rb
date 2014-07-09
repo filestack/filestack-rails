@@ -176,35 +176,26 @@ describe FilepickerRails::ApplicationHelper do
     context 'with policy' do
 
       before do
+        Timecop.freeze(Time.zone.parse("2012-09-19 12:59:27"))
         Rails.application.config.filepicker_rails.secret_key = 'filepicker123secretkey'
-        Rails.application.config.filepicker_rails.policy_proc = Proc.new do
-          FilepickerRails::Policy.new(
-            expiry: 100.years.since(Time.at(0)).to_i,
-            call: [:read, :convert]
-          )
-        end
       end
 
       after do
+        Timecop.return
         Rails.application.config.filepicker_rails.secret_key = nil
-        Rails.application.config.filepicker_rails.policy_proc = nil
       end
 
       it 'have policy and signature' do
-        expiry = 100.years.since(Time.at(0)).to_i
-        json_policy = {expiry: expiry, call: [:read, :convert]}.to_json
-        policy = Base64.urlsafe_encode64(json_policy)
-        signature = OpenSSL::HMAC.hexdigest('sha256', 'filepicker123secretkey', policy)
-        url = "foo?#{{policy: policy, signature: signature}.to_param}"
+        url = 'foo?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicmVhZCIsImNvbnZlcnQiXX0%3D' \
+              '&signature=4562a7e728aa0e53d82c20a97e4f01103dd127724edce631c3f4ada70922eecd'
         expect(filepicker_image_url('foo')).to eq(url)
       end
 
       it 'have policy and signature when have some convert option' do
-        expiry = 100.years.since(Time.at(0)).to_i
-        json_policy = {expiry: expiry, call: [:read, :convert]}.to_json
-        policy = Base64.urlsafe_encode64(json_policy)
-        signature = OpenSSL::HMAC.hexdigest('sha256', 'filepicker123secretkey', policy)
-        url = "foo/convert?#{{policy: policy, quality: 80, signature: signature}.to_param}"
+        url = 'foo/convert' \
+              '?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicmVhZCIsImNvbnZlcnQiXX0%3D' \
+              '&quality=80' \
+              '&signature=4562a7e728aa0e53d82c20a97e4f01103dd127724edce631c3f4ada70922eecd'
         expect(filepicker_image_url('foo', quality: 80)).to eq(url)
       end
     end

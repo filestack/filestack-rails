@@ -125,7 +125,8 @@ module FilepickerRails
 
         def policy_config
           return {} unless ::Rails.application.config.filepicker_rails.secret_key.present?
-          grant = ::Rails.application.config.filepicker_rails.policy_proc.call
+          grant = Policy.new
+          grant.call = [:read, :convert]
 
           {
             'policy' => grant.policy,

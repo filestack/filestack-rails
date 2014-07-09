@@ -9,7 +9,6 @@
 ### features
 
 - filepicker_image_tag now works with policies
-- filepicker_image_tag policies can be overridden
 
 ## 1.1.0 (March 30, 2014)
 
