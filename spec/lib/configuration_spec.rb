@@ -20,10 +20,10 @@ describe FilepickerRails::Configuration do
     end
   end
 
-  describe "#default_expiry=" do
+  describe "#expiry=" do
 
-    it "respond to default_expiry=" do
-      expect(configuration).to respond_to(:default_expiry=)
+    it "respond to expiry=" do
+      expect(configuration).to respond_to(:expiry=)
     end
   end
 
@@ -49,16 +49,16 @@ describe FilepickerRails::Configuration do
     end
   end
 
-  describe "#default_expiry" do
+  describe "#expiry" do
 
     it "have defined value" do
-      configuration.default_expiry = 450
-      expect(configuration.default_expiry).to eq(450)
+      configuration.expiry = 450
+      expect(configuration.expiry).to eq(450)
     end
 
     it "have a default value" do
       Timecop.freeze(Time.zone.parse("2012-09-19 12:59:27")) do
-        expect(configuration.default_expiry).to eq(1348060167)
+        expect(configuration.expiry).to eq(1348060167)
       end
     end
   end
