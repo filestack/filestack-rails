@@ -57,7 +57,9 @@ describe FilepickerRails::Configuration do
     end
 
     it "have a default value" do
-      expect(configuration.default_expiry).to eq(600)
+      Timecop.freeze(Time.zone.parse("2012-09-19 12:59:27")) do
+        expect(configuration.default_expiry).to eq(1348060167)
+      end
     end
   end
 

@@ -8,7 +8,7 @@ module FilepickerRails
     end
 
     def default_expiry
-      @default_expiry ||= 600
+      @default_expiry ||= Time.zone.now.to_i + 600
     end
   end
 end
