@@ -23,7 +23,7 @@ module FilepickerRails
     def json_policy
       hash = Hash.new
 
-      @expiry ||= ::Rails.application.config.filepicker_rails.expiry
+      @expiry ||= ::Rails.application.config.filepicker_rails.expiry.call
 
       [:expiry, :call, :handle, :maxsize, :minsize, :path].each do |input|
         hash[input] = send(input) unless send(input).nil?

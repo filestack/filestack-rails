@@ -175,14 +175,16 @@ By default the expiry time is 10 minutes. If you need to change the expiry time 
 So you can do something like that to set the expiry time to 5 minutes.
 
 ```ruby
-config.filepicker_rails.expiry = (Time.zone.now + 5.minutes).to_i
+config.filepicker_rails.expiry = -> { (Time.zone.now + 5.minutes).to_i }
 ```
 
 If you need always the same url, a static expiry time, to do some cache. You can set a date starting of the Epoch.
 
 ```ruby
-100.years.since(Time.at(0)).to_i
+-> { 100.years.since(Time.at(0)).to_i }
 ```
+
+The argument need to be a [callable](http://www.rubytapas.com/episodes/35-Callable).
 
 ## Demo
 
