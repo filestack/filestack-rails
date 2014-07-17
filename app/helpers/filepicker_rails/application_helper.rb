@@ -73,18 +73,66 @@ module FilepickerRails
     #                 and horizontal with a comma. The default behavior
     #                 is bottom,right
     def filepicker_image_url(url, options = {})
-      query_params = options.slice(:w, :h, :fit, :align, :rotate, :cache, :crop, :format, :quality, :watermark, :watersize, :waterposition).to_query
+      FilepickerImageUrl.new(url, options).execute
+    end
 
-      if ::Rails.application.config.filepicker_rails.cdn_host
-        uri = URI.parse(url)
-        url = url.gsub("#{uri.scheme}://#{uri.host}", ::Rails.application.config.filepicker_rails.cdn_host)
+    class FilepickerImageUrl
+
+      CONVERT_OPTIONS = [:w, :h, :fit, :align, :rotate, :crop, :format,
+                         :quality, :watermark, :watersize, :waterposition]
+      VALID_OPTIONS   = CONVERT_OPTIONS + [:cache]
+
+      def initialize(url, options = {})
+        @url, @options = url, options
       end
 
-      if query_params.blank?
-        url
-      else
-        [url, "/convert?", query_params].join
+      def execute
+        url_with_path = if convert_options.any?
+          "#{cdn_url}/convert"
+        else
+          cdn_url
+        end
+
+        query_params = all_options.merge(policy_config).to_query
+
+        [url_with_path, query_params.presence].compact.join('?')
       end
+
+      private
+
+        attr_reader :url, :options
+
+        def all_options
+          options.select { |option| VALID_OPTIONS.include?(option) }
+        end
+
+        def convert_options
+          options.select { |option| CONVERT_OPTIONS.include?(option) }
+        end
+
+        def cdn_host
+          ::Rails.application.config.filepicker_rails.cdn_host
+        end
+
+        def cdn_url
+          if cdn_host
+            uri = URI.parse(url)
+            url.gsub("#{uri.scheme}://#{uri.host}", cdn_host)
+          else
+            url
+          end
+        end
+
+        def policy_config
+          return {} unless ::Rails.application.config.filepicker_rails.secret_key.present?
+          grant = Policy.new
+          grant.call = [:read, :convert]
+
+          {
+            'policy' => grant.policy,
+            'signature' => grant.signature
+          }
+        end
     end
   end
 end

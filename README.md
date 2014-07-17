@@ -158,7 +158,35 @@ of an iframe on the page.
 * services - What services your users can upload to. Ex: "BOX, COMPUTER, FACEBOOK".
 * save_as_name - A recommended file name. The user can override this.
 
-### Demo
+### Policy
+
+To use the [filepicker policies](https://developers.inkfilepicker.com/docs/security/) follow this instructions.
+
+Set your Secret Key in `config/application.rb`
+
+```ruby
+config.filepicker_rails.secret_key = "Your filepicker.io Secret Key"
+```
+
+### Expiry time
+
+By default the expiry time is 10 minutes. If you need to change the expiry time this should be an integer and it is expressed in seconds since the [Epoch](http://en.wikipedia.org/wiki/Unix_time).
+
+So you can do something like that to set the expiry time to 5 minutes.
+
+```ruby
+config.filepicker_rails.expiry = -> { (Time.zone.now + 5.minutes).to_i }
+```
+
+If you need always the same url, a static expiry time, to do some cache. You can set a date starting of the Epoch.
+
+```ruby
+-> { 100.years.since(Time.at(0)).to_i }
+```
+
+The argument need to be a [callable](http://www.rubytapas.com/episodes/35-Callable).
+
+## Demo
 
 See a simple demo app [repo](https://github.com/maxtilford/filepicker-rails-demo)
 

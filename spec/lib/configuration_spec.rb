@@ -20,10 +20,16 @@ describe FilepickerRails::Configuration do
     end
   end
 
-  describe "#default_expiry=" do
+  describe "#expiry=" do
 
-    it "respond to default_expiry=" do
-      expect(configuration).to respond_to(:default_expiry=)
+    it "respond to expiry=" do
+      expect(configuration).to respond_to(:expiry=)
+    end
+
+    it 'raises error if not receive a callable' do
+      expect do
+        configuration.expiry = 12
+      end.to raise_error(ArgumentError, 'Must be a callable')
     end
   end
 
@@ -49,15 +55,17 @@ describe FilepickerRails::Configuration do
     end
   end
 
-  describe "#default_expiry" do
+  describe "#expiry" do
 
     it "have defined value" do
-      configuration.default_expiry = 450
-      expect(configuration.default_expiry).to eq(450)
+      configuration.expiry = -> { 450 }
+      expect(configuration.expiry.call).to eq(450)
     end
 
     it "have a default value" do
-      expect(configuration.default_expiry).to eq(600)
+      Timecop.freeze(Time.zone.parse("2012-09-19 12:59:27")) do
+        expect(configuration.expiry.call).to eq(1348060167)
+      end
     end
   end
 
