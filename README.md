@@ -34,18 +34,6 @@ Set your API Key in config/application.rb:
 config.filepicker_rails.api_key = "Your filepicker.io API Key"
 ```
 
-Set your Secret Key in config/application.rb for signed request support:
-
-```ruby
-config.filepicker_rails.secret_key = "Your filepicker.io Secret Key"
-```
-
-Set your CDN Path in config/production.rb ([CDN usage](https://developers.inkfilepicker.com/docs/cdn/)):
-
-```ruby
-config.filepicker_rails.cdn_host = "Your CDN host name"
-```
-
 ## Usage
 
 ### First create a migration to add the field that will hold your filepicker.io URL
@@ -158,6 +146,14 @@ of an iframe on the page.
 * services - What services your users can upload to. Ex: "BOX, COMPUTER, FACEBOOK".
 * save_as_name - A recommended file name. The user can override this.
 
+### CDN
+
+Set your CDN Path in config/production.rb ([CDN usage](https://developers.inkfilepicker.com/docs/cdn/)):
+
+```ruby
+config.filepicker_rails.cdn_host = "Your CDN host name"
+```
+
 ### Policy
 
 To use the [filepicker policies](https://developers.inkfilepicker.com/docs/security/) follow this instructions.
@@ -168,7 +164,7 @@ Set your Secret Key in `config/application.rb`
 config.filepicker_rails.secret_key = "Your filepicker.io Secret Key"
 ```
 
-### Expiry time
+#### Expiry time
 
 By default the expiry time is 10 minutes. If you need to change the expiry time this should be an integer and it is expressed in seconds since the [Epoch](http://en.wikipedia.org/wiki/Unix_time).
 
