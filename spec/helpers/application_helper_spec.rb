@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe FilepickerRails::ApplicationHelper do
+RSpec.describe FilepickerRails::ApplicationHelper do
 
   describe "#filepicker_js_include_tag" do
 

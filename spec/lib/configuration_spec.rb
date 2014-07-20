@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe FilepickerRails::Configuration do
+RSpec.describe FilepickerRails::Configuration do
 
   let!(:configuration) do
     FilepickerRails::Configuration.new
