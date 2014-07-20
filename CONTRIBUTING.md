@@ -23,26 +23,8 @@ a test!
 
 9. Create new Pull Request
 
-At this point you're waiting on us. We like to at least comment on, if not
-accept, pull requests within three business days (and, typically, one business
-day). We may suggest some changes or improvements or alternatives.
+At this point you're waiting on us. We like to at least give you feedback, if not just
+accept it, within a few days, depending on our internal priorities.
 
-Some things that will increase the chance that your pull request is accepted,
-taken straight from the Ruby on Rails guide:
-
-* Use Rails idioms and helpers
-* Include tests that fail without your code, and pass with it
-* Update the documentation, the surrounding one, examples elsewhere, guides,
-  whatever is affected by your contribution
-
-Syntax:
-
-* Two spaces, no tabs.
-* No trailing whitespace. Blank lines should not have any space.
-* Prefer &&/|| over and/or.
-* my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
-* a = b and not a=b.
-* Follow the conventions you see used in the source already.
-
-And in case we didn't emphasize it enough: we love tests!
+Some things that will increase the chance that your pull request is accepted is to follow the practices described on [Ruby style guide](https://github.com/bbatsov/ruby-style-guide), [Rails style guide](https://github.com/bbatsov/rails-style-guide) and [Better Specs](http://betterspecs.org/).
 
