@@ -2,13 +2,17 @@
 
 ## 1.1.1 (Unreleased)
 
-### bug fixes
-
-- Do not modify original url when using cdn
-
 ### features
 
 - filepicker_image_tag now works with policies
+
+### improvements
+
+- update to RSpec 3
+
+### bug fixes
+
+- Do not modify original url when using cdn
 
 ## 1.1.0 (March 30, 2014)
 

@@ -1,7 +1,6 @@
-require 'spec_helper'
-require 'timecop'
+require 'rails_helper'
 
-describe FilepickerRails::FormHelper do
+RSpec.describe FilepickerRails::FormHelper do
 
   let!(:form) do
     if rails_4_1_x?

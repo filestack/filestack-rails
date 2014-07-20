@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-feature 'Rails integration' do
+RSpec.feature 'Rails integration' do
 
   background do
     visit '/'
