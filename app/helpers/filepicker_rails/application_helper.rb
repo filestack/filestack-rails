@@ -134,5 +134,6 @@ module FilepickerRails
           }
         end
     end
+    private_constant :FilepickerImageUrl
   end
 end

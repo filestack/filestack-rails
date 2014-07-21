@@ -32,4 +32,5 @@ module FilepickerRails
       MultiJson.dump(hash)
     end
   end
+  private_constant :Policy
 end
