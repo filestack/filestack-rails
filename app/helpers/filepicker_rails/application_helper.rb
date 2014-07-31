@@ -27,46 +27,50 @@ module FilepickerRails
       image_tag(filepicker_image_url(url, image_options), image_tag_options)
     end
 
-    # w - Resize the image to this width.
+    # Generates the full path of the image to the specified `url` accepts optional `options`
+    # hash for configuration.
     #
-    # h - Resize the image to this height.
+    # #### Options
     #
-    # fit - Specifies how to resize the image. Possible values are:
-    #       clip: Resizes the image to fit within the specified parameters without
-    #             distorting, cropping, or changing the aspect ratio
-    #       crop: Resizes the image to fit the specified parameters exactly by
+    # - `:w` - Resize the image to this width.
+    #
+    # - `:h` - Resize the image to this height.
+    #
+    # - `:fit` - Specifies how to resize the image. Possible values are:
+    #     - `:clip` - Resizes the image to fit within the specified parameters without
+    #             distorting, cropping, or changing the aspect ratio, this is the default.
+    #     - `:crop` - Resizes the image to fit the specified parameters exactly by
     #             removing any parts of the image that don't fit within the boundaries
-    #       scales: Resizes the image to fit the specified parameters exactly by
+    #     - `:scales` - Resizes the image to fit the specified parameters exactly by
     #               scaling the image to the desired size
-    #       Defaults to "clip".
-    # align - Determines how the image is aligned when resizing and using the "fit" parameter.
+    # - `:align` - Determines how the image is aligned when resizing and using the "fit" parameter.
     #         Check API for details.
     #
-    # rotate - Rotate the image. Default is no rotation.
-    #          rotate="exif" will rotate the image automatically based on the exif data in the image.
-    #          Other valid values are integers between 0 and 359, for degrees of rotation.
+    # - `:rotate` - Rotate the image. Default is no rotation. Possible values are:
+    #     - `:exif` - will rotate the image automatically based on the exif data in the image.
+    #     -  Other valid values are integers between 0 and 359, for degrees of rotation.
     #
-    # cache - Specifies if the image should be cached or not.
+    # - `:cache` - Specifies if the image should be cached or not.
     #
-    # crop - Crops the image to a specified rectangle. The input to this parameter
-    #        should be 4 numbers for 'x,y,width,height' - for example,
-    #        'crop=10,20,200,250' would select the 200x250 pixel rectangle starting
+    # - `:crop` - Crops the image to a specified rectangle. The input to this parameter
+    #        should be 4 numbers for `x,y,width,height` - for example,
+    #        `10, 20, 200, 250` would select the 200x250 pixel rectangle starting
     #        from 10 pixels from the left edge and 20 pixels from the top edge of the
     #        image.
     #
-    # format - Specifies what format the image should be converted to, if any.
+    # - `:format` - Specifies what format the image should be converted to, if any.
     #          Possible values are "jpg" and "png". For "jpg" conversions, you
     #          can additionally specify a quality parameter.
     #
-    # quality - For jpeg conversion, specifies the quality of the resultant image.
+    # - `:quality` - For jpeg conversion, specifies the quality of the resultant image.
     #           Quality should be an integer between 1 and 100
     #
-    # watermark - Adds the specified absolute url as a watermark on the image.
+    # - `:watermark` - Adds the specified absolute url as a watermark on the image.
     #
-    # watersize - This size of the watermark, as a percentage of the base
+    # - `:watersize` - This size of the watermark, as a percentage of the base
     #             image (not the original watermark).
     #
-    # waterposition - Where to put the watermark relative to the base image.
+    # - `:waterposition` - Where to put the watermark relative to the base image.
     #                 Possible values for vertical position are "top","middle",
     #                 "bottom" and "left","center","right", for horizontal
     #                 position. The two can be combined by separating vertical
