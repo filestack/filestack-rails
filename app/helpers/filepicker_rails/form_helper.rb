@@ -1,6 +1,13 @@
 module FilepickerRails
   module FormHelper
 
+    FILEPICKER_OPTIONS_TO_DASHERIZE = [:button_text, :button_class, :mimetypes,
+                                       :extensions, :container, :services,
+                                       :drag_text, :drag_class, :store_path,
+                                       :store_location, :store_access, :multiple]
+
+    FILEPICKER_OPTIONS_TO_CAMELIZE = [:max_size]
+
     # Creates a filepicker field, accepts optional `options` hash for configuration.
     #
     # #### Options
@@ -72,26 +79,18 @@ module FilepickerRails
         ::Rails.version.to_i >= 4
       end
 
-      def retrieve_legacy_filepicker_options(options)
-        mappings = {
-            :button_text    => 'data-fp-button-text',
-            :button_class   => 'data-fp-button-class',
-            :mimetypes      => 'data-fp-mimetypes',
-            :extensions     => 'data-fp-extensions',
-            :container      => 'data-fp-container',
-            :services       => 'data-fp-services',
-            :drag_text      => 'data-fp-drag-text',
-            :drag_class     => 'data-fp-drag-class',
-            :store_path     => 'data-fp-store-path',
-            :store_location => 'data-fp-store-location',
-            :store_access   => 'data-fp-store-access',
-            :multiple       => 'data-fp-multiple',
-            :max_size       => 'data-fp-maxSize',
-            :onchange       => 'onchange',
-            :class          => 'class',
-            :value          => 'value'
-        }
+      def filepicker_prefix
+        'data-fp-'
+      end
 
+      def retrieve_legacy_filepicker_options(options)
+        mappings = {}
+        FILEPICKER_OPTIONS_TO_DASHERIZE.each do |option|
+          mappings[option] = "#{filepicker_prefix}#{option.to_s.dasherize}"
+        end
+        FILEPICKER_OPTIONS_TO_CAMELIZE.each do |option|
+          mappings[option] = "#{filepicker_prefix}#{option.to_s.camelize(:lower)}"
+        end
         Hash[options.map {|k, v| [mappings[k] || k, v] }]
       end
 
