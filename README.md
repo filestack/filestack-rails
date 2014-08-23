@@ -28,7 +28,7 @@ Add the filepicker.io javascript library to your layout:
 <%= filepicker_js_include_tag %>
 ```
 
-Set your API Key in config/application.rb:
+Set your API Key in `config/application.rb`:
 
 ```ruby
 config.filepicker_rails.api_key = "Your filepicker.io API Key"
@@ -46,12 +46,8 @@ Then add a column to the model's table of type :string:
 
 ```ruby
 class AddNameOfAttrForFilepickerUrlToUser < ActiveRecord::Migration
-  def up
+  def change
     add_column :user, :filepicker_url, :string
-  end
-
-  def down
-    remove_column :user, :filepicker_url
   end
 end
 ```
@@ -68,24 +64,15 @@ end
   <%= f.submit %>
 <% end %>
 ```
+The `filepicker_field` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/Ink/filepicker-rails/master/FilepickerRails/FormHelper:filepicker_field).
 
-Full options list:
+### Displaying an image:
 
-* button_text - The text of the upload button.
-* button_class - The class of the upload button.
-* extensions - The extensions of file types you want to support for this upload. Ex: ".png,.jpg".
-* mimetypes - The file types you want to support for this upload. Ex: "image/png,text/*".
-* container - Where to show the file picker dialog can be "modal", "window" or the
-of an iframe on the page.
-* multiple - (true or false) Whether or not multiple uploads can be saved at once.
-* services - What services your users can upload to. Ex: "BOX, COMPUTER, FACEBOOK".
-* store_path - The path to store the file at within the specified file store.
-* store_location - The file is not copied by default. It remains in the original location. If you wish you have the file copied onto your own storage, you can specify where we should put the copy. The only value at the moment is "S3".
-* store_access - Should the underlying file be publicly available on its S3 link. Options are "public" and "private", defaults to 'private'.
-* dragdrop - (true or false) Whether or not to allow drag-and-drop uploads.
-* drag_text - The text of the dragdrop pane.
-* drag_class - The class of the dragdrop pane.
-* onchange - The onchange event.
+```erb
+<%= filepicker_image_tag @user.filepicker_url, w: 160, h: 160, fit: 'clip' %>
+```
+
+See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
 
 ### Accessing FilePicker File with OnChange:
 
@@ -125,30 +112,17 @@ Example fpfiles object:
 }]
 ```
 
-### Displaying an image:
-
-```erb
-<%= filepicker_image_tag @user.filepicker_url, w: 160, h: 160, fit: 'clip' %>
-```
-
-See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
-
 ### Allowing the user to download a file (or upload it to any of the supported services)
 
 ```erb
 <%= filepicker_save_button "Save", @user.filepicker_url, "image/jpg" %>
 ```
 
-Full options list:
-
-* container - Where to show the file picker dialog can be "modal", "window" or the
-of an iframe on the page.
-* services - What services your users can upload to. Ex: "BOX, COMPUTER, FACEBOOK".
-* save_as_name - A recommended file name. The user can override this.
+The `filepicker_save_button` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/Ink/filepicker-rails/master/FilepickerRails/ApplicationHelper:filepicker_save_button).
 
 ### CDN
 
-Set your CDN Path in config/production.rb ([CDN usage](https://developers.inkfilepicker.com/docs/cdn/)):
+Set your CDN Path in `config/production.rb` ([CDN usage](https://developers.inkfilepicker.com/docs/cdn/)):
 
 ```ruby
 config.filepicker_rails.cdn_host = "Your CDN host name"
@@ -185,6 +159,12 @@ The argument need to be a [callable](http://www.rubytapas.com/episodes/35-Callab
 ## Demo
 
 See a simple demo app [repo](https://github.com/maxtilford/filepicker-rails-demo)
+
+## RDocs
+
+You can view the Filepicker::Rails documentation in RDoc format here:
+
+http://rubydoc.info/github/Ink/filepicker-rails/master/frames
 
 ## Versioning
 
