@@ -164,14 +164,7 @@ module FilepickerRails
         end
 
         def policy_config
-          return {} unless ::Rails.application.config.filepicker_rails.secret_key.present?
-          grant = Policy.new
-          grant.call = [:read, :convert]
-
-          {
-            'policy' => grant.policy,
-            'signature' => grant.signature
-          }
+          Policy.apply
         end
     end
     private_constant :FilepickerImageUrl

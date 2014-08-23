@@ -78,14 +78,7 @@ module FilepickerRails
       end
 
       def secure_filepicker
-        return {} unless ::Rails.application.config.filepicker_rails.secret_key.present?
-        grant = Policy.new
-        grant.call = [:pick, :store]
-
-        {
-            'data-fp-policy' => grant.policy,
-            'data-fp-signature' => grant.signature
-        }
+        Policy.apply([:pick, :store], ['data-fp-policy', 'data-fp-signature'])
       end
   end
 end
