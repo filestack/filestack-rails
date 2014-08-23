@@ -72,7 +72,7 @@ The `filepicker_field` accepts a options parameter, [click here to see all the v
 <%= filepicker_image_tag @user.filepicker_url, w: 160, h: 160, fit: 'clip' %>
 ```
 
-See [the filepicker.io documentation](https://developers.filepicker.io/docs/web/#fpurl-images) for the full options list.
+The `filepicker_image_tag` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/Ink/filepicker-rails/master/FilepickerRails/ApplicationHelper:filepicker_image_url).
 
 ### Accessing FilePicker File with OnChange:
 

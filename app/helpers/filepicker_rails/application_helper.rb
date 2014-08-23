@@ -44,7 +44,7 @@ module FilepickerRails
     end
 
     # Creates a image tag of the `url`. Accepts the options to work on filepicker.io,
-    # see the valid options on `filepicker_image_tag` documentation. Accepts html options to the image tag,
+    # see the valid options on `filepicker_image_url` documentation. Accepts html options to the image tag,
     # see the [image_tag](http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html#method-i-image_tag)
     # documentation for the valid options.
     #
