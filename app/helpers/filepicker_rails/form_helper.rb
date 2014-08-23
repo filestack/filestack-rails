@@ -36,23 +36,41 @@ module FilepickerRails
     #     <% end %>
     #
     def filepicker_field(method, options = {})
-      type = options.delete(:dragdrop) ? 'filepicker-dragdrop' : 'filepicker'
-
-      input_options = retrieve_legacy_filepicker_options(options)
-      input_options['data-fp-apikey'] ||= ::Rails.application.config.filepicker_rails.api_key
-      input_options.merge!(secure_filepicker) unless input_options['data-fp-policy'].present?
-      input_options['type'] = type
-
-      if ::Rails.version.to_i >= 4
-        tag = ActionView::Helpers::Tags::TextField.new(@object_name, method, @template, objectify_options(input_options))
-        tag.send(:add_default_name_and_id, input_options)
-        tag.render
+      define_input_options(options)
+      @method = method
+      if rails_greater_than_4?
+        rails_greater_than_4_input
       else
-        ActionView::Helpers::InstanceTag.new(@object_name, method, @template).to_input_field_tag(type, input_options)
+        rails_input
       end
     end
 
     private
+
+      attr_reader :input_options, :method, :type, :object_name, :template
+
+      def define_input_options(options)
+        @type = options.delete(:dragdrop) ? 'filepicker-dragdrop' : 'filepicker'
+        @input_options = retrieve_legacy_filepicker_options(options)
+        @input_options['data-fp-apikey'] ||= ::Rails.application.config.filepicker_rails.api_key
+        @input_options.merge!(secure_filepicker) unless @input_options['data-fp-policy'].present?
+        @input_options['type'] = @type
+        @input_options
+      end
+
+      def rails_greater_than_4_input
+        tag = ActionView::Helpers::Tags::TextField.new(object_name, method, template, objectify_options(input_options))
+        tag.send(:add_default_name_and_id, input_options)
+        tag.render
+      end
+
+      def rails_input
+        ActionView::Helpers::InstanceTag.new(object_name, method, template).to_input_field_tag(type, input_options)
+      end
+
+      def rails_greater_than_4?
+        ::Rails.version.to_i >= 4
+      end
 
       def retrieve_legacy_filepicker_options(options)
         mappings = {
