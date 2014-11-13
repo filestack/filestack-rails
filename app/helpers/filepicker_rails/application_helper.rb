@@ -43,6 +43,23 @@ module FilepickerRails
       button_tag(text, options)
     end
 
+    # Creates a link allowing the user to download a file
+    # (or upload it to any of the supported services). Set the content of
+    # the link on the `text` parameter. The `url` of the content you want the user to save.
+    # Define the `mimetype` of the content. Accepts a optional `options` parameter.
+    #
+    # #### Options
+    #
+    # - `:container` - Where to show the file picker dialog can be `modal`,
+    # `window` or the id of an iframe on the page.
+    # - `:services` - What services your users can upload to. Ex: `BOX, COMPUTER, FACEBOOK`.
+    # - `:save_as_name` - A recommended file name. The user can override this.
+    #
+    # #### Examples
+    #
+    #     filepicker_save_link "Save", @user.filepicker_url, "image/jpg"
+    #     # => <a data-fp-apikey="..." data-fp-mimetype="image/jpg" data-fp-url="https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG" href="#" id="filepicker_export_widget_link">save</a>
+    #
     def filepicker_save_link(text, url, mimetype, options = {})
       options[:data] ||= {}
       container = options.delete(:container)
