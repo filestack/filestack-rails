@@ -58,3 +58,6 @@ The changelog began with version 1.0.0 so any changes prior to that
 can be seen by checking the tagged releases and reading git commit
 messages.
 
+## Unreleased
+Adds a new helper, filepicker_save_link, works just like filepicker_save_button
+but it generates a link instead.
