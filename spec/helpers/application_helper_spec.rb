@@ -61,6 +61,17 @@ RSpec.describe FilepickerRails::ApplicationHelper do
     end
   end
 
+  describe "#filepicker_save_link" do
+    context 'without options' do
+      it 'have the correct link' do
+        html = %{<a data-fp-apikey="123filepickerapikey"}
+        html << %{ data-fp-mimetype="image/jpg" data-fp-url="/foo"}
+        html << %{ href="#" id="filepicker_export_widget_link">save</a>}
+        expect(filepicker_save_link('save', '/foo', 'image/jpg')).to eq(html)
+      end
+    end
+  end
+
   describe "#filepicker_image_tag" do
 
     context "only with url" do

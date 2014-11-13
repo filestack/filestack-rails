@@ -43,6 +43,24 @@ module FilepickerRails
       button_tag(text, options)
     end
 
+    def filepicker_save_link(text, url, mimetype, options = {})
+      options[:data] ||= {}
+      container = options.delete(:container)
+      services = options.delete(:services)
+      save_as = options.delete(:save_as_name)
+
+      options[:id] = options.fetch(:id, 'filepicker_export_widget_link')
+
+      options[:data]['fp-url'] = url
+      options[:data]['fp-apikey'] = ::Rails.application.config.filepicker_rails.api_key
+      options[:data]['fp-mimetype'] = mimetype
+      options[:data]['fp-option-container'] = container if container
+      options[:data]['fp-option-services'] = Array(services).join(",") if services
+      options[:data]['fp-option-defaultSaveasName'] = save_as if save_as
+
+      link_to text, '#', options
+    end
+
     # Creates a image tag of the `url`. Accepts the options to work on filepicker.io,
     # see the valid options on `filepicker_image_url` documentation. Accepts html options to the image tag,
     # see the [image_tag](http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html#method-i-image_tag)
