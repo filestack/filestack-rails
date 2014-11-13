@@ -70,6 +70,42 @@ RSpec.describe FilepickerRails::ApplicationHelper do
         expect(filepicker_save_link('save', '/foo', 'image/jpg')).to eq(html)
       end
     end
+
+    context "with options" do
+
+      describe "container" do
+
+        it "have the correct button" do
+          html = %{<a data-fp-apikey="123filepickerapikey"}
+          html << %{ data-fp-mimetype="image/jpg" data-fp-option-container=\"modal\" data-fp-url="/foo"}
+          html << %{ href="#" id="filepicker_export_widget_link">save</a>}
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', container: 'modal')).to eq(html)
+        end
+      end
+
+      describe "services" do
+
+        it "have the correct a" do
+          html = %{<a data-fp-apikey="123filepickerapikey"}
+          html << %{ data-fp-mimetype="image/jpg" data-fp-option-services="COMPUTER, FACEBOOK"}
+          html << %{ data-fp-url="/foo"}
+          html << %{ href="#" id="filepicker_export_widget_link">save</a>}
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', services: 'COMPUTER, FACEBOOK')).to eq(html)
+        end
+      end
+
+      describe "save_as_name" do
+
+        it "have the correct a" do
+          html = %{<a data-fp-apikey="123filepickerapikey"}
+          html << %{ data-fp-mimetype="image/jpg" data-fp-option-defaultSaveasName="myfile"}
+          html << %{ data-fp-url="/foo"}
+          html << %{ href="#" id="filepicker_export_widget_link">save</a>}
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to eq(html)
+        end
+      end
+    end
+
   end
 
   describe "#filepicker_image_tag" do
