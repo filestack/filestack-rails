@@ -29,18 +29,9 @@ module FilepickerRails
     #     # => <button data-fp-apikey="..." data-fp-mimetype="image/jpg" data-fp-url="https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG" name="button" type="submit">save</button>
     #
     def filepicker_save_button(text, url, mimetype, options = {})
-      options[:data] ||= {}
-      container = options.delete(:container)
-      services = options.delete(:services)
-      save_as = options.delete(:save_as_name)
-
-      options[:data]['fp-url'] = url
-      options[:data]['fp-apikey'] = ::Rails.application.config.filepicker_rails.api_key
-      options[:data]['fp-mimetype'] = mimetype
-      options[:data]['fp-option-container'] = container if container
-      options[:data]['fp-option-services'] = Array(services).join(",") if services
-      options[:data]['fp-option-defaultSaveasName'] = save_as if save_as
-      button_tag(text, options)
+      export_widget(text, url, mimetype, options) do
+        button_tag(text, options)
+      end
     end
 
     # Creates a link allowing the user to download a file
@@ -61,21 +52,10 @@ module FilepickerRails
     #     # => <a data-fp-apikey="..." data-fp-mimetype="image/jpg" data-fp-url="https://www.filepicker.io/api/file/hFHUCB3iTxyMzseuWOgG" href="#" id="filepicker_export_widget_link">save</a>
     #
     def filepicker_save_link(text, url, mimetype, options = {})
-      options[:data] ||= {}
-      container = options.delete(:container)
-      services = options.delete(:services)
-      save_as = options.delete(:save_as_name)
-
-      options[:id] = options.fetch(:id, 'filepicker_export_widget_link')
-
-      options[:data]['fp-url'] = url
-      options[:data]['fp-apikey'] = ::Rails.application.config.filepicker_rails.api_key
-      options[:data]['fp-mimetype'] = mimetype
-      options[:data]['fp-option-container'] = container if container
-      options[:data]['fp-option-services'] = Array(services).join(",") if services
-      options[:data]['fp-option-defaultSaveasName'] = save_as if save_as
-
-      link_to text, '#', options
+      export_widget(text, url, mimetype, options) do
+        options[:id] = options.fetch(:id, 'filepicker_export_widget_link')
+        link_to text, '#', options
+      end
     end
 
     # Creates a image tag of the `url`. Accepts the options to work on filepicker.io,
@@ -203,5 +183,22 @@ module FilepickerRails
         end
     end
     private_constant :FilepickerImageUrl
+
+    private
+
+      def export_widget(text, url, mimetype, options, &block)
+        options[:data] ||= {}
+        container = options.delete(:container)
+        services = options.delete(:services)
+        save_as = options.delete(:save_as_name)
+
+        options[:data]['fp-url'] = url
+        options[:data]['fp-apikey'] = ::Rails.application.config.filepicker_rails.api_key
+        options[:data]['fp-mimetype'] = mimetype
+        options[:data]['fp-option-container'] = container if container
+        options[:data]['fp-option-services'] = Array(services).join(",") if services
+        options[:data]['fp-option-defaultSaveasName'] = save_as if save_as
+        block.call
+      end
   end
 end
