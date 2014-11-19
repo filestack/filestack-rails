@@ -3,6 +3,7 @@
 ## 1.3.0 (Unreleased)
 
 ### features
+
 - Adds filepicker_save_link
 
 ## 1.2.0 (August 23, 2014)
