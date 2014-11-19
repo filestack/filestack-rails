@@ -62,11 +62,13 @@ RSpec.describe FilepickerRails::ApplicationHelper do
   end
 
   describe "#filepicker_save_link" do
+
     context 'without options' do
       it 'have the correct link' do
-        expect(filepicker_save_link('save', '/foo', 'image/jpg')).to eq(link_to 'save', '#',
-          data: {'fp-url' => '/foo', 'fp-apikey' => ::Rails.application.config.filepicker_rails.api_key,
-            'fp-mimetype' => 'image/jpg'}, id: 'filepicker_export_widget_link' )
+        html = %{<a data-fp-apikey="123filepickerapikey"}
+        html << %{ data-fp-mimetype="image/jpg" data-fp-url="/foo" href="#"}
+        html << %{ id="filepicker_export_widget_link">save</a>}
+        expect(filepicker_save_link('save', '/foo', 'image/jpg')).to eq(html)
       end
     end
 
@@ -75,31 +77,30 @@ RSpec.describe FilepickerRails::ApplicationHelper do
       describe "container" do
 
         it "have the correct link" do
-          expect(filepicker_save_link('save', '/foo', 'image/jpg', container: 'modal')).to eq(link_to 'save', '#',
-            data: {'fp-url' => '/foo', 'fp-apikey' => ::Rails.application.config.filepicker_rails.api_key,
-              'fp-mimetype' => 'image/jpg', 'fp-option-container' => 'modal'},
-            id: 'filepicker_export_widget_link' )
-
+          html = %{<a data-fp-apikey="123filepickerapikey"}
+          html << %{ data-fp-mimetype="image/jpg" data-fp-option-container="modal"}
+          html << %{ data-fp-url="/foo" href="#" id="filepicker_export_widget_link">save</a>}
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', container: 'modal')).to eq(html)
         end
       end
 
       describe "services" do
 
         it "have the correct link" do
-          expect(filepicker_save_link('save', '/foo', 'image/jpg', services: 'COMPUTER, FACEBOOK')).to eq(link_to 'save', '#',
-            data: {'fp-url' => '/foo', 'fp-apikey' => ::Rails.application.config.filepicker_rails.api_key,
-              'fp-mimetype' => 'image/jpg', 'fp-option-services' => 'COMPUTER, FACEBOOK'},
-            id: 'filepicker_export_widget_link' )
+          html = %{<a data-fp-apikey="123filepickerapikey"}
+          html << %{ data-fp-mimetype="image/jpg" data-fp-option-services="COMPUTER, FACEBOOK"}
+          html << %{ data-fp-url="/foo" href="#" id="filepicker_export_widget_link">save</a>}
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', services: 'COMPUTER, FACEBOOK')).to eq(html)
         end
       end
 
       describe "save_as_name" do
 
         it "have the correct link" do
-          expect(filepicker_save_link('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to eq(link_to 'save', '#',
-            data: {'fp-url' => '/foo', 'fp-apikey' => ::Rails.application.config.filepicker_rails.api_key,
-              'fp-mimetype' => 'image/jpg', 'fp-option-defaultSaveasName' => 'myfile'},
-            id: 'filepicker_export_widget_link' )
+          html = %{<a data-fp-apikey="123filepickerapikey"}
+          html << %{ data-fp-mimetype="image/jpg" data-fp-option-defaultSaveasName="myfile"}
+          html << %{ data-fp-url="/foo" href="#" id="filepicker_export_widget_link">save</a>}
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to eq(html)
         end
       end
     end
