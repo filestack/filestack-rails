@@ -65,10 +65,7 @@ RSpec.describe FilepickerRails::ApplicationHelper do
 
     context 'without options' do
       it 'have the correct link' do
-        html = %{<a data-fp-apikey="123filepickerapikey"}
-        html << %{ data-fp-mimetype="image/jpg" data-fp-url="/foo" href="#"}
-        html << %{ id="filepicker_export_widget_link">save</a>}
-        expect(filepicker_save_link('save', '/foo', 'image/jpg')).to eq(html)
+        expect(filepicker_save_link('save', '/foo', 'image/jpg')).to eq(build_link)
       end
     end
 
@@ -77,34 +74,33 @@ RSpec.describe FilepickerRails::ApplicationHelper do
       describe "container" do
 
         it "have the correct link" do
-          html = %{<a data-fp-apikey="123filepickerapikey"}
-          html << %{ data-fp-mimetype="image/jpg" data-fp-option-container="modal"}
-          html << %{ data-fp-url="/foo" href="#" id="filepicker_export_widget_link">save</a>}
-          expect(filepicker_save_link('save', '/foo', 'image/jpg', container: 'modal')).to eq(html)
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', container: 'modal')).to eq(build_link('fp-option-container' => 'modal'))
         end
       end
 
       describe "services" do
 
         it "have the correct link" do
-          html = %{<a data-fp-apikey="123filepickerapikey"}
-          html << %{ data-fp-mimetype="image/jpg" data-fp-option-services="COMPUTER, FACEBOOK"}
-          html << %{ data-fp-url="/foo" href="#" id="filepicker_export_widget_link">save</a>}
-          expect(filepicker_save_link('save', '/foo', 'image/jpg', services: 'COMPUTER, FACEBOOK')).to eq(html)
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', services: 'COMPUTER, FACEBOOK')).to eq(build_link('fp-option-services' => 'COMPUTER, FACEBOOK'))
         end
       end
 
       describe "save_as_name" do
 
         it "have the correct link" do
-          html = %{<a data-fp-apikey="123filepickerapikey"}
-          html << %{ data-fp-mimetype="image/jpg" data-fp-option-defaultSaveasName="myfile"}
-          html << %{ data-fp-url="/foo" href="#" id="filepicker_export_widget_link">save</a>}
-          expect(filepicker_save_link('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to eq(html)
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to eq(build_link('fp-option-defaultSaveasName' => 'myfile'))
         end
       end
     end
 
+    def build_link(options = {})
+      default_options = { 'fp-apikey' => '123filepickerapikey',
+                          'fp-mimetype' => 'image/jpg',
+                          'fp-url' => '/foo'
+      }
+      data =  default_options.merge(options)
+      link_to 'save', '#', data: data, id: 'filepicker_export_widget_link'
+    end
   end
 
   describe "#filepicker_image_tag" do
