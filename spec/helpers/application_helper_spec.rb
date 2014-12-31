@@ -19,11 +19,34 @@ RSpec.describe FilepickerRails::ApplicationHelper do
 
     context "without options" do
 
-      it "have the correct button" do
-        html = %{<button data-fp-apikey="123filepickerapikey"}
-        html << %{ data-fp-mimetype="image/jpg" data-fp-url="/foo" name="button"}
-        html << %{ type="submit">save</button>}
-        expect(filepicker_save_button('save', '/foo', 'image/jpg')).to eq(html)
+      it "be a button tag" do
+        regex = %r{\A<button .*>save</button>\z}
+        expect(filepicker_save_button('save', '/foo', 'image/jpg')).to match(regex)
+      end
+
+      it "have the data-fp-apikey attribute" do
+        attribute = %{data-fp-apikey="123filepickerapikey"}
+        expect(filepicker_save_button('save', '/foo', 'image/jpg')).to include(attribute)
+      end
+
+      it "have the data-fp-mimetype attribute" do
+        attribute = %{data-fp-mimetype="image/jpg"}
+        expect(filepicker_save_button('save', '/foo', 'image/jpg')).to include(attribute)
+      end
+
+      it "have the data-fp-url attribute" do
+        attribute = %{data-fp-url="/foo"}
+        expect(filepicker_save_button('save', '/foo', 'image/jpg')).to include(attribute)
+      end
+
+      it "have the name attribute" do
+        attribute = %{name="button"}
+        expect(filepicker_save_button('save', '/foo', 'image/jpg')).to include(attribute)
+      end
+
+      it "have the type attribute" do
+        attribute = %{type="submit"}
+        expect(filepicker_save_button('save', '/foo', 'image/jpg')).to include(attribute)
       end
     end
 
@@ -31,31 +54,25 @@ RSpec.describe FilepickerRails::ApplicationHelper do
 
       describe "container" do
 
-        it "have the correct button" do
-          html = %{<button data-fp-apikey="123filepickerapikey"}
-          html << %{ data-fp-mimetype="image/jpg" data-fp-option-container=\"modal\" data-fp-url="/foo"}
-          html << %{ name="button" type="submit">save</button>}
-          expect(filepicker_save_button('save', '/foo', 'image/jpg', container: 'modal')).to eq(html)
+        it "have the data-fp-option-container attribute" do
+          attribute = %{data-fp-option-container="modal"}
+          expect(filepicker_save_button('save', '/foo', 'image/jpg', container: 'modal')).to include(attribute)
         end
       end
 
       describe "services" do
 
-        it "have the correct button" do
-          html = %{<button data-fp-apikey="123filepickerapikey"}
-          html << %{ data-fp-mimetype="image/jpg" data-fp-option-services="COMPUTER, FACEBOOK"}
-          html << %{ data-fp-url="/foo" name="button" type="submit">save</button>}
-          expect(filepicker_save_button('save', '/foo', 'image/jpg', services: 'COMPUTER, FACEBOOK')).to eq(html)
+        it "have the data-fp-option-services attribute" do
+          attribute = %{data-fp-option-services="COMPUTER, FACEBOOK"}
+          expect(filepicker_save_button('save', '/foo', 'image/jpg', services: 'COMPUTER, FACEBOOK')).to include(attribute)
         end
       end
 
       describe "save_as_name" do
 
-        it "have the correct button" do
-          html = %{<button data-fp-apikey="123filepickerapikey"}
-          html << %{ data-fp-mimetype="image/jpg" data-fp-option-defaultSaveasName="myfile"}
-          html << %{ data-fp-url="/foo" name="button" type="submit">save</button>}
-          expect(filepicker_save_button('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to eq(html)
+        it "have the data-fp-option-defaultSaveasName attribute" do
+          attribute = %{data-fp-option-defaultSaveasName="myfile"}
+          expect(filepicker_save_button('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to include(attribute)
         end
       end
     end
@@ -94,9 +111,9 @@ RSpec.describe FilepickerRails::ApplicationHelper do
     end
 
     def build_link(options = {})
-      default_options = { 'fp-apikey' => '123filepickerapikey',
+      default_options = { 'fp-url' => '/foo',
+                          'fp-apikey' => '123filepickerapikey',
                           'fp-mimetype' => 'image/jpg',
-                          'fp-url' => '/foo'
       }
       data =  default_options.merge(options)
       link_to 'save', '#', data: data, id: 'filepicker_export_widget_link'
@@ -107,16 +124,32 @@ RSpec.describe FilepickerRails::ApplicationHelper do
 
     context "only with url" do
 
-      it "have correct image tag" do
-        expect(filepicker_image_tag("foo")).to eq(%{<img alt="Foo" src="/images/foo" />})
+      it "be a img tag" do
+        regex = %r{\A<img .*/>\z}
+        expect(filepicker_image_tag("foo")).to match(regex)
+      end
+
+      it "has correct src attribute" do
+        attribute = %{src="/images/foo"}
+        expect(filepicker_image_tag("foo")).to include(attribute)
+      end
+
+      it "has correct alt attribute" do
+        attribute = %{alt="Foo"}
+        expect(filepicker_image_tag("foo")).to include(attribute)
       end
     end
 
     context "with image_options" do
 
-      it "have correct image tag" do
-        html = %{<img alt="Convert?h=160&amp;w=160" src="/images/foo/convert?h=160&amp;w=160" />}
-        expect(filepicker_image_tag("foo", w: 160, h: 160)).to eq(html)
+      it "has correct src attribute" do
+        attribute = %{src="/images/foo/convert?h=160&amp;w=160"}
+        expect(filepicker_image_tag("foo", w: 160, h: 160)).to include(attribute)
+      end
+
+      it "has correct alt attribute" do
+        attribute = %{alt="Convert?h=160&amp;w=160"}
+        expect(filepicker_image_tag("foo", w: 160, h: 160)).to include(attribute)
       end
     end
 
