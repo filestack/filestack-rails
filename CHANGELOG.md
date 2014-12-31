@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.3.0 (Unreleased)
+## 1.3.0 (December 31, 2014)
 
 ### features
 
