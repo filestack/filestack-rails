@@ -5,6 +5,9 @@
 ### features
 
 - Adds filepicker_save_link
+
+### improvements
+
 - Adds support to Rails 4.2
 
 ## 1.2.0 (August 23, 2014)
