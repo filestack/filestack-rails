@@ -2,8 +2,8 @@ language: ruby
 rvm:
   - 1.9.3
   - 2.0.0
-  - 2.1.0
-  - 2.1.1
+  - 2.1
+  - 2.2
 
 before_script:
   - cd spec/dummy
@@ -13,6 +13,6 @@ before_script:
 gemfile:
   - gemfiles/3.2.gemfile
   - gemfiles/4.0.gemfile
-  - gemfiles/4.0.1.gemfile
   - gemfiles/4.1.gemfile
+  - gemfiles/4.2.gemfile
 
