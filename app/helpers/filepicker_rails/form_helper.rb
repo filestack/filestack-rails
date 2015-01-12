@@ -6,7 +6,7 @@ module FilepickerRails
                                        :drag_text, :drag_class, :store_path,
                                        :store_location, :store_access, :multiple]
 
-    FILEPICKER_OPTIONS_TO_CAMELIZE = [:max_size]
+    FILEPICKER_OPTIONS_TO_CAMELIZE = [:max_size, :max_files]
 
     # Creates a filepicker field, accepts optional `options` hash for configuration.
     #
@@ -27,6 +27,7 @@ module FilepickerRails
     # - `:drag_class` - The class of the dragdrop pane.
     # - `:onchange` - The onchange event.
     # - `:max_size` - The maximum file size allowed, in bytes.
+    # - `:max_files` - The maximum number of files.
     # - `:class` - Add a class to the input.
     # - `:value` - Define the value of the input
     #

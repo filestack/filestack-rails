@@ -1,5 +1,7 @@
 # Changelog
 
+- Add option for max number of files
+
 ## 1.3.0 (December 31, 2014)
 
 ### features
