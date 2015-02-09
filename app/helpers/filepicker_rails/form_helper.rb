@@ -7,7 +7,7 @@ module FilepickerRails
                                        :store_location, :store_access,
                                        :store_container, :multiple]
 
-    FILEPICKER_OPTIONS_TO_CAMELIZE = [:max_size, :max_files]
+    FILEPICKER_OPTIONS_TO_CAMELIZE = [:max_size, :max_files, :open_to]
 
     # Creates a filepicker field, accepts optional `options` hash for configuration.
     #
@@ -30,6 +30,7 @@ module FilepickerRails
     # - `:onchange` - The onchange event.
     # - `:max_size` - The maximum file size allowed, in bytes.
     # - `:max_files` - The maximum number of files.
+    # - `:open_to` - Open the picker to the given service. Ex: `COMPUTER`.
     # - `:class` - Add a class to the input.
     # - `:value` - Define the value of the input
     #

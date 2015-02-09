@@ -122,6 +122,11 @@ RSpec.describe FilepickerRails::FormHelper do
         expect(form.filepicker_field(:filepicker_url, max_files: 10)).to include(attribute)
       end
 
+      it "have correct input with 'open_to'" do
+        attribute = %{data-fp-openTo="FACEBOOK"}
+        expect(form.filepicker_field(:filepicker_url, open_to: 'FACEBOOK')).to include(attribute)
+      end
+
       it "have correct input with 'onchange'" do
         attribute = %{onchange="track()"}
         expect(form.filepicker_field(:filepicker_url, onchange: "track()")).to include(attribute)
