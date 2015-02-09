@@ -4,7 +4,8 @@ module FilepickerRails
     FILEPICKER_OPTIONS_TO_DASHERIZE = [:button_text, :button_class, :mimetypes,
                                        :extensions, :container, :services,
                                        :drag_text, :drag_class, :store_path,
-                                       :store_location, :store_access, :multiple]
+                                       :store_location, :store_access,
+                                       :store_container, :multiple]
 
     FILEPICKER_OPTIONS_TO_CAMELIZE = [:max_size, :max_files]
 
@@ -21,6 +22,7 @@ module FilepickerRails
     # - `:services` - What services your users can upload to. Ex: `BOX, COMPUTER, FACEBOOK`.
     # - `:store_path` - The path to store the file at within the specified file store.
     # - `:store_location` - The file is not copied by default. It remains in the original location. If you wish you have the file copied onto your own storage, you can specify where we should put the copy. The only value at the moment is `S3`.
+    # - `:store_container` - The bucket or container in your specified `store_location`. Defaults to the container specified in the developer portal. Does not apply to Dropbox storage.
     # - `:store_access` - Should the underlying file be publicly available on its S3 link. Options are `public` and `private`, defaults to 'private'.
     # - `:dragdrop` - (`true` or `false`) Whether or not to allow drag-and-drop uploads.
     # - `:drag_text` - The text of the dragdrop pane.
