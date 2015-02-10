@@ -97,6 +97,11 @@ RSpec.describe FilepickerRails::FormHelper do
         expect(form.filepicker_field(:filepicker_url, store_location: "S3")).to include(attribute)
       end
 
+      it "have correct input with 'store_container'" do
+        attribute = %{data-fp-store-container="my-bucket"}
+        expect(form.filepicker_field(:filepicker_url, store_container: "my-bucket")).to include(attribute)
+      end
+
       it "have correct input with 'store_access'" do
         attribute = %{data-fp-store-access="public"}
         expect(form.filepicker_field(:filepicker_url, store_access: "public")).to include(attribute)
@@ -115,6 +120,11 @@ RSpec.describe FilepickerRails::FormHelper do
       it "have correct input with 'max_files'" do
         attribute = %{data-fp-maxFiles="10"}
         expect(form.filepicker_field(:filepicker_url, max_files: 10)).to include(attribute)
+      end
+
+      it "have correct input with 'open_to'" do
+        attribute = %{data-fp-openTo="FACEBOOK"}
+        expect(form.filepicker_field(:filepicker_url, open_to: 'FACEBOOK')).to include(attribute)
       end
 
       it "have correct input with 'onchange'" do
