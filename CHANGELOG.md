@@ -5,6 +5,8 @@
 ### features
 
 - Add option for max number of files
+- Add store_container option to filepicker_field
+- Add open_to option to filepicker_field
 
 ## 1.3.0 (December 31, 2014)
 
