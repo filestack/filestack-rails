@@ -9,6 +9,10 @@
 - Add open_to option to filepicker_field
 - Add filepicker_field_tag helper method
 
+### improvements
+
+- move from end-of-life multi_json to json
+
 ## 1.3.0 (December 31, 2014)
 
 ### features

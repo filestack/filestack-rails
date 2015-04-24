@@ -39,7 +39,7 @@ module FilepickerRails
         hash[input] = send(input) unless send(input).nil?
       end
 
-      MultiJson.dump(hash)
+      hash.to_json
     end
   end
   private_constant :Policy
