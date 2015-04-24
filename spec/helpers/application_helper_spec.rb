@@ -15,6 +15,14 @@ RSpec.describe FilepickerRails::ApplicationHelper do
     end
   end
 
+  describe "#filepicker_field_tag" do
+
+    it_behaves_like "a filepicker input tag" do
+      let(:args) { ['user[filepicker_url]'] }
+      let(:filepicker_input_tag) { filepicker_field_tag(*args) }
+    end
+  end
+
   describe "#filepicker_save_button" do
 
     context "without options" do
