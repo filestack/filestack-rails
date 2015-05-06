@@ -1,6 +1,8 @@
 module FilepickerRails
   module ApplicationHelper
 
+    include FilepickerRails::Tag
+
     # Creates a javascript tag to the filepicker JavaScript.
     #
     # #### Examples
@@ -9,6 +11,41 @@ module FilepickerRails
     #     # => <script src="//api.filepicker.io/v1/filepicker.js"></script>
     def filepicker_js_include_tag
       javascript_include_tag "//api.filepicker.io/v1/filepicker.js"
+    end
+
+    # Creates a filepicker field tag, accepts optional `options` hash for configuration.
+    #
+    # #### Options
+    #
+    # - `:button_text` - The text of the upload button.
+    # - `:button_class` - The class of the upload button.
+    # - `:extensions` - The extensions of file types you want to support for this upload. Ex: `.png,.jpg`.
+    # - `:mimetypes` - The file types you want to support for this upload. Ex: `image/png,text/*`.
+    # - `:container` - Where to show the file picker dialog can be `modal`, `window` or the id of an iframe on the page.
+    # - `:multiple` - (true or false) Whether or not multiple uploads can be saved at once.
+    # - `:services` - What services your users can upload to. Ex: `BOX, COMPUTER, FACEBOOK`.
+    # - `:store_path` - The path to store the file at within the specified file store.
+    # - `:store_location` - The file is not copied by default. It remains in the original location. If you wish you have the file copied onto your own storage, you can specify where we should put the copy. The only value at the moment is `S3`.
+    # - `:store_container` - The bucket or container in your specified `store_location`. Defaults to the container specified in the developer portal. Does not apply to Dropbox storage.
+    # - `:store_access` - Should the underlying file be publicly available on its S3 link. Options are `public` and `private`, defaults to 'private'.
+    # - `:dragdrop` - (`true` or `false`) Whether or not to allow drag-and-drop uploads.
+    # - `:drag_text` - The text of the dragdrop pane.
+    # - `:drag_class` - The class of the dragdrop pane.
+    # - `:onchange` - The onchange event.
+    # - `:max_size` - The maximum file size allowed, in bytes.
+    # - `:max_files` - The maximum number of files.
+    # - `:open_to` - Open the picker to the given service. Ex: `COMPUTER`.
+    # - `:class` - Add a class to the input.
+    # - `:value` - Define the value of the input
+    #
+    # #### Examples
+    #
+    #     filepicker_field_tag('user[filepicker_url]')
+    #     # => <input data-fp-apikey="..." id="user_filepicker_url" name="user[filepicker_url]" type="filepicker" />
+    #
+    def filepicker_field_tag(name, options = {})
+      define_input_options(options)
+      tag :input, { 'type' => type, 'name' => name, 'id' => sanitize_to_id(name) }.update(input_options.stringify_keys)
     end
 
     # Creates a button allowing the user to download a file
