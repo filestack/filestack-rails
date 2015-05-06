@@ -12,9 +12,14 @@ RSpec.describe FilepickerRails::FormHelper do
 
   describe "#filepicker_field" do
 
-    it_behaves_like "a filepicker input tag" do
-      let(:args) { [:filepicker_url] }
-      let(:filepicker_input_tag) { form.filepicker_field(*args) }
+    include_examples "a filepicker input tag" do
+      let(:args) do
+        [:filepicker_url]
+      end
+
+      let(:filepicker_input_tag) do
+        form.filepicker_field(*args)
+      end
     end
   end
 end
