@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.4.0 (Unreleased)
+## 1.4.0 (May, 7, 2015)
 
 ### features
 
@@ -11,7 +11,7 @@
 
 ### improvements
 
-- move from end-of-life multi_json to json
+- Move from end-of-life multi_json to json
 
 ## 1.3.0 (December 31, 2014)
 
