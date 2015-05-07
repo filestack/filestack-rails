@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.0 (Unreleased)
+
+### features
+
+### improvements
+
+- Declare FilepickerRails::Tag as a private module
+
 ## 1.4.0 (May, 7, 2015)
 
 ### features
