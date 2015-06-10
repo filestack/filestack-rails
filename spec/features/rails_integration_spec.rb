@@ -7,7 +7,7 @@ RSpec.feature 'Rails integration' do
   end
 
   scenario 'adding the the javascript helper' do
-    script_tag = 'script[src="//api.filepicker.io/v1/filepicker.js"]'
+    script_tag = 'script[src="//api.filepicker.io/v2/filepicker.js"]'
     expect(page).to have_css(script_tag, visible: false)
   end
 

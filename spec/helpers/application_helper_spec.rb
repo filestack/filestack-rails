@@ -9,8 +9,13 @@ RSpec.describe FilepickerRails::ApplicationHelper do
        expect(filepicker_js_include_tag).to match(regex)
     end
 
+    it "include the correct type" do
+      attribute = %{type="text/javascript"}
+      expect(filepicker_js_include_tag).to include(attribute)
+    end
+
     it "has correct src attribute" do
-      attribute = %{src="//api.filepicker.io/v1/filepicker.js"}
+      attribute = %{src="//api.filepicker.io/v2/filepicker.js"}
       expect(filepicker_js_include_tag).to include(attribute)
     end
   end

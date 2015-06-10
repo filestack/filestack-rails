@@ -7,8 +7,15 @@
 ### improvements
 
 - Declare FilepickerRails::Tag as a private module
+- Update `filepicker_js_include_tag` to use the V2 api
 
 ## 1.4.0 (May, 7, 2015)
+
+:warning: :warning: :warning:
+This is the last version that uses the API V1.
+Since the migration from V1 to V2 has no breaking changes probably you are good to go.
+More info about the migration [here](https://www.filepicker.com/documentation/file_ingestion/javascript_api/migration?v=v2).
+:warning: :warning: :warning:
 
 ### features
 
