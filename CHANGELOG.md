@@ -4,10 +4,11 @@
 
 ### features
 
+- Update `filepicker_js_include_tag` to use the V2 api
+
 ### improvements
 
 - Declare FilepickerRails::Tag as a private module
-- Update `filepicker_js_include_tag` to use the V2 api
 
 ## 1.4.0 (May, 7, 2015)
 
