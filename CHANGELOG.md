@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.1 (July, 1, 2015)
+
+### improvements
+
+- Update `filepicker_image_url` to merge query params into current url params if they exist
+
 ## 1.5.0 (June, 10, 2015)
 
 ### features

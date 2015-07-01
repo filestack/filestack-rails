@@ -254,6 +254,13 @@ RSpec.describe FilepickerRails::ApplicationHelper do
       end
     end
 
+    context "with convert options provided and convert options already in the url" do
+      it "merges the options into the query params" do
+        url = filepicker_image_url("foo/convert?crop=0,0,1024,1024", watersize: 70)
+        expect(url).to eq("foo/convert?crop=0%2C0%2C1024%2C1024&watersize=70")
+      end
+    end
+
     context "with cdn host" do
 
       before do
