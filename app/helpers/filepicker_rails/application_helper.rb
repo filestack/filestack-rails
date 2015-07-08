@@ -179,17 +179,17 @@ module FilepickerRails
       end
 
       def execute
-        base_url = url_with_path.split("?").first
-        query_params = original_url_options.merge(all_options).merge(policy_config).to_query
+        base_url = url_with_path.split('?').first
+        query_params = all_options.to_query
 
-        [base_url, query_params.presence].compact.join("?")
+        [base_url, query_params.presence].compact.join('?')
       end
 
       private
 
         attr_reader :url, :options
 
-        def all_options
+        def valid_options
           options.select { |option| VALID_OPTIONS.include?(option) }
         end
 
@@ -197,11 +197,15 @@ module FilepickerRails
           options.select { |option| CONVERT_OPTIONS.include?(option) }
         end
 
+        def all_options
+          [original_url_options, valid_options, policy_config].inject(&:merge)
+        end
+
         def original_url_options
-          query_string = url_with_path.split("?")[1]
+          query_string = url_with_path.split('?')[1]
 
           if query_string
-            query_to_hash(query_string)
+            Rack::Utils.parse_nested_query(query_string)
           else
             {}
           end
@@ -224,20 +228,16 @@ module FilepickerRails
           Policy.apply
         end
 
-        def query_to_hash(query_string)
-          Hash[
-            CGI::parse(query_string).map do |k, v|
-              [k, v.first]
-            end
-          ]
-        end
-
         def url_with_path
-          @url_with_path ||= if convert_options.any? && !cdn_url.match("/convert")
+          @url_with_path ||= if append_convert_on_url_path?
             "#{cdn_url}/convert"
           else
             cdn_url
           end
+        end
+
+        def append_convert_on_url_path?
+          convert_options.any? && !cdn_url.match('/convert')
         end
     end
     private_constant :FilepickerImageUrl
