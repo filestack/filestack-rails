@@ -179,15 +179,10 @@ module FilepickerRails
       end
 
       def execute
-        url_with_path = if convert_options.any?
-          "#{cdn_url}/convert"
-        else
-          cdn_url
-        end
+        base_url = url_with_path.split("?").first
+        query_params = original_url_options.merge(all_options).merge(policy_config).to_query
 
-        query_params = all_options.merge(policy_config).to_query
-
-        [url_with_path, query_params.presence].compact.join('?')
+        [base_url, query_params.presence].compact.join("?")
       end
 
       private
@@ -202,8 +197,18 @@ module FilepickerRails
           options.select { |option| CONVERT_OPTIONS.include?(option) }
         end
 
+        def original_url_options
+          query_string = url_with_path.split("?")[1]
+
+          if query_string
+            query_to_hash(query_string)
+          else
+            {}
+          end
+        end
+
         def cdn_host
-          ::Rails.application.config.filepicker_rails.cdn_host
+          @cdn_host ||= ::Rails.application.config.filepicker_rails.cdn_host
         end
 
         def cdn_url
@@ -217,6 +222,22 @@ module FilepickerRails
 
         def policy_config
           Policy.apply
+        end
+
+        def query_to_hash(query_string)
+          Hash[
+            CGI::parse(query_string).map do |k, v|
+              [k, v.first]
+            end
+          ]
+        end
+
+        def url_with_path
+          @url_with_path ||= if convert_options.any? && !cdn_url.match("/convert")
+            "#{cdn_url}/convert"
+          else
+            cdn_url
+          end
         end
     end
     private_constant :FilepickerImageUrl
