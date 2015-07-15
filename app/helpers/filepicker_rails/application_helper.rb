@@ -10,7 +10,7 @@ module FilepickerRails
     #     filepicker_js_include_tag
     #     # => <script src="//api.filepicker.io/v1/filepicker.js"></script>
     def filepicker_js_include_tag
-      javascript_include_tag "//api.filepicker.io/v1/filepicker.js"
+      javascript_include_tag "//api.filepicker.io/v2/filepicker.js", type: "text/javascript"
     end
 
     # Creates a filepicker field tag, accepts optional `options` hash for configuration.
@@ -179,22 +179,17 @@ module FilepickerRails
       end
 
       def execute
-        url_with_path = if convert_options.any?
-          "#{cdn_url}/convert"
-        else
-          cdn_url
-        end
+        base_url = url_with_path.split('?').first
+        query_params = all_options.to_query
 
-        query_params = all_options.merge(policy_config).to_query
-
-        [url_with_path, query_params.presence].compact.join('?')
+        [base_url, query_params.presence].compact.join('?')
       end
 
       private
 
         attr_reader :url, :options
 
-        def all_options
+        def valid_options
           options.select { |option| VALID_OPTIONS.include?(option) }
         end
 
@@ -202,8 +197,22 @@ module FilepickerRails
           options.select { |option| CONVERT_OPTIONS.include?(option) }
         end
 
+        def all_options
+          [original_url_options, valid_options, policy_config].inject(&:merge)
+        end
+
+        def original_url_options
+          query_string = url_with_path.split('?')[1]
+
+          if query_string
+            Rack::Utils.parse_nested_query(query_string)
+          else
+            {}
+          end
+        end
+
         def cdn_host
-          ::Rails.application.config.filepicker_rails.cdn_host
+          @cdn_host ||= ::Rails.application.config.filepicker_rails.cdn_host
         end
 
         def cdn_url
@@ -217,6 +226,18 @@ module FilepickerRails
 
         def policy_config
           Policy.apply
+        end
+
+        def url_with_path
+          @url_with_path ||= if append_convert_on_url_path?
+            "#{cdn_url}/convert"
+          else
+            cdn_url
+          end
+        end
+
+        def append_convert_on_url_path?
+          convert_options.any? && !cdn_url.match('/convert')
         end
     end
     private_constant :FilepickerImageUrl

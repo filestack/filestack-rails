@@ -9,8 +9,13 @@ RSpec.describe FilepickerRails::ApplicationHelper do
        expect(filepicker_js_include_tag).to match(regex)
     end
 
+    it "include the correct type" do
+      attribute = %{type="text/javascript"}
+      expect(filepicker_js_include_tag).to include(attribute)
+    end
+
     it "has correct src attribute" do
-      attribute = %{src="//api.filepicker.io/v1/filepicker.js"}
+      attribute = %{src="//api.filepicker.io/v2/filepicker.js"}
       expect(filepicker_js_include_tag).to include(attribute)
     end
   end
@@ -245,6 +250,14 @@ RSpec.describe FilepickerRails::ApplicationHelper do
         it "have correct url with 'cache' and convert option" do
           url = 'foo/convert?align=faces&cache=true'
           expect(filepicker_image_url("foo", cache: true, align: 'faces')).to eq(url)
+        end
+      end
+
+      describe "when convert options is already in the url" do
+
+        it "merges the options into the query params" do
+          url = filepicker_image_url("foo/convert?crop=0,0,1024,1024", watersize: 70)
+          expect(url).to eq("foo/convert?crop=0%2C0%2C1024%2C1024&watersize=70")
         end
       end
     end
