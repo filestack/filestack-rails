@@ -1,5 +1,25 @@
 # Changelog
 
+## 2.0.0 (July, 15, 2015)
+
+### features
+
+- Use API V2
+- Re-release the changes of 1.5.0 and 1.5.1 as 2.0.0
+
+## 1.6.0 (July, 15, 2015)
+
+This is the last version that uses the API V1.
+
+Since the migration from V1 to V2 has no breaking changes probably you are good to upgrade to 2.x. Otherwise lock the gem to 1.x in your `Gemfile`: `gem "filepicker-rails", "~> 1.0"`
+
+More info about the migration [here](https://www.filepicker.com/documentation/file_ingestion/javascript_api/migration?v=v2).
+
+### features
+
+- The latest gem 1.x stays with API V1
+- Revert the changes of 1.5.0 and 1.5.1 and re-release 1.4.0 as 1.6.0
+
 ## 1.5.1 (July, 8, 2015)
 
 ### bug fixes
@@ -17,12 +37,6 @@
 - Declare FilepickerRails::Tag as a private module
 
 ## 1.4.0 (May, 7, 2015)
-
-:warning: :warning: :warning:
-This is the last version that uses the API V1.
-Since the migration from V1 to V2 has no breaking changes probably you are good to go.
-More info about the migration [here](https://www.filepicker.com/documentation/file_ingestion/javascript_api/migration?v=v2).
-:warning: :warning: :warning:
 
 ### features
 
