@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.0 (July, 15, 2015)
+
+### features
+
+- Use API V2
+- Re-release the changes of 1.5.0 and 1.5.1 as 2.0.0
+
 ## 1.6.0 (July, 15, 2015)
 
 This is the last version that uses the API V1.
