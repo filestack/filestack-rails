@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.0.0 (July, 15, 2015)
+
+- Properly-released version 1.5.0 and 1.5.1.
+  This version uses the API V2 you can see more about the
+  [migration here](https://www.filepicker.com/documentation/file_ingestion/javascript_api/migration?v=v2).
+  Since dialog V2 was completely rebuilt from the ground up, custom css files
+  from v1 will not work correctly with it.
+  [See here](https://www.filepicker.com/documentation/file_ingestion/javascript_api/pick_multiple?v=v2#custom_css).
+
 ## 1.5.1 (July, 8, 2015) yanked due to mis-release
 
 ### bug fixes
