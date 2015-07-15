@@ -1,5 +1,4 @@
 module FilepickerRails
-  # @private
   module Tag
 
     FILEPICKER_OPTIONS_TO_DASHERIZE = [:button_text, :button_class, :mimetypes,
