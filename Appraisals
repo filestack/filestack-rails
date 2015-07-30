@@ -1,9 +1,11 @@
 appraise '3.2' do
-  gem 'rails', '~> 3.2.15'
+  gem 'rails', '~> 3.2.0'
+  gem 'test-unit', '~> 3.0'
 end
 
 appraise '4.0' do
   gem 'rails', '~> 4.0.0'
+  gem 'test-unit', '~> 3.0'
 end
 
 appraise '4.1' do
