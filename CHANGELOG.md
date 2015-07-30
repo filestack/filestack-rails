@@ -1,5 +1,9 @@
 # Changelog
 
+## unreleased
+
+- Support for `crop-first` parameter when linking to an image.
+
 ## 2.0.0 (July, 15, 2015)
 
 - Properly-released version 1.5.0 and 1.5.1.

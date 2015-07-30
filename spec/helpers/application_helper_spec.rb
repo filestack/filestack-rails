@@ -241,6 +241,11 @@ RSpec.describe FilepickerRails::ApplicationHelper do
         expect(filepicker_image_url("foo", waterposition: 'top')).to eq('foo/convert?waterposition=top')
       end
 
+      it "have correct url with 'crop_first'" do
+        url = 'foo/convert?crop_first=true'
+        expect(filepicker_image_url("foo", crop_first: true)).to eq(url)
+      end
+
       describe 'cache' do
 
         it "have correct url with 'cache' only" do
