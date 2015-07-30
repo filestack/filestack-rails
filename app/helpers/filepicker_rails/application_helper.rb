@@ -138,6 +138,10 @@ module FilepickerRails
     #        from 10 pixels from the left edge and 20 pixels from the top edge of the
     #        image.
     #
+    # - `:crop_first` - Makes sure the image is cropped before any other
+    #                   conversion parameters are executed.
+    #                   The only value for this parameter is `true`.
+    #
     # - `:format` - Specifies what format the image should be converted to, if any.
     #          Possible values are `jpg` and `png`. For `jpg` conversions, you
     #          can additionally specify a quality parameter.

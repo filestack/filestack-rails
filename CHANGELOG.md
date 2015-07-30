@@ -2,7 +2,9 @@
 
 ## unreleased
 
-- Support for `crop-first` parameter when linking to an image.
+- Support for
+  [`crop_first`](https://www.filepicker.com/documentation/file_processing/image_conversion/crop?v=v2)
+  an `filepicker_image_url`.
 
 ## 2.0.0 (July, 15, 2015)
 
