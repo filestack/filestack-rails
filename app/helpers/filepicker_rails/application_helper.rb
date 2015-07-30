@@ -171,7 +171,8 @@ module FilepickerRails
     class FilepickerImageUrl
 
       CONVERT_OPTIONS = [:w, :h, :fit, :align, :rotate, :crop, :format,
-                         :quality, :watermark, :watersize, :waterposition]
+                         :quality, :watermark, :watersize, :waterposition,
+                         :crop_first]
       VALID_OPTIONS   = CONVERT_OPTIONS + [:cache]
 
       def initialize(url, options = {})
