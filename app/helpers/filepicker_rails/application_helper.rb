@@ -245,7 +245,6 @@ module FilepickerRails
           convert_options.any? && !cdn_url.match('/convert')
         end
     end
-    private_constant :FilepickerImageUrl
 
     private
 

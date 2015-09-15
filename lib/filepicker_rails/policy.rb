@@ -42,5 +42,4 @@ module FilepickerRails
       hash.to_json
     end
   end
-  private_constant :Policy
 end
