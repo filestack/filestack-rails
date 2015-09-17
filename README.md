@@ -138,6 +138,24 @@ Set your Secret Key in `config/application.rb`
 config.filepicker_rails.secret_key = "Your filepicker.io Secret Key"
 ```
 
+#### Generating Custom Policies
+
+Sometimes you may need more control over your policy than the Rails helpers
+provide. For instance Javascript heavy applications that can't use the helpers.
+An example workflow may involve sending down the policy and signature in the 
+initial html and reading the values in Javascript.
+
+```erb
+# app/views/layouts/application.html.erb
+<html>
+<head>
+  <meta name="fp-policy" content='<%= FilepickerRails::Policy.apply.to_json.html_safe %>' />
+</head>
+<body>
+</body>
+</html>
+```
+
 #### Expiry time
 
 By default the expiry time is 10 minutes. If you need to change the expiry time this should be an integer and it is expressed in seconds since the [Epoch](http://en.wikipedia.org/wiki/Unix_time).
