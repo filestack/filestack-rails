@@ -1,6 +1,6 @@
 # Changelog
 
-## unreleased
+## 2.1.0 (October, 07, 2015)
 
 - Support for
   [`crop_first`](https://www.filepicker.com/documentation/file_processing/image_conversion/crop?v=v2)
