@@ -122,7 +122,7 @@ The `filepicker_save_button` accepts a options parameter, [click here to see all
 
 ### CDN
 
-Set your CDN Path in `config/production.rb` ([CDN usage](https://developers.inkfilepicker.com/docs/cdn/)):
+Set your CDN Path in `config/production.rb` ([CDN usage](https://www.filepicker.com/documentation/cdn/)):
 
 ```ruby
 config.filepicker_rails.cdn_host = "Your CDN host name"
@@ -130,7 +130,7 @@ config.filepicker_rails.cdn_host = "Your CDN host name"
 
 ### Policy
 
-To use the [filepicker policies](https://developers.inkfilepicker.com/docs/security/) follow this instructions.
+To use the [filepicker policies](https://www.filepicker.com/documentation/security/) follow this instructions.
 
 Set your Secret Key in `config/application.rb`
 
