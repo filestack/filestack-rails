@@ -1,5 +1,11 @@
 # Changelog
 
+## unreleased
+
+- Support for
+  [`language`](https://www.filepicker.com/docs/file-ingestion/javascript-api/language?v=v2)
+  dialog option.
+
 ## 2.1.0 (October, 07, 2015)
 
 - Support for
