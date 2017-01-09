@@ -258,6 +258,18 @@ RSpec.describe FilepickerRails::ApplicationHelper do
         end
       end
 
+      describe 'compress' do
+
+        it "have correct url with 'compress' only" do
+          expect(filepicker_image_url("foo", compress: true)).to eq('foo?compress=true')
+        end
+
+        it "have correct url with 'compress' and convert option" do
+          url = 'foo/convert?align=faces&compress=true'
+          expect(filepicker_image_url("foo", compress: true, align: 'faces')).to eq(url)
+        end
+      end
+
       describe "when convert options is already in the url" do
 
         it "merges the options into the query params" do
