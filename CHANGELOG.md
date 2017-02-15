@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Include handle when generating secure urls [Fixes #116](https://github.com/Ink/filepicker-rails/issues/116).
+  This ensures that all policies and signatures are unique.
+
 ## 2.1.0 (October, 07, 2015)
 
 - Support for

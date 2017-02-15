@@ -229,8 +229,12 @@ module FilepickerRails
           end
         end
 
+        def handle
+          url.split("/").last
+        end
+
         def policy_config
-          Policy.apply
+          Policy.apply(options: {handle: handle})
         end
 
         def url_with_path

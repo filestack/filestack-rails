@@ -301,16 +301,22 @@ RSpec.describe FilepickerRails::ApplicationHelper do
       end
 
       it 'have policy and signature' do
-        url = 'foo?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicmVhZCIsImNvbnZlcnQiXX0%3D' \
-              '&signature=4562a7e728aa0e53d82c20a97e4f01103dd127724edce631c3f4ada70922eecd'
+        url = 'foo?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicmVhZCIsImNvbnZlcnQiXSwiaGFuZGxlIjoiZm9vIn0%3D' \
+              '&signature=bccb3bdfc0cb1dfc7cff1bafebd659bb5a8f1a1a3a93e9d80a32b004cd4ab939'
         expect(filepicker_image_url('foo')).to eq(url)
+      end
+
+      it 'have different policy and signature with a different handle' do
+        url = 'bar?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicmVhZCIsImNvbnZlcnQiXSwiaGFuZGxlIjoiYmFyIn0%3D' \
+                  '&signature=687ed74d2d113b77069c4aac836cb4d1b947cff8e7dba920869b47e4e03ff6b6'
+        expect(filepicker_image_url('bar')).to eq(url)
       end
 
       it 'have policy and signature when have some convert option' do
         url = 'foo/convert' \
-              '?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicmVhZCIsImNvbnZlcnQiXX0%3D' \
+              '?policy=eyJleHBpcnkiOjEzNDgwNjAxNjcsImNhbGwiOlsicmVhZCIsImNvbnZlcnQiXSwiaGFuZGxlIjoiZm9vIn0%3D' \
               '&quality=80' \
-              '&signature=4562a7e728aa0e53d82c20a97e4f01103dd127724edce631c3f4ada70922eecd'
+              '&signature=bccb3bdfc0cb1dfc7cff1bafebd659bb5a8f1a1a3a93e9d80a32b004cd4ab939'
         expect(filepicker_image_url('foo', quality: 80)).to eq(url)
       end
     end

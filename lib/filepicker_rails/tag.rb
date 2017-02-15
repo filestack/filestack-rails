@@ -39,7 +39,7 @@ module FilepickerRails
       end
 
       def secure_filepicker
-        Policy.apply([:pick, :store], ['data-fp-policy', 'data-fp-signature'])
+        Policy.apply(call: [:pick, :store], keys: ['data-fp-policy', 'data-fp-signature'])
       end
   end
 end
