@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Removed support for Ruby 1.9.3 and Ruby 2.0.0
 - Include handle when generating secure urls [Fixes #116](https://github.com/Ink/filepicker-rails/issues/116).
   This ensures that all policies and signatures are unique.
 
