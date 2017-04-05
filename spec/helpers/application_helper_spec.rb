@@ -90,7 +90,7 @@ RSpec.describe FilepickerRails::ApplicationHelper do
 
         it "have the data-fp-suggestedFilename attribute" do
           attribute = %{data-fp-suggestedFilename="myfile"}
-          expect(filepicker_save_button('save', '/foo', 'image/jpg', suggestedFilename: 'myfile')).to include(attribute)
+          expect(filepicker_save_button('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to include(attribute)
         end
       end
     end
@@ -123,7 +123,7 @@ RSpec.describe FilepickerRails::ApplicationHelper do
       describe "suggestedFilename" do
 
         it "have the correct link" do
-          expect(filepicker_save_link('save', '/foo', 'image/jpg', suggestedFilename: 'myfile')).to eq(build_link('fp-suggestedFilename' => 'myfile'))
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to eq(build_link('fp-suggestedFilename' => 'myfile'))
         end
       end
     end
