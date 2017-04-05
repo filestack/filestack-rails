@@ -58,7 +58,7 @@ module FilepickerRails
     # - `:container` - Where to show the file picker dialog can be `modal`,
     # `window` or the id of an iframe on the page.
     # - `:services` - What services your users can upload to. Ex: `BOX, COMPUTER, FACEBOOK`.
-    # - `:save_as_name` - A recommended file name. The user can override this.
+    # - `:suggestedFilename` - A recommended file name. The user can override this.
     #
     # #### Examples
     #
@@ -81,7 +81,7 @@ module FilepickerRails
     # - `:container` - Where to show the file picker dialog can be `modal`,
     # `window` or the id of an iframe on the page.
     # - `:services` - What services your users can upload to. Ex: `BOX, COMPUTER, FACEBOOK`.
-    # - `:save_as_name` - A recommended file name. The user can override this.
+    # - `:suggestedFilename` - A recommended file name. The user can override this.
     #
     # #### Examples
     #
@@ -258,9 +258,9 @@ module FilepickerRails
         options[:data]['fp-url'] = url
         options[:data]['fp-apikey'] = ::Rails.application.config.filepicker_rails.api_key
         options[:data]['fp-mimetype'] = mimetype
-        options[:data]['fp-option-container'] = container if container
-        options[:data]['fp-option-services'] = Array(services).join(",") if services
-        options[:data]['fp-option-defaultSaveasName'] = save_as if save_as
+        options[:data]['fp-container'] = container if container
+        options[:data]['fp-services'] = Array(services).join(",") if services
+        options[:data]['fp-suggestedFilename'] = save_as if save_as
         block.call
       end
   end
