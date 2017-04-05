@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "rails", "~> 3.2.0"
+gem "rails", "~> 3.2.22"
 gem "test-unit", "~> 3.0"
 gem "rack-cache", "< 1.3"
 

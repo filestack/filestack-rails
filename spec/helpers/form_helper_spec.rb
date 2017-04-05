@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe FilepickerRails::FormHelper do
 
   let!(:form) do
-    if rails_4_1_x?
+    if rails_4_1_x_up?
       ActionView::Helpers::FormBuilder.new(:user, nil, nil, {})
     else
       ActionView::Helpers::FormBuilder.new(:user, nil, nil, {}, nil)
