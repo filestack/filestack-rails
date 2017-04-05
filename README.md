@@ -182,11 +182,11 @@ Please see [CONTRIBUTING.md](https://github.com/filestack/filepicker-rails/blob/
 
 Thank you to all the [contributors](https://github.com/filestack/filepicker-rails/graphs/contributors).
 
-[gem_version_badge]: https://badge.fury.io/rb/filepicker-rails.png
-[ruby_gems]: http://rubygems.org/gems/filepicker-rails
-[travis_ci]: http://travis-ci.org/Ink/filepicker-rails
-[travis_ci_badge]: https://travis-ci.org/Ink/filepicker-rails.svg?branch=master
-[code_climate]: https://codeclimate.com/github/Ink/filepicker-rails
-[code_climate_badge]: https://codeclimate.com/github/Ink/filepicker-rails.png
-[coveralls]: https://coveralls.io/r/Ink/filepicker-rails
-[coveralls_badge]: https://coveralls.io/repos/Ink/filepicker-rails/badge.png?branch=master
+[gem_version_badge]: https://badge.fury.io/rb/filestack-rails.svg
+[ruby_gems]: http://rubygems.org/gems/filestack-rails
+[travis_ci]: http://travis-ci.org/filestack/filestack-rails
+[travis_ci_badge]: https://travis-ci.org/filestack/filestack-rails.svg?branch=master
+[code_climate]: https://codeclimate.com/github/filestack/filestack-rails
+[code_climate_badge]: https://codeclimate.com/github/filestack/filestack-rails.png
+[coveralls]: https://coveralls.io/r/filestack/filestack-rails
+[coveralls_badge]: https://coveralls.io/repos/filestack/filestack-rails/badge.png?branch=master
