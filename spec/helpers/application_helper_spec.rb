@@ -72,25 +72,25 @@ RSpec.describe FilepickerRails::ApplicationHelper do
 
       describe "container" do
 
-        it "have the data-fp-option-container attribute" do
-          attribute = %{data-fp-option-container="modal"}
+        it "have the data-fp-container attribute" do
+          attribute = %{data-fp-container="modal"}
           expect(filepicker_save_button('save', '/foo', 'image/jpg', container: 'modal')).to include(attribute)
         end
       end
 
       describe "services" do
 
-        it "have the data-fp-option-services attribute" do
-          attribute = %{data-fp-option-services="COMPUTER, FACEBOOK"}
+        it "have the data-fp-services attribute" do
+          attribute = %{data-fp-services="COMPUTER, FACEBOOK"}
           expect(filepicker_save_button('save', '/foo', 'image/jpg', services: 'COMPUTER, FACEBOOK')).to include(attribute)
         end
       end
 
-      describe "save_as_name" do
+      describe "suggestedFilename" do
 
-        it "have the data-fp-option-defaultSaveasName attribute" do
-          attribute = %{data-fp-option-defaultSaveasName="myfile"}
-          expect(filepicker_save_button('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to include(attribute)
+        it "have the data-fp-suggestedFilename attribute" do
+          attribute = %{data-fp-suggestedFilename="myfile"}
+          expect(filepicker_save_button('save', '/foo', 'image/jpg', suggestedFilename: 'myfile')).to include(attribute)
         end
       end
     end
@@ -109,21 +109,21 @@ RSpec.describe FilepickerRails::ApplicationHelper do
       describe "container" do
 
         it "have the correct link" do
-          expect(filepicker_save_link('save', '/foo', 'image/jpg', container: 'modal')).to eq(build_link('fp-option-container' => 'modal'))
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', container: 'modal')).to eq(build_link('fp-container' => 'modal'))
         end
       end
 
       describe "services" do
 
         it "have the correct link" do
-          expect(filepicker_save_link('save', '/foo', 'image/jpg', services: 'COMPUTER, FACEBOOK')).to eq(build_link('fp-option-services' => 'COMPUTER, FACEBOOK'))
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', services: 'COMPUTER, FACEBOOK')).to eq(build_link('fp-services' => 'COMPUTER, FACEBOOK'))
         end
       end
 
-      describe "save_as_name" do
+      describe "suggestedFilename" do
 
         it "have the correct link" do
-          expect(filepicker_save_link('save', '/foo', 'image/jpg', save_as_name: 'myfile')).to eq(build_link('fp-option-defaultSaveasName' => 'myfile'))
+          expect(filepicker_save_link('save', '/foo', 'image/jpg', suggestedFilename: 'myfile')).to eq(build_link('fp-suggestedFilename' => 'myfile'))
         end
       end
     end
