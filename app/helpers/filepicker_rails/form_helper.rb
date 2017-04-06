@@ -27,6 +27,7 @@ module FilepickerRails
     # - `:open_to` - Open the picker to the given service. Ex: `COMPUTER`.
     # - `:class` - Add a class to the input.
     # - `:value` - Define the value of the input
+    # - `:language` - Open the picker to the given language. Ex: `fr`.
     #
     # #### Examples
     #
