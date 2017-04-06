@@ -19,9 +19,9 @@ module FilepickerRails
       OpenSSL::HMAC.hexdigest('sha256', ::Rails.application.config.filepicker_rails.secret_key, policy)
     end
 
-    def self.apply(call = [:read, :convert], keys = ['policy', 'signature'])
+    def self.apply(call: [:read, :convert], keys: ['policy', 'signature'], options: {})
       return {} unless ::Rails.application.config.filepicker_rails.secret_key.present?
-      grant = Policy.new
+      grant = Policy.new(options)
       grant.call = call
       {
         keys[0] => grant.policy,
