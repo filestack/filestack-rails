@@ -10,7 +10,7 @@ module FilepickerRails
     #     filepicker_js_include_tag
     #     # => <script src="//api.filepicker.io/v1/filepicker.js"></script>
     def filepicker_js_include_tag
-      javascript_include_tag "//api.filestackapi.com/filestack.js", type: "text/javascript"
+      javascript_include_tag "//api.filepicker.io/v2/filepicker.js", type: "text/javascript"
     end
 
     # Creates a filepicker field tag, accepts optional `options` hash for configuration.
