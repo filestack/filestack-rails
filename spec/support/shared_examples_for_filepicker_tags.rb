@@ -150,6 +150,12 @@ RSpec.shared_examples "a filepicker input tag" do
       expect(filepicker_input_tag).to include(attribute)
     end
 
+    it "have correct input with 'language'" do
+      args << { language: 'fr' }
+      attribute = %{data-fp-language="fr"}
+      expect(filepicker_input_tag).to include(attribute)
+    end
+
     describe "policy" do
 
       before do

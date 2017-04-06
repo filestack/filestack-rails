@@ -8,7 +8,7 @@ module FilepickerRails
                                        :store_location, :store_access,
                                        :store_container, :multiple]
 
-    FILEPICKER_OPTIONS_TO_CAMELIZE = [:max_size, :max_files, :open_to]
+    FILEPICKER_OPTIONS_TO_CAMELIZE = [:max_size, :max_files, :open_to, :language]
 
     private
 
