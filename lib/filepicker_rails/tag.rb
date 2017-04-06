@@ -11,7 +11,6 @@ module FilepickerRails
     FILEPICKER_OPTIONS_TO_CAMELIZE = [:max_size, :max_files, :open_to]
 
     private
-
       attr_reader :input_options, :type
 
       def define_input_options(options)
