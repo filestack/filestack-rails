@@ -163,6 +163,10 @@ module FilepickerRails
     #
     # - `:cache` - Specifies if the image should be cached or not.
     #
+    # - `:compress` - You can take advantage of Filepicker's image compression which utilizes JPEGtran and OptiPNG.
+    #                 The value for this parameter is boolean. If you want to compress your image then the parameter
+    #                 is compress:true. Compression is off/false by default.
+    #
     # #### Examples
     #
     #      filepicker_image_url @user.filepicker_url, w: 160, h: 160, fit: 'clip'
@@ -177,7 +181,7 @@ module FilepickerRails
       CONVERT_OPTIONS = [:w, :h, :fit, :align, :rotate, :crop, :format,
                          :quality, :watermark, :watersize, :waterposition,
                          :crop_first]
-      VALID_OPTIONS   = CONVERT_OPTIONS + [:cache]
+      VALID_OPTIONS   = CONVERT_OPTIONS + [:cache, :compress]
 
       def initialize(url, options = {})
         @url, @options = url, options
