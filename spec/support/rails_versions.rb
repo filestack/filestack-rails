@@ -4,10 +4,11 @@ module RailsVersions
   end
   module_function :rails_version
 
-  def rails_4_1_x?
-    Gem::Requirement.new('~> 4.1').satisfied_by?(rails_version)
+  def rails_4_1_x_up?
+    Gem::Requirement.new('>= 4.1').satisfied_by?(rails_version)
   end
-  module_function :rails_4_1_x?
+  module_function :rails_4_1_x_up?
+
 end
 
 RSpec.configure do |config|

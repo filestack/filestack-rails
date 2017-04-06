@@ -4,7 +4,7 @@
 [![Coveralls][coveralls_badge]][coveralls]
 [![Code Climate][code_climate_badge]][code_climate]
 
-Adds form, image_tag, and download/save helpers to help you get up and running with [filepicker.io](http://filepicker.io) in Rails.
+Adds form, image_tag, and download/save helpers to help you get up and running with [filestack.com](http://filestack.com) in Rails.
 
 ## Installation
 
@@ -22,7 +22,7 @@ Or install it yourself as:
 
     $ gem install filepicker-rails
 
-Add the filepicker.io javascript library to your layout:
+Add the filestack.com javascript library to your layout:
 
 ```erb
 <%= filepicker_js_include_tag %>
@@ -31,12 +31,12 @@ Add the filepicker.io javascript library to your layout:
 Set your API Key in `config/application.rb`:
 
 ```ruby
-config.filepicker_rails.api_key = "Your filepicker.io API Key"
+config.filepicker_rails.api_key = "Your Filestack API Key"
 ```
 
 ## Usage
 
-### First create a migration to add the field that will hold your filepicker.io URL
+### First create a migration to add the field that will hold your Filestack URL
 
 Run the Rails migration generator from the command line:
 
@@ -64,7 +64,7 @@ end
   <%= f.submit %>
 <% end %>
 ```
-The `filepicker_field` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/Ink/filepicker-rails/master/FilepickerRails/FormHelper:filepicker_field).
+The `filepicker_field` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/filestack/filepicker-rails/master/FilepickerRails/FormHelper:filepicker_field).
 
 ### Displaying an image:
 
@@ -72,7 +72,7 @@ The `filepicker_field` accepts a options parameter, [click here to see all the v
 <%= filepicker_image_tag @user.filepicker_url, w: 160, h: 160, fit: 'clip' %>
 ```
 
-The `filepicker_image_tag` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/Ink/filepicker-rails/master/FilepickerRails/ApplicationHelper:filepicker_image_url).
+The `filepicker_image_tag` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/filestack/filepicker-rails/master/FilepickerRails/ApplicationHelper:filepicker_image_url).
 
 ### Accessing FilePicker File with OnChange:
 
@@ -118,7 +118,7 @@ Example fpfiles object:
 <%= filepicker_save_button "Save", @user.filepicker_url, "image/jpg" %>
 ```
 
-The `filepicker_save_button` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/Ink/filepicker-rails/master/FilepickerRails/ApplicationHelper:filepicker_save_button).
+The `filepicker_save_button` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/filestack/filepicker-rails/master/FilepickerRails/ApplicationHelper:filepicker_save_button).
 
 ### CDN
 
@@ -130,12 +130,12 @@ config.filepicker_rails.cdn_host = "Your CDN host name"
 
 ### Policy
 
-To use the [filepicker policies](https://www.filepicker.com/documentation/security/) follow this instructions.
+To use the [filepicker policies](https://filestack.com/docs/security/) follow this instructions.
 
 Set your Secret Key in `config/application.rb`
 
 ```ruby
-config.filepicker_rails.secret_key = "Your filepicker.io Secret Key"
+config.filepicker_rails.secret_key = "Your Filestack Secret Key"
 ```
 
 #### Expiry time
@@ -164,7 +164,7 @@ See a simple demo app [repo](https://github.com/maxtilford/filepicker-rails-demo
 
 You can view the Filepicker::Rails documentation in RDoc format here:
 
-http://rubydoc.info/github/Ink/filepicker-rails/master/frames
+http://rubydoc.info/github/filestack/filepicker-rails/master/frames
 
 ## Versioning
 
@@ -172,22 +172,21 @@ Filepicker::Rails follow the [Semantic Versioning](http://semver.org/).
 
 ## Issues
 
-If you have problems, please create a [Github Issue](https://github.com/Ink/filepicker-rails/issues).
+If you have problems, please create a [Github Issue](https://github.com/filestack/filepicker-rails/issues).
 
 ## Contributing
 
-Please see [CONTRIBUTING.md](https://github.com/Ink/filepicker-rails/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING.md](https://github.com/filestack/filepicker-rails/blob/master/CONTRIBUTING.md) for details.
 
 ## Credits
 
-Thank you to all the [contributors](https://github.com/Ink/filepicker-rails/graphs/contributors).
+Thank you to all the [contributors](https://github.com/filestack/filepicker-rails/graphs/contributors).
 
-[gem_version_badge]: https://badge.fury.io/rb/filepicker-rails.png
-[ruby_gems]: http://rubygems.org/gems/filepicker-rails
-[travis_ci]: http://travis-ci.org/Ink/filepicker-rails
-[travis_ci_badge]: https://travis-ci.org/Ink/filepicker-rails.svg?branch=master
-[code_climate]: https://codeclimate.com/github/Ink/filepicker-rails
-[code_climate_badge]: https://codeclimate.com/github/Ink/filepicker-rails.png
-[coveralls]: https://coveralls.io/r/Ink/filepicker-rails
-[coveralls_badge]: https://coveralls.io/repos/Ink/filepicker-rails/badge.png?branch=master
-
+[gem_version_badge]: https://badge.fury.io/rb/filestack-rails.svg
+[ruby_gems]: http://rubygems.org/gems/filestack-rails
+[travis_ci]: http://travis-ci.org/filestack/filestack-rails
+[travis_ci_badge]: https://travis-ci.org/filestack/filestack-rails.svg?branch=master
+[code_climate]: https://codeclimate.com/github/filestack/filestack-rails
+[code_climate_badge]: https://codeclimate.com/github/filestack/filestack-rails.png
+[coveralls]: https://coveralls.io/r/filestack/filestack-rails
+[coveralls_badge]: https://coveralls.io/repos/filestack/filestack-rails/badge.png?branch=master

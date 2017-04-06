@@ -8,7 +8,7 @@ require 'capybara/rspec'
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each { |f| require f }
 
-if RailsVersions.rails_4_1_x?
+if RailsVersions.rails_4_1_x_up?
   ActiveRecord::Migration.maintain_test_schema!
 end
 

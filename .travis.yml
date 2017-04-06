@@ -3,6 +3,7 @@ rvm:
   - 2.1
   - 2.2
   - 2.3
+  - 2.4.1
 
 before_script:
   - cd spec/dummy
@@ -14,3 +15,17 @@ gemfile:
   - gemfiles/4.0.gemfile
   - gemfiles/4.1.gemfile
   - gemfiles/4.2.gemfile
+  - gemfiles/5.0.gemfile
+
+matrix:
+  exclude:
+    - rvm: 2.1
+      gemfile: gemfiles/5.0.gemfile
+    - rvm: 2.4.1
+      gemfile: gemfiles/3.2.gemfile
+    - rvm: 2.4.1
+      gemfile: gemfiles/4.0.gemfile
+    - rvm: 2.4.1
+      gemfile: gemfiles/4.1.gemfile
+    - rvm: 2.4.1
+      gemfile: gemfiles/4.2.gemfile
