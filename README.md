@@ -15,7 +15,7 @@ This gem was previously named filepicker-rails (up to 2.1.0 version).
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'filestack-rails'
+gem 'filestack-rails', require: 'filepicker-rails'
 ```
 
 And then execute:
