@@ -10,7 +10,7 @@ module FilepickerRails
 
     initializer 'filepicker_rails.action_controller' do |app|
       ActiveSupport.on_load(:action_controller) do
-        helper FilepickerRails::ApplicationHelper
+        ::ActionController::Base.helper(FilepickerRails::ApplicationHelper)
       end
     end
   end
