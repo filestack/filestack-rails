@@ -6,12 +6,16 @@
 
 Adds form, image_tag, and download/save helpers to help you get up and running with [filestack.com](http://filestack.com) in Rails.
 
+## Note
+
+This gem was previously named filepicker-rails (up to 2.1.0 version).
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'filepicker-rails'
+gem 'filestack-rails'
 ```
 
 And then execute:
@@ -20,7 +24,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install filepicker-rails
+    $ gem install filestack-rails
 
 Add the filestack.com javascript library to your layout:
 

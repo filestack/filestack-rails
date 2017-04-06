@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.2.0 (April, 05, 2017)
+
+- Move repository to Filestack organisation.
+- Rename gem to filestack-rails.
+- Add support for Ruby 2.3.0 and 2.4.1.
+- Remove support for Ruby 1.9.3 and Ruby 2.0.0.
+- Add helper support for Rails 5 [Fixes #153](https://github.com/filestack/filestack-rails/issues/153).
+- Include handle when generating secure urls [Fixes #116](https://github.com/Ink/filepicker-rails/issues/116).
+  This ensures that all policies and signatures are unique.
+- Support for [`language`](https://www.filepicker.com/docs/file-ingestion/javascript-api/language?v=v2) dialog option.
+- Add support for compress argument.
+- Fix data-fp-services and data-fp-suggestedFilename options for filepicker_save_link.
+
 ## 2.1.0 (October, 07, 2015)
 
 - Support for
