@@ -192,5 +192,5 @@ Thank you to all the [contributors](https://github.com/filestack/filepicker-rail
 [travis_ci_badge]: https://travis-ci.org/filestack/filestack-rails.svg?branch=master
 [code_climate]: https://codeclimate.com/github/filestack/filestack-rails
 [code_climate_badge]: https://codeclimate.com/github/filestack/filestack-rails.png
-[coveralls]: https://coveralls.io/r/filestack/filestack-rails
-[coveralls_badge]: https://coveralls.io/repos/filestack/filestack-rails/badge.png?branch=master
+[coveralls]: https://coveralls.io/github/filestack/filestack-rails?branch=master
+[coveralls_badge]: https://coveralls.io/repos/github/filestack/filestack-rails/badge.svg?branch=master
