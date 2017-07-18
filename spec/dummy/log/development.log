@@ -1,0 +1,1306 @@
+Started GET "/" for ::1 at 2017-07-15 20:48:26 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (8.5ms)
+Completed 200 OK in 229ms (Views: 47.3ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 20:49:23 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 196ms (Views: 29.3ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 20:50:16 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 197ms (Views: 22.8ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 20:50:36 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 182ms (Views: 21.3ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 20:50:38 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 33ms (Views: 18.8ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for ::1 at 2017-07-15 20:53:20 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 186ms (Views: 22.2ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 20:53:23 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 33ms (Views: 18.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 20:54:01 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 35ms (Views: 18.9ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 20:54:11 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 208ms (Views: 23.5ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 20:54:59 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 38ms (Views: 22.4ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 20:55:08 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 179ms (Views: 21.3ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 20:59:07 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 175ms (Views: 20.7ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:01:02 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 180ms (Views: 21.8ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:01:05 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 32ms (Views: 18.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:01:06 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 32ms (Views: 17.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:01:06 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 34ms (Views: 18.9ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:01:07 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 33ms (Views: 17.7ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:02:05 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 180ms (Views: 21.9ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:02:27 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 188ms (Views: 21.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:02:28 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 33ms (Views: 19.2ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:04:45 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 176ms (Views: 21.1ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:14:12 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 188ms (Views: 23.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:15:32 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (4.0ms)
+Completed 200 OK in 175ms (Views: 21.2ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:15:36 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 34ms (Views: 18.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:15:46 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 34ms (Views: 18.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:16:41 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (4.5ms)
+Completed 200 OK in 171ms (Views: 20.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:17:33 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (4.5ms)
+Completed 200 OK in 189ms (Views: 22.1ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:22:08 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 195ms (Views: 22.4ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:22:17 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 32ms (Views: 18.1ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:22:46 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 200ms (Views: 21.2ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:23:00 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 37ms (Views: 19.8ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:25:27 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 176ms (Views: 21.5ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:25:45 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.1.2/lib/rails/templates/rails/welcome/index.html.erb (5.0ms)
+Completed 200 OK in 197ms (Views: 27.1ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:15:54 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 690ms (Views: 531.7ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:17:33 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 431ms
+
+
+  
+ActionView::Template::Error (undefined method `filestack_js_include_tag' for FilestackRails::ApplicationHelper:Module):
+     6: 
+     7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     8:     <%= javascript_include_tag 'application' %>
+     9:     <%= FilestackRails::ApplicationHelper.filestack_js_include_tag %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___601135997_48392256'
+Started GET "/" for ::1 at 2017-07-15 22:18:50 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 398ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `filestack_js_include_tag' for #<#<Class:0x5dce1c0>:0x5dc6e88>
+Did you mean?  filestack_rails):
+     6: 
+     7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     8:     <%= javascript_include_tag 'application' %>
+     9:     <%= filestack_js_include_tag %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__634392619_49109904'
+Started GET "/" for ::1 at 2017-07-15 22:20:31 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 398ms (Views: 234.9ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:21:38 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 468ms (Views: 296.1ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:27:06 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 204ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `filestack_js_init_tag' for #<#<Class:0x5eb7f08>:0x489eb50>
+Did you mean?  filestack_js_include_tag):
+     7:     <%= stylesheet_link_tag    'application', media: 'all' %>
+     8:     <%= javascript_include_tag 'application' %>
+     9:     <%= filestack_js_include_tag %>
+    10:     <%= filestack_js_init_tag %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb__1016178810_66154044'
+Started GET "/" for ::1 at 2017-07-15 22:27:34 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 105ms (Views: 93.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:27:41 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 92ms (Views: 77.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:30:49 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 429ms (Views: 273.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:31:15 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 149ms (Views: 135.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:32:03 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 446ms (Views: 296.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:32:38 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 80ms (Views: 68.8ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:34:05 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 77ms (Views: 67.1ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:34:27 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 75ms
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag 'anotherclient' %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__959643038_68322456'
+Started GET "/" for ::1 at 2017-07-15 22:34:52 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 361ms (Views: 211.1ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:35:14 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 168ms (Views: 159.1ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 17:40:42 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 484ms (Views: 329.4ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 17:41:52 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 375ms (Views: 221.4ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 17:42:15 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 78ms (Views: 64.4ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 17:42:29 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 321ms
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag('anotherclient') %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___483880264_48940944'
+Started GET "/" for ::1 at 2017-07-15 17:42:47 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 388ms (Views: 226.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 19:26:35 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 334ms
+
+
+  
+ActionView::Template::Error (undefined method `client_name' for nil:NilClass):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___745910142_49263024'
+Started GET "/" for ::1 at 2017-07-15 19:27:50 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 65ms
+
+
+  
+ActionView::Template::Error (undefined method `client_name' for nil:NilClass):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___745910142_68487300'
+Started GET "/" for ::1 at 2017-07-15 19:28:04 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 384ms (Views: 223.2ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 19:29:20 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 333ms
+
+
+  
+ActionView::Template::Error (undefined method `client_name' for nil:NilClass):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___116094977_49059696'
+Started GET "/" for ::1 at 2017-07-15 19:31:04 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 335ms
+
+
+  
+ActionView::Template::Error (undefined method `filetack_rails' for #<Rails::Application::Configuration:0x4435830>
+Did you mean?  file_watcher):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___950126225_49327620'
+Started GET "/" for ::1 at 2017-07-15 19:31:24 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 70ms
+
+
+  
+ActionView::Template::Error (undefined method `filetack_rails' for #<Rails::Application::Configuration:0x4435830>
+Did you mean?  file_watcher):
+     5:     <%= csrf_meta_tags %>
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___950126225_68650068'
+Started GET "/" for ::1 at 2017-07-15 19:31:34 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 421ms (Views: 245.2ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 19:32:46 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 547ms (Views: 374.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 19:50:39 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 393ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a relative path):
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__944727596_49673004'
+Started GET "/" for ::1 at 2017-07-15 19:50:57 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 347ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a relative path):
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__134912421_49024776'
+Started GET "/" for ::1 at 2017-07-15 19:51:09 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 84ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a relative path):
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__134912421_66318960'
+Started GET "/" for ::1 at 2017-07-15 19:51:22 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 362ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a relative path):
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__360340411_49787328'
+Started GET "/" for ::1 at 2017-07-15 19:52:27 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 353ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a relative path):
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___1026329842_48910344'
+Started GET "/" for ::1 at 2017-07-15 19:54:12 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 352ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a relative path):
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__566028369_48993948'
+Started GET "/" for ::1 at 2017-07-15 19:55:29 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 353ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a relative path):
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___709357913_48852792'
+Started GET "/" for ::1 at 2017-07-15 19:56:40 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 350ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a relative path):
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___555855841_49569864'
+Started GET "/" for ::1 at 2017-07-15 19:57:44 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 450ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a relative path):
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= stylesheet_link_tag 'application', media: 'all' %>
+    10:     <%= javascript_include_tag 'application' %>
+    11:   </head>
+    12: 
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__102469146_50144868'
+Started GET "/" for ::1 at 2017-07-15 19:59:11 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 313ms (Views: 152.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 19:59:27 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 200ms
+
+
+  
+ActionView::Template::Error (require_tree argument must be a relative path):
+     6: 
+     7:     <%= filestack_js_include_tag %>
+     8:     <%= filestack_js_init_tag %>
+     9:     <%= javascript_include_tag 'application' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__1026636929_65427696'
+Started GET "/" for ::1 at 2017-07-15 20:02:05 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 427ms (Views: 270.3ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 21:53:32 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 380ms (Views: 224.5ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:06:33 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 222ms
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2)):
+    1: <h1>Hello#index</h1>
+    2: <p>Find me in app/views/hello/index.html.erb</p>
+    3: <%= filestack_picker_element "pick!" "console.log('this is working');" %>
+  
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb__905611626_46368828'
+Started GET "/" for ::1 at 2017-07-15 22:07:03 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 241ms (Views: 230.9ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:08:14 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 376ms (Views: 221.3ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:09:12 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 181ms (Views: 170.9ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:09:25 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 478ms (Views: 311.1ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:10:03 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 415ms (Views: 241.3ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:13:50 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (32.1ms)
+Completed 500 Internal Server Error in 238ms
+
+
+  
+ActionView::Template::Error (undefined local variable or method `get_client_and_apikey' for #<#<Class:0x5d4a358>:0x5d41538>
+Did you mean?  get_client_and_api_key):
+    1: <h1>Hello#index</h1>
+    2: <p>Find me in app/views/hello/index.html.erb</p>
+    3: <%= filestack_picker_element "pick!", "logIt()" %>
+  
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb___345003766_46835076'
+Started GET "/" for ::1 at 2017-07-15 22:14:17 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 386ms (Views: 226.4ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:20:22 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 541ms (Views: 369.9ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:22:20 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 382ms (Views: 220.8ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:23:44 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 83ms (Views: 69.7ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:23:53 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 81ms (Views: 71.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:24:45 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 225ms (Views: 213.8ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:53:05 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 490ms (Views: 297.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:54:25 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 448ms (Views: 225.1ms)
+
+
+Started GET "/" for ::1 at 2017-07-15 22:55:11 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 375ms (Views: 221.2ms)
+
+
+Started GET "/" for ::1 at 2017-07-16 07:13:53 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 112ms (Views: 95.6ms)
+
+
+Started GET "/" for ::1 at 2017-07-16 11:54:38 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 96ms (Views: 86.0ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170717142523)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "picture" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170717142523"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-17 14:25:30.107831"], ["updated_at", "2017-07-17 14:25:30.107831"]]
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2017-07-17 09:39:29 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 250ms (ActiveRecord: 3.0ms)
+
+
+  
+SyntaxError (C:/Users/richa/Documents/FilestackRails/test/dummy/app/views/hello/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting keyword_end
+C:/Users/richa/Documents/FilestackRails/test/dummy/app/views/hello/index.html.erb:11: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/hello/index.html.erb:9: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/hello/index.html.erb:11: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2017-07-17 09:40:30 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (22.6ms)
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `users_path' for #<#<Class:0x583c5c0>:0x58314a8>):
+    1: <h1>Rails Picker Test</h1>
+    2: <%= filestack_picker_element "pick!", "logIt", {'accept' => 'image/*', 'fromSources' => 'facebook'} %>
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture %>
+  
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb__603303753_46262112'
+Started GET "/" for ::1 at 2017-07-17 09:41:29 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (105.5ms)
+Completed 200 OK in 1035ms (Views: 1017.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-07-17 10:02:05 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (48.6ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for #<Class:0x5801a30>):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture %>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb__759958123_45639132'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb__759958123_45639132'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for ::1 at 2017-07-17 10:06:04 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 267ms (Views: 248.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-07-17 10:06:42 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 251ms (Views: 232.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-17 10:39:32 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (18.5ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 2..3)):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture %>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb___753303745_45936120'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb___753303745_45936120'
+Started GET "/" for ::1 at 2017-07-17 10:40:04 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (18.0ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (please provide your form.filestack_field with an ID):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture %>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb___650572780_46551420'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb___650572780_46551420'
+Started GET "/" for ::1 at 2017-07-17 10:40:31 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (20.1ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tag_value' for #<ActionView::Helpers::FormBuilder:0x5da3380>):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture, {'id' => 'pickerid'}%>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb___650572780_49136208'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb___650572780_49136208'
+Started GET "/" for ::1 at 2017-07-17 10:41:02 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (26.6ms)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tag_value' for #<ActionView::Helpers::FormBuilder:0x5806b18>):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture, {'id' => 'pickerid'}%>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb__915302925_46590912'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb__915302925_46590912'
+Started GET "/" for ::1 at 2017-07-17 10:42:49 -0500
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (21.1ms)
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `tag_value' for #<ActionView::Helpers::FormBuilder:0x5ab2398>):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture, {'id' => 'pickerid'}%>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb__915302925_47623692'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb__915302925_47623692'
+Started GET "/" for ::1 at 2017-07-17 10:43:38 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (17.0ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (please provide your form.filestack_field with an ID):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture, {'id' => 'pickerid'}%>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb___854696274_46435476'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb___854696274_46435476'
+Started GET "/" for ::1 at 2017-07-17 10:44:33 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (23.1ms)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `filestack_picker_element' for FilestackRails::ApplicationHelper:Module):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture, "Upload", {'id' => 'pickerid'} %>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb___195062466_46442868'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb___195062466_46442868'
+Started GET "/" for ::1 at 2017-07-17 10:45:44 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (23.6ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `button_tag' for #<ActionView::Helpers::FormBuilder:0x57a75b0>
+Did you mean?  button):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture, "Upload", {'id' => 'pickerid'} %>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb__7646982_46126368'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb__7646982_46126368'
+Started GET "/" for ::1 at 2017-07-17 10:51:32 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 256ms (Views: 237.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-17 10:54:58 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 253ms (Views: 234.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-07-17 10:56:29 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 294ms (Views: 273.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-07-17 12:04:49 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (26.6ms)
+Completed 500 Internal Server Error in 123ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2)):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture, "Upload", {'id' => 'pickerid', 'class' => 'someclassname'} %>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb__564381128_46362744'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb__564381128_46362744'
+Started GET "/" for ::1 at 2017-07-17 12:05:22 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 260ms (Views: 240.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-07-17 12:05:59 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 292ms (Views: 274.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-07-17 12:10:07 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 258ms (Views: 239.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-07-17 12:15:20 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (24.1ms)
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::Helpers::Tags::Button):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture , f  %>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb___811282457_45682584'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb___811282457_45682584'
+Started GET "/" for ::1 at 2017-07-17 12:17:03 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (24.1ms)
+Completed 500 Internal Server Error in 101ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::Helpers::FormHelpers):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture , f  %>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb___377000075_45765780'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb___377000075_45765780'
+Started GET "/" for ::1 at 2017-07-17 12:18:45 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (24.6ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::Helpers::FormTagHelper::Button):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture , f  %>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb___255341803_46343556'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb___255341803_46343556'
+Started GET "/" for ::1 at 2017-07-17 12:19:13 -0500
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (60.1ms)
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::Helpers::FormTagHelper::ButtonTag):
+    3: <%= form_for @user do |f| %>
+    4:     <div>
+    5:         <%= f.label :picture, "Upload a picture!" %>
+    6:         <%= f.filestack_field :picture , f  %>
+    7:     </div>
+    8: 
+    9:     <%= f.submit %>
+  
+app/views/hello/index.html.erb:6:in `block in _app_views_hello_index_html_erb___387888364_46899492'
+app/views/hello/index.html.erb:3:in `_app_views_hello_index_html_erb___387888364_46899492'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2017-07-17 16:43:34 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HelloController#index as HTML
+  Rendering hello/index.html.erb within layouts/application
+  Rendered hello/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 842ms (Views: 824.6ms | ActiveRecord: 1.0ms)
+
+

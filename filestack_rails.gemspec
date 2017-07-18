@@ -7,16 +7,19 @@ require "filestack_rails/version"
 Gem::Specification.new do |s|
   s.name        = "filestack_rails"
   s.version     = FilestackRails::VERSION
-  s.authors     = ["Richard"]
-  s.email       = ["richard.alan.herbert@gmail.com"]
-  s.homepage    = ""
-  s.summary     = "Summary of FilestackRails."
-  s.description = "Description of FilestackRails."
+  s.authors     = ["filestack"]
+  s.email       = ["dev@filestack.com"]
+  s.homepage    = "https://www.filestack.com"
+  s.summary     = "Filestack plugin for Rails 4+"
+  s.description = "Allows easy integraiton of Filestack's File Picker through dynamic button tags and form helpers"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.1.2"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'coveralls'
+  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'appraisal'
 end
