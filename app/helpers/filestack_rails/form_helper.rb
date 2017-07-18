@@ -2,15 +2,13 @@ module FilestackRails
   module FormHelper
 
     def filestack_field(method, options = {})
-      get_filepicker_form_button(method, options)
+      get_filestack_field_button(method, options)
     end
 
     private 
 
-      attr_reader :object_name, :template
-
-      def get_filepicker_form_button(method, options)
-
+      def get_filestack_field_button(method, options)
+        # TODO: add filestack_field button
       end
 
       def create_javascript_for_picker(callback, options)
