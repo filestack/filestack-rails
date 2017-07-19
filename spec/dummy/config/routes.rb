@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
-  root to: 'welcome#index'
-  mount FilepickerRails::Engine => "/filepicker_rails"
+  resources :users
+  get 'hello/index'
+  post 'hello/save'
+  root 'hello#index'
+  mount FilestackRails::Engine => "/filestack_rails"
 end
