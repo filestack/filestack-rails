@@ -19,7 +19,7 @@ class FilestackTransform
         @transform.instance_variable_set(:@external_url, url)
     end
 
-    def url
+    def fs_url
         @transform.url
     end
 end 
@@ -30,7 +30,7 @@ module FilestackRails
         def get_transform(apikey)
             FilestackTransform.new(apikey)
         end
-        
+
     end
 end
 

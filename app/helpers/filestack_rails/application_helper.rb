@@ -24,9 +24,10 @@ module FilestackRails
 
     def filestack_image(url, options = {})
       transform_object = options[:transform]
+      options.delete(:transform)
       if transform_object
         transform_object.add_external_url url
-        image_tag transform_object.url, options
+        image_tag transform_object.fs_url, options
       else
         image_tag url
       end
