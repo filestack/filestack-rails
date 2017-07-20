@@ -12,7 +12,7 @@ module FilestackRails
     end
 
     def filestack_picker_element(content, callback, options = {})
-      button_tag content, onclick: create_javascript_for_picker(callback, options)
+      button_tag content, onclick: create_javascript_for_picker(callback, options), type: 'button'
     end 
     
     private 

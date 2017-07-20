@@ -23,7 +23,7 @@ RSpec.describe FilestackRails::ApplicationHelper do
   describe "filestack_picker_element" do 
     it "has the right picker element" do
       html_string = filestack_picker_element "hello!", "console.log('hello!')"
-      correct_string = '<button name="button" type="submit" onclick="(function(){
+      correct_string = '<button name="button" type="button" onclick="(function(){
         rich_client.pick({}).then(function(data){console.log(&#39;hello!&#39;)(data)})
       })()">hello!</button>'
       expect(html_string).to eq(correct_string)

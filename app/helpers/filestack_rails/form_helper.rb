@@ -1,33 +1,25 @@
 module FilestackRails
   module FormHelper
-
-    def filestack_field(method, options = {})
-      get_filestack_field_button(method, options)
+    include FilestackRails::ApplicationHelper
+    include ActionView::Helpers
+    def filestack_field(method, content, options = {})
+      get_filestack_field_button(method, content, options)
     end
 
     private 
 
-      def get_filestack_field_button(method, options)
-        # TODO: add filestack_field button
-      end
+      def get_filestack_field_button(method, content, options = {})
+        options[:id] = options[:id] || "#{@object.class.name.downcase}_#{method.downcase}"
+        options[:style] = 'display:none'
+        user_callback = options[:callback] || nil
 
-      def create_javascript_for_picker(callback, options)
-        client_name, apikey = get_client_and_api_key
-        json_string = if options.nil? 
-                        ''
-                      else 
-                        options.to_json
-                      end
-        "(function(){
-          #{client_name}.pick(#{json_string}).then(function(data){#{callback}(data)})
-        })()"
-      end
+        form_field_callback_guts = "const filestack_input_field = document.getElementById('#{options[:id]}');" \
+          "filestack_input_field.value = data.filesUploaded[0].url;"
+        form_field_callback_guts = "#{form_field_callback_guts}#{user_callback}(data)" unless user_callback.nil?                      
+        form_field_callback = "(function(data){#{form_field_callback_guts}})"
 
-      def get_client_and_api_key
-        client_name = ::Rails.application.config.filestack_rails.client_name
-        apikey = ::Rails::application.config.filestack_rails.api_key
-        [client_name, apikey]
+        html_string = "#{filestack_picker_element("#{content}", form_field_callback)}#{text_field(method, options)}"
+        raw html_string.html_safe
       end
-
   end
 end
