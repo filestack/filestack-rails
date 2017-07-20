@@ -1,6 +1,8 @@
+include FilestackRails::Transform
+
 module FilestackRails
   module ApplicationHelper
-    
+
     def filestack_js_include_tag
       javascript_include_tag "https://static.filestackapi.com/v3/filestack.js", type: "text/javascript"
     end
@@ -14,6 +16,21 @@ module FilestackRails
     def filestack_picker_element(content, callback, options = {})
       button_tag content, onclick: create_javascript_for_picker(callback, options), type: 'button'
     end 
+
+    def filestack_transform
+      _, apikey = get_client_and_api_key
+      get_transform(apikey)
+    end
+
+    def filestack_image(url, options = {})
+      transform_object = options[:transform]
+      if transform_object
+        transform_object.add_external_url url
+        image_tag transform_object.url, options
+      else
+        image_tag url
+      end
+    end
     
     private 
 
@@ -34,5 +51,6 @@ module FilestackRails
       apikey = ::Rails::application.config.filestack_rails.api_key
       [client_name, apikey]
     end
+
   end
 end
