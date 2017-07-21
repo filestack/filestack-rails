@@ -108,7 +108,33 @@ Filestack::Rails now has access to the full list of image transforms through our
 
 ## Demo
 
-See a simple demo app [repo](https://github.com/maxtilford/filepicker-rails-demo)
+To see the Filestack::Rails plugin in action, clone this repository and run the demo app by following these instructions: 
+
+### Set API key
+
+Go to ```spec/dummy/config/application.rb``` and change the API key to your own. 
+
+### Install Dependencies
+
+Navigate to the ```spec/dummy``` folder and run:
+```
+$ bundle install
+```
+
+### Migrate User Database
+
+The form field requires a User model, which has been predefined, and so you need to migrate the database:
+```
+rails db:migrate
+```
+
+### Run Server
+
+While in the ```spec/dummy``` directory,un the server
+```
+rails s
+```
+and navigate to http://localhost:3000.
 
 ## RDocs
 
