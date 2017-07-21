@@ -4,12 +4,19 @@ RSpec.describe FilestackRails::ApplicationHelper do
   include FilestackRails::ApplicationHelper
   include ActionView::Helpers
   describe '#filestack_js_include_tag' do
-    it "be a script tag" do
+    it "is a script tag" do
       regex = %r{\A<script.*></script>\z}
       expect(filestack_js_include_tag).to match(regex)
     end
 
-    it "include the correct type" do
+    it "js_initn is a script tag" do
+      init_tag = filestack_js_init_tag
+      expect(init_tag).to include('<script')
+      expect(init_tag).to include('</script>')
+      expect(init_tag).to include('filestack.init')
+    end
+
+    it "includes the correct type" do
       attribute = %{type="text/javascript"}
       expect(filestack_js_include_tag).to include(attribute)
     end
