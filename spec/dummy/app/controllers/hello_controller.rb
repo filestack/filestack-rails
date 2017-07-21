@@ -1,4 +1,5 @@
 class HelloController < ApplicationController
+  include FilestackRails::ApplicationHelper
   def index
     @user = User.new
   end
