@@ -2,9 +2,10 @@ include FilestackRails::Transform
 
 module FilestackRails
   module ApplicationHelper
-
     def filestack_js_include_tag
-      javascript_include_tag "https://static.filestackapi.com/v3/filestack.js", type: "text/javascript"
+      javascript_include_tag(
+        'https://static.filestackapi.com/v3/filestack.js', type: 'text/javascript'
+      )
     end
 
     def filestack_js_init_tag
@@ -14,7 +15,11 @@ module FilestackRails
     end
 
     def filestack_picker_element(content, callback, options = {})
-      button_tag content, onclick: create_javascript_for_picker(callback, options), type: 'button'
+      picker_options = options[:pickerOptions]
+      options.delete(:pickerOptions)
+      options[:onclick] = create_javascript_for_picker(callback, picker_options)
+      options[:type] = 'button'
+      button_tag content, options
     end 
 
     def filestack_transform
@@ -32,14 +37,14 @@ module FilestackRails
         image_tag url
       end
     end
-    
-    private 
+
+    private
 
     def create_javascript_for_picker(callback, options)
-      client_name, apikey = get_client_and_api_key
-      json_string = if options.nil? 
+      client_name, = get_client_and_api_key
+      json_string = if options.nil?
                       ''
-                    else 
+                    else
                       options.to_json
                     end
       "(function(){
@@ -49,9 +54,8 @@ module FilestackRails
 
     def get_client_and_api_key
       client_name = ::Rails.application.config.filestack_rails.client_name
-      apikey = ::Rails::application.config.filestack_rails.api_key
+      apikey = ::Rails.application.config.filestack_rails.api_key
       [client_name, apikey]
     end
-
   end
 end

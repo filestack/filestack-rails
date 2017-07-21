@@ -15,7 +15,7 @@ This gem was previously named filepicker-rails (up to 2.1.0 version).
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'filestack-rails', require: 'filepicker-rails'
+gem 'filestack-rails', require: 'filestack-rails'
 ```
 
 And then execute:
@@ -26,143 +26,115 @@ Or install it yourself as:
 
     $ gem install filestack-rails
 
-Add the filestack.com javascript library to your layout:
+Add the Filestack Uploader and initialization script to your layout:
 
 ```erb
-<%= filepicker_js_include_tag %>
+<%= filestack_js_include_tag %>
+<%= filestack_js_init_tag %> 
 ```
 
-Set your API Key in `config/application.rb`:
+Please note: the scripts need to be added in that order and before your application's custom scripts, e.g. before any scripts in your assets folder.
+
+Set your API key and client name in `config/application.rb`:
 
 ```ruby
-config.filepicker_rails.api_key = "Your Filestack API Key"
+config.filestack_rails.api_key = "Your Filestack API Key"
+config.filestack_rails.client_name = "custom_client_name"
+
 ```
+The client name defaults to "filestack_client" and is injected into your client-side Javascript. This is because v3 of the File Picker lives in the Javascript of your web application. For more information, please see our [File Picker documenation](https://www.filestack.com/docs/javascript-api/pick-v3). 
 
 ## Usage
 
-### First create a migration to add the field that will hold your Filestack URL
+The Filestack-Rails plugin provides three main functionalities: 
 
-Run the Rails migration generator from the command line:
-
-    $ rails g migration AddNameOfAttrForFilepickerUrlToUser
-
-Then add a column to the model's table of type :string:
-
-```ruby
-class AddNameOfAttrForFilepickerUrlToUser < ActiveRecord::Migration
-  def change
-    add_column :user, :filepicker_url, :string
-  end
-end
-```
-
-### Adding an upload field to your form:
+### Filestack Upload Button
+This is a generic button that can be added anywhere in your application and opens an instance of the File Picker. Once a user has chosen a file(s) and submitted, a callback will be executed, passing in the results. You can also pass in any options for the File Picker using the pickerOptions symbol:
 
 ```erb
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.label :filepicker_url, "Upload Your Avatar:" %>
-    <%= f.filepicker_field :filepicker_url %> <!-- User#filepicker_url is a regular string column -->
-  </div>
-
-  <%= f.submit %>
-<% end %>
+<%= filestack_picker_element 'button test', 'callbackForButton', id: 'someuniequeid', pickerOptions: { 'fromSources' => 'facebook' } %>
 ```
-The `filepicker_field` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/filestack/filepicker-rails/master/FilepickerRails/FormHelper:filepicker_field).
+File Picker options are exactly the same as in the Javscript SDK and can be found in the aforementioned documentation. 
 
-### Displaying an image:
+The callback can be either the name of a function you've defined in your main Javascript or it can be any code that is immediately executable, e.g. "console.log" or "(function(data){console.log(data)})". The callback should take in a response array as its only argument, which has the following structure:
 
-```erb
-<%= filepicker_image_tag @user.filepicker_url, w: 160, h: 160, fit: 'clip' %>
-```
-
-The `filepicker_image_tag` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/filestack/filepicker-rails/master/FilepickerRails/ApplicationHelper:filepicker_image_url).
-
-### Accessing FilePicker File with OnChange:
-
-Javascript code in the onchange field acts as a callback, which is
-called on upload completion. You can specify onchange either in the ERB
-template (as shown below), or unobtrusively via jQuery's change event.
-
-```erb
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.label :filepicker_url, "Upload Your Avatar:" %>
-    <%= f.filepicker_field :filepicker_url, onchange: 'onPhotoUpload(event)' %>
-  </div>
-
-  <%= f.submit %>
-<% end %>
-```
-
-The callback is called with a special 'event' variable. The variable has a fpfiles (or if not multiple, also fpfile) attribute with information about the files (jQuery users: look under event.originalEvent).
-
-Example fpfiles object:
 ```javascript
-[{
-    url: 'https://...',
-    data: {
-        filename: 'filename.txt',
-        size: 100,
-        type: 'text/plain'
-    }
-},{
-    url: 'https://...',
-    data: {
-        filename: 'filename2.jpg',
-        size: 9000,
-        type: 'image/jpeg'
-    }
-}]
+{
+    "filesUploaded": [
+        {
+            "filename":"Birds",
+            "handle":"unique_filestack_handle",
+            "mimetype":"image/jpeg",
+            "originalPath":"/bird/flickr/3/2849/9533051578_377332e54c_z.jpg/Birds",
+            "size":121727,
+            "source":"imagesearch",
+            "url":"https://cdn.filestackcontent.com/unique_filestack_handle",
+            "key":"fnZb1ElSMmKCLPNaErRU_bird.jpg",
+            "container":"filestack-website-uploads"
+        },
+        {
+            "filename": ...
+        }
+    ],
+    "filesFailed": []
+}
 ```
 
-### Allowing the user to download a file (or upload it to any of the supported services)
+Each file that is uploaded will be represented as a single object within the filesUploaded array. Accessing the first file uploaded in the callback would be achieved like so:
+```javascript
+url = data.filesUploaded[0].url
+```
+
+### Filestack Form Helper
+The form helper wraps the generic Pick element and adds the value of the returned file to an invisible text element, in order to attach to the form. It accepts the same options as the Pick element and renders the same button.
 
 ```erb
-<%= filepicker_save_button "Save", @user.filepicker_url, "image/jpg" %>
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.filestack_field :filepicker_url, 'Upload Your Avatar!',  pickerOptions: {'fromSources': 'facebook'}, id: 'unique-id' %> 
+  </div>
+
+  <%= f.submit %>
+<% end %>
 ```
 
-The `filepicker_save_button` accepts a options parameter, [click here to see all the valid options](http://rubydoc.info/github/filestack/filepicker-rails/master/FilepickerRails/ApplicationHelper:filepicker_save_button).
 
-### CDN
+### Displaying an image with Filestack Transformations:
+Filestack::Rails now has access to the full list of image transforms through our custom Transformation Engine. This functionality is provided by the Filestack Ruby SDK and acts as a small wrapper around it. The filestack_image tag accepts the same options as the genric Rails image_tag, with the addition of a transform option, which accepts a filestack_transform chain:
 
-Set your CDN Path in `config/production.rb` ([CDN usage](https://www.filepicker.com/documentation/cdn/)):
-
-```ruby
-config.filepicker_rails.cdn_host = "Your CDN host name"
+```erb
+<%= filestack_image @user.filepicker_url, transform: filestack_transform.resize(width:100, height:100).flip.enhance %>
 ```
-
-### Policy
-
-To use the [filepicker policies](https://filestack.com/docs/security/) follow this instructions.
-
-Set your Secret Key in `config/application.rb`
-
-```ruby
-config.filepicker_rails.secret_key = "Your Filestack Secret Key"
-```
-
-#### Expiry time
-
-By default the expiry time is 10 minutes. If you need to change the expiry time this should be an integer and it is expressed in seconds since the [Epoch](http://en.wikipedia.org/wiki/Unix_time).
-
-So you can do something like that to set the expiry time to 5 minutes.
-
-```ruby
-config.filepicker_rails.expiry = -> { (Time.zone.now + 5.minutes).to_i }
-```
-
-If you need always the same url, a static expiry time, to do some cache. You can set a date starting of the Epoch.
-
-```ruby
--> { 100.years.since(Time.at(0)).to_i }
-```
-
-The argument need to be a [callable](http://www.rubytapas.com/episodes/35-Callable).
 
 ## Demo
 
-See a simple demo app [repo](https://github.com/maxtilford/filepicker-rails-demo)
+To see the Filestack::Rails plugin in action, clone this repository and run the demo app by following these instructions: 
+
+### Set API key
+
+Go to ```spec/dummy/config/application.rb``` and change the API key to your own. 
+
+### Install Dependencies
+
+Navigate to the ```spec/dummy``` folder and run:
+```
+$ bundle install
+```
+
+### Migrate User Database
+
+The form field requires a User model, which has been predefined, and so you need to migrate the database:
+```
+rails db:migrate
+```
+
+### Run Server
+
+While in the ```spec/dummy``` directory,un the server
+```
+rails s
+```
+and navigate to http://localhost:3000.
 
 ## RDocs
 
@@ -172,7 +144,7 @@ http://rubydoc.info/github/filestack/filepicker-rails/master/frames
 
 ## Versioning
 
-Filepicker::Rails follow the [Semantic Versioning](http://semver.org/).
+Filestack::Rails follow the [Semantic Versioning](http://semver.org/).
 
 ## Issues
 
