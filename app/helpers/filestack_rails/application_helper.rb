@@ -15,8 +15,12 @@ module FilestackRails
     end
 
     def filestack_picker_element(content, callback, options = {})
-      button_tag content, onclick: create_javascript_for_picker(callback, options), type: 'button'
-    end
+      picker_options = options[:pickerOptions]
+      options.delete(:pickerOptions)
+      options[:onclick] = create_javascript_for_picker(callback, picker_options)
+      options[:type] = 'button'
+      button_tag content, options
+    end 
 
     def filestack_transform
       _, apikey = get_client_and_api_key

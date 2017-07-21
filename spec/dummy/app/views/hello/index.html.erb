@@ -1,8 +1,8 @@
 <h1>Rails Picker Test</h1>
-<%= filestack_picker_element "pick!", "logIt", {'accept' => 'image/*', 'fromSources' => 'facebook'} %>
-<%= filestack_image 'https://tinyurl.com/yanvlakc', transform: filestack_transform.resize(width:100, height:100), id: 'unique-id' %>
+<%= filestack_picker_element "pick!", "logIt", pickerOptions: {'accept' => 'image/*', 'fromSources' => 'facebook'}, id: 'unique-id' %>
+<%= filestack_image 'https://tinyurl.com/yanvlakc', transform: filestack_transform.resize(width:100, height:100), id: 'another-unique-id' %>
 <%= form_for @user do |f| %>
     <%= f.label :picture %>
-    <%= f.filestack_field :picture, 'Upload a Picture' %>
+    <%= f.filestack_field :picture, 'Upload a Picture', pickerOptions: {'accept' => 'image/*', 'fromSources' => 'facebook'} %>
     <%= f.submit %>
 <% end %>
