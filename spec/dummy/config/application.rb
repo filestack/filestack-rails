@@ -8,7 +8,7 @@ require 'filestack_rails'
 module Dummy
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
+    # config.load_defaults 5.1
     config.assets.compile = true
     config.filestack_rails.api_key = 'API_KEY'
     config.filestack_rails.client_name = 'rich_client'
