@@ -1,16 +1,18 @@
-# Filepicker::Rails
-[![RubyGems][gem_version_badge]][ruby_gems]
 [![Travis CI][travis_ci_badge]][travis_ci]
 [![Coveralls][coveralls_badge]][coveralls]
 [![Code Climate][code_climate_badge]][code_climate]
 
-Adds form, image_tag, and download/save helpers to help you get up and running with [filestack.com](http://filestack.com) in Rails.
+# Filestack::Rails
+<a href="https://www.filestack.com"><img src="https://filestack.com/themes/filestack/assets/images/press-articles/color.svg" align="left" hspace="10" vspace="6"></a>
+This is the official Rails plugin for Filestack - API and content management system that makes it easy to add powerful file uploading and transformation capabilities to any web or mobile application.
 
-## Note
+## Resources
 
-This gem was previously named filepicker-rails (up to 2.1.0 version).
+* [Filestack](https://www.filestack.com)
+* [Documentation](https://www.filestack.com/docs)
+* [API Reference](https://filestack.github.io/)
 
-## Installation
+## Installing
 
 Add this line to your application's Gemfile:
 
@@ -26,21 +28,20 @@ Or install it yourself as:
 
     $ gem install filestack-rails
 
-Add the Filestack Uploader and initialization script to your layout:
+Add the Filestack File Picker and initialization script to your layout:
 
 ```erb
 <%= filestack_js_include_tag %>
 <%= filestack_js_init_tag %> 
 ```
 
-Please note: the scripts need to be added in that order and before your application's custom scripts, e.g. before any scripts in your assets folder.
+Please note: the scripts need to be added before your application's custom scripts, e.g. before any scripts in your assets folder, if you need access the Filestack client in your own Javascript. 
 
 Set your API key and client name in `config/application.rb`:
 
 ```ruby
 config.filestack_rails.api_key = "Your Filestack API Key"
 config.filestack_rails.client_name = "custom_client_name"
-
 ```
 The client name defaults to "filestack_client" and is injected into your client-side Javascript. This is because v3 of the File Picker lives in the Javascript of your web application. For more information, please see our [File Picker documenation](https://www.filestack.com/docs/javascript-api/pick-v3). 
 
@@ -136,27 +137,21 @@ rails s
 ```
 and navigate to http://localhost:3000.
 
-## RDocs
-
-You can view the Filepicker::Rails documentation in RDoc format here:
-
-http://rubydoc.info/github/filestack/filepicker-rails/master/frames
-
 ## Versioning
 
-Filestack::Rails follow the [Semantic Versioning](http://semver.org/).
+Filestack::Rails follows the [Semantic Versioning](http://semver.org/).
 
 ## Issues
 
-If you have problems, please create a [Github Issue](https://github.com/filestack/filepicker-rails/issues).
+If you have problems, please create a [Github Issue](https://github.com/filepicker/filestack-rails/issues).
 
 ## Contributing
 
-Please see [CONTRIBUTING.md](https://github.com/filestack/filepicker-rails/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING.md](https://github.com/filepicker/filestack-rails/CONTRIBUTING.md) for details.
 
 ## Credits
 
-Thank you to all the [contributors](https://github.com/filestack/filepicker-rails/graphs/contributors).
+Thank you to all the [contributors](https://github.com/filepicker/filestack-rails/graphs/contributors).
 
 [gem_version_badge]: https://badge.fury.io/rb/filestack-rails.svg
 [ruby_gems]: http://rubygems.org/gems/filestack-rails
