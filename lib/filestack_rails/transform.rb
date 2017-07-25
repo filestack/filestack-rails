@@ -2,7 +2,12 @@ require 'filestack'
 
 class FilestackTransform
     def initialize(apikey)
-        @transform = Transform.new(apikey:apikey)
+        security = ::Rails.application.config.filestack_rails.security
+        if !security.nil?
+            @transform = Transform.new(apikey: apikey, security: security)
+        else
+            @transform = Transform.new(apikey: apikey)
+        end
     end
 
     def method_missing(method_name, **args)

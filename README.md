@@ -45,6 +45,28 @@ config.filestack_rails.client_name = "custom_client_name"
 ```
 The client name defaults to "filestack_client" and is injected into your client-side Javascript. This is because v3 of the File Picker lives in the Javascript of your web application. For more information, please see our [File Picker documenation](https://www.filestack.com/docs/javascript-api/pick-v3). 
 
+### Security
+
+If your account has security enabled, then you must initialize the File Picker with a signature and policy. This is easily enabled through the configuration options by setting your application secret and security options:
+
+```ruby
+config.filestack_rails.app_secret = 'YOUR_APP_SECRET'
+config.filestack_rails.security = {'call' => %w[pick store read convert] }
+```
+If you set security to an empty object like so
+```ruby
+config.filestack_rails.security = {}
+```
+it will provide a policy and signature with only an expiry setting (this defaults to one hour).
+
+You can access the generated policy and signature anytime by calling their attributes on the created security object.
+
+```ruby
+puts config.filestack_rails.security.policy
+puts config.filestack_rails.security.signature
+```
+You can also generate a new security object at any time, although this will only affect the filestack_image tag, and not the File Picker client. 
+
 ## Usage
 
 The Filestack-Rails plugin provides three main functionalities: 
