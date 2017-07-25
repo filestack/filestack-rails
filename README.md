@@ -107,7 +107,6 @@ Each file that is uploaded will be represented as a single object within the fil
 ```javascript
 url = data.filesUploaded[0].url
 ```
-
 ### Filestack Form Helper
 The form helper wraps the generic Pick element and adds the value of the returned file to an invisible text element, in order to attach to the form. It accepts the same options as the Pick element and renders the same button.
 
@@ -129,11 +128,16 @@ Filestack::Rails now has access to the full list of image transforms through our
 ## Migrating from 2.x to 3.x
 Filestack::Rails 3.x is a significant and breaking change. Users wishing to upgrade will need to change their current implementation in order to use the plugin correctly. 
 ### Javascript-based File Picker
-The v3 File Picker is a Javascript application that lives on the client-side of your application. This means you have greater control and access to when it is called, access to the rest of the web SDK, as well as being ale to pass callbacks executed once uploads have completed. You must keep in mind the File Picker client lives in global scope and adjust your namespaces accordingly, although you can also change the name of the client, as detailed in the above sections.
+The v3 File Picker is a Javascript application that lives on the client-side of your application. This means you have greater control and access to when it is called, access to the rest of the web SDK, as well as being able to pass callbacks executed once uploads have completed. You must keep in mind the File Picker client lives in global scope and adjust your namespaces accordingly, although you can also change the name of the client, as detailed in the above sections.
 ### Form Helper
 The form helper's call remains essentially the same, except that it now takes as its argument the value of the button element displayed on the page. 
 ```erb
 <%= f.filestack_field :filestack_url, 'Pick Your Avatar' >
+```
+### Transformations
+The filestack_image tag wraps the generic Rails image_tag and generates a new URL with use of the Ruby SDK. This provides the entire scope of the possible transformations through Filestack's transformation engine, minus those which do not return an image (like debug, av_convert, and so forth). Defining transformations is as simple as chaining them together using the filestack_transform method:
+```erb
+<%= @user.filestack_url, transform: filestack_transform.resize(width:100, height:100).enhance %>
 ```
 ### Ruby SDK
 Filestack::Rails injects the Filestack Ruby SDK into your application for use anywhere. You can use it to access the rest of the Filestack API and find its documentation [here](https://github.com/filestack/filestack-ruby)
