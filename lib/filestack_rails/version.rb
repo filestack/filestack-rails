@@ -1,3 +1,3 @@
 module FilestackRails
-  VERSION = '0.1.0'
+  VERSION = '3.0.0'
 end

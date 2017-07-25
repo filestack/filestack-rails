@@ -59,7 +59,7 @@ config.filestack_rails.security = {}
 ```
 it will provide a policy and signature with only an expiry setting (this defaults to one hour).
 
-You can access the generated policy and signature anytime by calling their attributes on the created security object.
+You can access the generated policy and signature anytime by calling their attributes on the created security object:
 
 ```erb
 puts config.filestack_rails.security.policy
@@ -69,7 +69,7 @@ You can also generate a new security object at any time, although this will only
 
 ## Usage
 
-The Filestack-Rails plugin provides three main functionalities: 
+Filestack::Rails provides three main functionalities: 
 
 ### Filestack Upload Button
 This is a generic button that can be added anywhere in your application and opens an instance of the File Picker. Once a user has chosen a file(s) and submitted, a callback will be executed, passing in the results. You can also pass in any options for the File Picker using the pickerOptions symbol:

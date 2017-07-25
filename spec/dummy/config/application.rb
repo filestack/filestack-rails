@@ -12,7 +12,6 @@ module Dummy
     config.assets.compile = true
     config.filestack_rails.api_key = 'API_KEY'
     config.filestack_rails.client_name = 'rich_client'
-    config.filestack_rails.app_secret = 'OLHJG4JUABB7DFL6CGATC4SN74'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
