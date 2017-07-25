@@ -8,6 +8,5 @@ spec/dummy/tmp/
 spec/dummy/.sass-cache
 coverage
 gemfiles/*.gemfile.lock
-Gemfile.lock
 .yardoc
 doc

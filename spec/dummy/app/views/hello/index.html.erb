@@ -1,0 +1,12 @@
+<h1>Rails Picker Test</h1>
+<h2>Example of Generic Picker Element</h2>
+<%= filestack_picker_element "pick!", "logIt", pickerOptions: {'accept' => 'image/*' }, id: 'unique-id' %>
+<h2>Example of Filestack Image Tag</h2>
+<%= filestack_image 'https://tinyurl.com/yanvlakc', transform: filestack_transform.resize(width:100, height:100), id: 'another-unique-id' %>
+<h2>Example of Filestack Form Field</h2>
+<%= form_for @user do |f| %>
+    <%= f.label :picture %>
+    <%= f.filestack_field :picture, 'Upload a Picture', pickerOptions: {'accept' => 'image/*' } %>
+    <br />
+    <%= f.submit %>
+<% end %>
