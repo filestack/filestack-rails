@@ -49,19 +49,19 @@ The client name defaults to "filestack_client" and is injected into your client-
 
 If your account has security enabled, then you must initialize the File Picker with a signature and policy. This is easily enabled through the configuration options by setting your application secret and security options:
 
-```ruby
+```erb
 config.filestack_rails.app_secret = 'YOUR_APP_SECRET'
 config.filestack_rails.security = {'call' => %w[pick store read convert] }
 ```
 If you set security to an empty object like so
-```ruby
+```erb
 config.filestack_rails.security = {}
 ```
 it will provide a policy and signature with only an expiry setting (this defaults to one hour).
 
 You can access the generated policy and signature anytime by calling their attributes on the created security object.
 
-```ruby
+```erb
 puts config.filestack_rails.security.policy
 puts config.filestack_rails.security.signature
 ```
