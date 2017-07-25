@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.0 (July 24th, 2017)
+- Update to use v3 of Filestack File Picker
+- Add filestack_picker_element as a general uploading button
+- Various additions and removals surrounding the aforementioned elements
+
 ## 2.2.0 (April, 05, 2017)
 
 - Move repository to Filestack organisation.

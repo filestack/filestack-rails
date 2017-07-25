@@ -5,7 +5,7 @@ require "filestack_rails/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "filestack_rails"
+  s.name        = "filestack-rails"
   s.version     = FilestackRails::VERSION
   s.authors     = ["filestack"]
   s.email       = ["dev@filestack.com"]
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 5.1.2"
+  s.add_dependency 'rails', '>= 4.0'
   s.add_dependency "filestack", "~> 2.0.1"
 
   s.add_development_dependency 'coveralls'

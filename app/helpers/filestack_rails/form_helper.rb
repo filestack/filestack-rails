@@ -12,12 +12,11 @@ module FilestackRails
       input_options = {}
       input_options[:id] = "#{@object.class.name.downcase}_#{method.downcase}"
       input_options[:style] = 'display:none'
-
       user_callback = options[:callback] || nil
       options.delete(:callback)
 
       form_field_callback_guts = 'const filestack_input_field' \
-        "= document.getElementById('#{options[:id]}');" \
+        "= document.getElementById('#{input_options[:id]}');" \
         'filestack_input_field.value = data.filesUploaded[0].url;'
 
       unless user_callback.nil?
