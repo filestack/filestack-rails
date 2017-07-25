@@ -134,6 +134,8 @@ The form helper's call remains essentially the same, except that it now takes as
 ```erb
 <%= f.filestack_field :filestack_url, 'Pick Your Avatar' >
 ```
+### Save Button
+As user saving/downloading is not currently supported in the v3 File Picker, that functionality has been removed from Filestack::Rails for the time being. 
 ### Transformations
 The filestack_image tag wraps the generic Rails image_tag and generates a new URL with use of the Ruby SDK. This provides the entire scope of the possible transformations through Filestack's transformation engine, minus those which do not return an image (like debug, av_convert, and so forth). Defining transformations is as simple as chaining them together using the filestack_transform method:
 ```erb
