@@ -12,12 +12,15 @@ This is the official Rails plugin for Filestack - API and content management sys
 * [Documentation](https://www.filestack.com/docs)
 * [API Reference](https://filestack.github.io/)
 
+## IMPORTANT
+Users of 3.0.0 wishing to upgrade to 3.1.0+ should note that the Filestack::Ruby dependency has been updated to no longer interfere with namespace. However, if you were using that dependency in your Rails app, you will need to change any Client and Filelink class declarations to FilestackClient and FilestackFilelink, as per documented [here](https://github.com/filestack/filestack-ruby/blob/master/README.md)
+
 ## Installing
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'filestack-rails', require: 'filestack-rails'
+gem 'filestack-rails'
 ```
 
 And then execute:
