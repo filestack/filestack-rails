@@ -1,6 +1,9 @@
 # Changelog
 
-## 3.0.0 (July 24th, 2017)
+## 3.1.0 (August 4, 2017)
+- Update Filestack::Ruby dependency to latest version to address namespacing issue
+
+## 3.0.0 (July 24, 2017)
 - Update to use v3 of Filestack File Picker
 - Add filestack_picker_element as a general uploading button
 - Various additions and removals surrounding the aforementioned elements
