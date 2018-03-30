@@ -45,6 +45,7 @@ Set your API key and client name in `config/application.rb`:
 ```ruby
 config.filestack_rails.api_key = "Your Filestack API Key"
 config.filestack_rails.client_name = "custom_client_name"
+config.filestack_rails.cname = "custom_cname"
 ```
 The client name defaults to "filestack_client" and is injected into your client-side Javascript. This is because v3 of the File Picker lives in the Javascript of your web application. For more information, please see our [File Picker documenation](https://www.filestack.com/docs/javascript-api/pick-v3).
 
