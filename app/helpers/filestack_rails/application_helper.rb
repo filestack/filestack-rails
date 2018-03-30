@@ -13,9 +13,9 @@ module FilestackRails
       signature, policy = get_policy_and_signature
       javascript_string = if policy && signature
                             "var #{client_name} = filestack.init('#{apikey}'," \
-                            "{'signature': '#{signature}', 'policy': '#{policy}'});"
+                            "{'signature': '#{signature}', 'policy': '#{policy}'}, '#{cname}');"
                           else
-                            "var #{client_name} = filestack.init('#{apikey}');"
+                            "var #{client_name} = filestack.init('#{apikey}', '', '#{cname}');"
                           end
       javascript_tag javascript_string
     end
@@ -45,6 +45,10 @@ module FilestackRails
     end
 
     private
+
+    def cname
+      ::Rails.application.config.filestack_rails.cname
+    end
 
     def create_javascript_for_picker(callback, options)
       client_name, = get_client_and_api_key

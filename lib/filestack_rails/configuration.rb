@@ -1,6 +1,6 @@
 module FilestackRails
   class Configuration
-    attr_accessor :api_key, :client_name, :secret_key, :security, :expiry, :app_secret
+    attr_accessor :api_key, :client_name, :secret_key, :security, :expiry, :app_secret, :cname
 
     def api_key
       @api_key or raise "Set config.filepicker_rails.api_key"
