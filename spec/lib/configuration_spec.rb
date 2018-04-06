@@ -36,4 +36,16 @@ RSpec.describe FilestackRails::Configuration do
       expect(configuration.security.signature)
     end
   end
+
+  describe '#cname' do
+    it 'has no cname' do
+      expect(configuration.cname).to be(nil)
+    end
+
+    it 'has cname' do
+      cname = 'fs.mycname.com'
+      configuration.cname = cname
+      expect(configuration.cname).to eq cname
+    end
+  end
 end

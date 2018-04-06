@@ -35,18 +35,28 @@ Add the Filestack File Picker and initialization script to your layout:
 
 ```erb
 <%= filestack_js_include_tag %>
-<%= filestack_js_init_tag %> 
+<%= filestack_js_init_tag %>
 ```
 
-Please note: the scripts need to be added before your application's custom scripts, e.g. before any scripts in your assets folder, if you need access the Filestack client in your own Javascript. 
+Please note: the scripts need to be added before your application's custom scripts, e.g. before any scripts in your assets folder, if you need access the Filestack client in your own Javascript.
 
 Set your API key and client name in `config/application.rb`:
 
 ```ruby
-config.filestack_rails.api_key = "Your Filestack API Key"
-config.filestack_rails.client_name = "custom_client_name"
+config.filestack_rails.api_key = 'Your Filestack API Key'
+config.filestack_rails.client_name = 'custom_client_name'
 ```
-The client name defaults to "filestack_client" and is injected into your client-side Javascript. This is because v3 of the File Picker lives in the Javascript of your web application. For more information, please see our [File Picker documenation](https://www.filestack.com/docs/javascript-api/pick-v3). 
+The client name defaults to "filestack_client" and is injected into your client-side Javascript. This is because v3 of the File Picker lives in the Javascript of your web application. For more information, please see our [File Picker documenation](https://www.filestack.com/docs/javascript-api/pick-v3).
+
+### CNAME
+
+If you have set up a custom CNAME, you can add it to your configuration file. The Picker will modify all assets to formatted with your domain origin instead of Filestack's.
+
+Set your CNAME in `config/application.rb`:
+
+```ruby
+config.filestack_rails.cname = 'custom_cname'
+```
 
 ### Security
 
@@ -68,19 +78,19 @@ You can access the generated policy and signature anytime by calling their attri
 puts config.filestack_rails.security.policy
 puts config.filestack_rails.security.signature
 ```
-You can also generate a new security object at any time, although this will only affect the filestack_image tag, and not the File Picker client. 
+You can also generate a new security object at any time, although this will only affect the filestack_image tag, and not the File Picker client.
 
 ## Usage
 
-Filestack::Rails provides three main functionalities: 
+Filestack::Rails provides three main functionalities:
 
 ### Filestack Upload Button
 This is a generic button that can be added anywhere in your application and opens an instance of the File Picker. Once a user has chosen a file(s) and submitted, a callback will be executed, passing in the results. You can also pass in any options for the File Picker using the pickerOptions symbol:
 
 ```erb
-<%= filestack_picker_element 'button test', 'callbackForButton', id: 'someuniequeid', pickerOptions: { 'fromSources' => 'facebook' } %>
+<%= filestack_picker_element 'button test', 'callbackForButton', id: 'someuniqueid', input_id: 'someuniqueinputid', pickerOptions: { 'fromSources' => 'facebook' } %>
 ```
-File Picker options are exactly the same as in the Javscript SDK and can be found in the aforementioned documentation. 
+File Picker options are exactly the same as in the Javscript SDK and can be found in the aforementioned documentation.
 
 The callback can be either the name of a function you've defined in your main Javascript or it can be any code that is immediately executable, e.g. "console.log" or "(function(data){console.log(data)})". The callback should take in a response array as its only argument, which has the following structure:
 
@@ -116,7 +126,7 @@ The form helper wraps the generic Pick element and adds the value of the returne
 ```erb
 <%= form_for @user do |f| %>
   <div>
-    <%= f.filestack_field :filepicker_url, 'Upload Your Avatar!',  pickerOptions: {'fromSources': 'facebook'}, id: 'unique-id' %> 
+    <%= f.filestack_field :filepicker_url, 'Upload Your Avatar!',  pickerOptions: {'fromSources': 'facebook'}, id: 'unique-id', input_id: 'unique-input-id' %>
   </div>
 
   <%= f.submit %>
@@ -129,16 +139,16 @@ Filestack::Rails now has access to the full list of image transforms through our
 <%= filestack_image @user.filepicker_url, transform: filestack_transform.resize(width:100, height:100).flip.enhance %>
 ```
 ## Migrating from 2.x to 3.x
-Filestack::Rails 3.x is a significant and breaking change. Users wishing to upgrade will need to change their current implementation in order to use the plugin correctly. 
+Filestack::Rails 3.x is a significant and breaking change. Users wishing to upgrade will need to change their current implementation in order to use the plugin correctly.
 ### Javascript-based File Picker
 The v3 File Picker is a Javascript application that lives on the client-side of your application. This means you have greater control and access to when it is called, access to the rest of the web SDK, as well as being able to pass callbacks executed once uploads have completed. You must keep in mind the File Picker client lives in global scope and adjust your namespaces accordingly, although you can also change the name of the client, as detailed in the above sections.
 ### Form Helper
-The form helper's call remains essentially the same, except that it now takes as its argument the value of the button element displayed on the page. 
+The form helper's call remains essentially the same, except that it now takes as its argument the value of the button element displayed on the page.
 ```erb
 <%= f.filestack_field :filestack_url, 'Pick Your Avatar' >
 ```
 ### Save Button
-As user saving/downloading is not currently supported in the v3 File Picker, that functionality has been removed from Filestack::Rails for the time being. 
+As user saving/downloading is not currently supported in the v3 File Picker, that functionality has been removed from Filestack::Rails for the time being.
 ### Transformations
 The filestack_image tag wraps the generic Rails image_tag and generates a new URL with use of the Ruby SDK. This provides the entire scope of the possible transformations through Filestack's transformation engine, minus those which do not return an image (like debug, av_convert, and so forth). Defining transformations is as simple as chaining them together using the filestack_transform method:
 ```erb
@@ -148,11 +158,11 @@ The filestack_image tag wraps the generic Rails image_tag and generates a new UR
 Filestack::Rails injects the Filestack Ruby SDK into your application for use anywhere. You can use it to access the rest of the Filestack API and find its documentation [here](https://github.com/filestack/filestack-ruby)
 ## Demo
 
-To see the Filestack::Rails plugin in action, clone this repository and run the demo app by following these instructions (will only work in Rails 5.x): 
+To see the Filestack::Rails plugin in action, clone this repository and run the demo app by following these instructions (will only work in Rails 5.x):
 
 ### Set API key
 
-Go to ```spec/dummy/config/application.rb``` and change the API key to your own. 
+Go to ```spec/dummy/config/application.rb``` and change the API key to your own.
 
 ### Install Dependencies
 
