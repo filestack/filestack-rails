@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.1.1 (April 11, 2018)
+- Add CNAME parameter
+
 ## 3.1.0 (August 4, 2017)
 - Update Filestack::Ruby dependency to latest version to address namespacing issue
 

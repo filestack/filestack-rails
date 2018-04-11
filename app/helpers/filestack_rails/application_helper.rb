@@ -10,13 +10,8 @@ module FilestackRails
 
     def filestack_js_init_tag
       client_name, apikey = get_client_and_api_key
-      signature, policy = get_policy_and_signature
-      javascript_string = if policy && signature
-                            "var #{client_name} = filestack.init('#{apikey}'," \
-                            "{'signature': '#{signature}', 'policy': '#{policy}'});"
-                          else
-                            "var #{client_name} = filestack.init('#{apikey}');"
-                          end
+      signature_and_policy = get_policy_and_signature_string
+      javascript_string = "var #{client_name} = filestack.init('#{apikey}', #{signature_and_policy}, '#{cname}');"
       javascript_tag javascript_string
     end
 
@@ -26,7 +21,7 @@ module FilestackRails
       options[:onclick] = create_javascript_for_picker(callback, picker_options)
       options[:type] = 'button'
       button_tag content, options
-    end 
+    end
 
     def filestack_transform
       _, apikey = get_client_and_api_key
@@ -45,6 +40,10 @@ module FilestackRails
     end
 
     private
+
+    def cname
+      ::Rails.application.config.filestack_rails.cname
+    end
 
     def create_javascript_for_picker(callback, options)
       client_name, = get_client_and_api_key
@@ -73,6 +72,12 @@ module FilestackRails
         policy = nil
       end
       return [signature, policy]
+    end
+
+    def get_policy_and_signature_string
+      signature, policy = get_policy_and_signature
+      return "{'signature': '#{signature}', 'policy': '#{policy}'}" if policy && signature
+      return "''"
     end
   end
 end
