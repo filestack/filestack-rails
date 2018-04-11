@@ -40,7 +40,7 @@ RSpec.describe FilestackRails::ApplicationHelper do
   describe "#filestack_image" do
     it "returns the correct tag" do
       image = filestack_image 'www.example.com', transform: filestack_transform.resize(width: 100, height: 100)
-      correct = '<img src="https://cdn.filestackcontent.com/API_KEY/resize=width:100,height:100/www.example.com" alt="Www.example" />'
+      correct = '<img src="https://cdn.filestackcontent.com/API_KEY/resize=width:100,height:100/www.example.com" />'
       expect(image).to eq(correct)
     end
   end
