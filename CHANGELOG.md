@@ -1,7 +1,10 @@
 # Changelog
 
+## 3.2.1 (October 10, 2018)
+- Update filestack-ruby gem to ver. 2.5.0
+
 ## 3.2.0 (August 30, 2018)
-- Update filestack-ruby gem to latest version
+- Update filestack-ruby gem to ver. 2.4.0
 
 ## 3.1.1 (April 11, 2018)
 - Add CNAME parameter
