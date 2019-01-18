@@ -20,7 +20,7 @@ RSpec.describe FilestackRails::Configuration do
     it "raise error when @api_key is not defined" do
       expect do
         configuration.api_key
-      end.to raise_error(RuntimeError, "Set config.filepicker_rails.api_key")
+      end.to raise_error(RuntimeError, "Set config.filestack_rails.api_key")
     end
   end
 
