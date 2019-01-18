@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.2.2 (January 18, 2019)
+- Fixed typo in exception message
+
 ## 3.2.1 (October 10, 2018)
 - Update filestack-ruby gem to ver. 2.5.0
 
