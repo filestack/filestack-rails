@@ -48,4 +48,16 @@ RSpec.describe FilestackRails::Configuration do
       expect(configuration.cname).to eq cname
     end
   end
+
+  describe '#version' do
+    it 'has no version' do
+      expect(configuration.version).to eq('v2')
+    end
+
+    it 'has version' do
+      version = 'v3'
+      configuration.version = version
+      expect(configuration.version).to eq version
+    end
+  end
 end
