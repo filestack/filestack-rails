@@ -58,7 +58,7 @@ module FilestackRails
         #{client_name}.pick(#{json_string}).then(function(data){#{callback}(data)})
       })()" }
 
-      v3 = -> { json_string = "#{json_string}".tr('{}','')
+      v3 = -> { json_string = "#{json_string}".slice!(1, json_string.length-2) # removed curly brackets help to generate pickerOptions in js
                 "(function(){
                   #{client_name}.picker({#{json_string}, onUploadDone: data => #{callback}(data)}).open()
                 })()" }
