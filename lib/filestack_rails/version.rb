@@ -4,7 +4,11 @@ class FilestackVersion
   end
 
   def determine_filestack_js(strategies)
-    strategies[@version.to_sym].call
+    begin
+      strategies[@version.to_sym].call
+    rescue
+      raise 'Set correct version in config.filestack_rails.version'
+    end
   end
 end
 
