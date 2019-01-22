@@ -1,6 +1,6 @@
 module FilestackRails
   class Configuration
-    attr_accessor :api_key, :client_name, :secret_key, :security, :expiry, :app_secret, :cname
+    attr_accessor :api_key, :client_name, :secret_key, :security, :expiry, :app_secret, :cname, :version
 
     def api_key
       @api_key or raise "Set config.filestack_rails.api_key"
@@ -8,6 +8,10 @@ module FilestackRails
 
     def client_name
       @client_name or 'filestack_client'
+    end
+
+    def version
+      @version or 'v2'
     end
 
     def expiry
