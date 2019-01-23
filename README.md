@@ -12,7 +12,7 @@
 Rails SDK for Filestack API and content management system.
 </p>
 
-**Important: This is the readme for 3.1.0+.**
+**Important: This is the readme for 4.0.0+.**
 
 Note that the [Filestack::Ruby](https://github.com/filestack/filestack-ruby/) dependency has been updated to no longer interfere with namespace. However, if you were using that dependency in your Rails application, you will need to change any `Client` and `Filelink` class declarations to `FilestackClient` and `FilestackFilelink`, as per documented [here](https://github.com/filestack/filestack-ruby/blob/master/README.md).
 
@@ -54,6 +54,16 @@ config.filestack_rails.client_name = 'custom_client_name'
 ```
 The client name defaults to `"filestack_client"` and is injected into your client-side Javascript. This is because v3 of the File Picker lives in the Javascript of your web application.
 
+### Filestack Picker Version
+
+For Filestack Rails SDK v.4.0.0+, the picker `version` is setup by default to `v3`. It means that Javascript version is 1.x.x. If you want to use older Javascript version (0.11.5), you have to configure `version` to `v2` in `config/application.rb`:
+```ruby
+# filestack-js (0.11.5)
+config.filestack_rails.version = 'v2'
+
+# filestack-js (1.x.x)
+config.filestack_rails.version = 'v3'
+```
 ### CNAME
 
 If you have set up a custom CNAME, you can add it to your configuration file. The Picker will modify all assets to formatted with your domain origin instead of Filestack's.

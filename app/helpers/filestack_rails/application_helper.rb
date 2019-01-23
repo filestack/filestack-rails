@@ -1,11 +1,13 @@
 include FilestackRails::Transform
+include FilestackRails::Version
 
 module FilestackRails
   module ApplicationHelper
     def filestack_js_include_tag
-      javascript_include_tag(
-        'https://static.filestackapi.com/v3/filestack.js', type: 'text/javascript'
-      )
+      v2 = -> { javascript_include_tag('https://static.filestackapi.com/v3/filestack.js', type: 'text/javascript') }
+      v3 = -> { javascript_include_tag('https://static.filestackapi.com/filestack-js/1.x.x/filestack.min.js', type: 'text/javascript') }
+
+      get_filestack_js_result(v2: v2, v3: v3)
     end
 
     def filestack_js_init_tag
@@ -52,9 +54,15 @@ module FilestackRails
                     else
                       options.to_json
                     end
-      "(function(){
+      v2 = -> { "(function(){
         #{client_name}.pick(#{json_string}).then(function(data){#{callback}(data)})
-      })()"
+      })()" }
+
+      v3 = -> { json_string = "#{json_string}".slice!(1, json_string.length-2) # removed curly brackets help to generate pickerOptions in js
+                "(function(){
+                  #{client_name}.picker({#{json_string}, onUploadDone: data => #{callback}(data)}).open()
+                })()" }
+      get_filestack_js_result(v2: v2, v3: v3)
     end
 
     def get_client_and_api_key
