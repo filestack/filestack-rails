@@ -1,11 +1,12 @@
 class FilestackVersion
-  def initialize
+  def initialize(results)
     @version = ::Rails.application.config.filestack_rails.version
+    @results = results
   end
 
-  def determine_filestack_js(strategies)
+  def determine_filestack_js_result
     begin
-      strategies[@version.to_sym].call
+      @results[@version.to_sym].call
     rescue
       raise 'Set correct version in config.filestack_rails.version'
     end
@@ -16,8 +17,8 @@ module FilestackRails
   VERSION = '3.2.2'
 
   module Version
-    def load_filestack_js(strategies)
-        FilestackVersion.new.determine_filestack_js(strategies)
+    def get_filestack_js_result(results)
+        FilestackVersion.new(results).determine_filestack_js_result
     end
   end
 end

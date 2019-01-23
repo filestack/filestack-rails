@@ -7,7 +7,7 @@ module FilestackRails
       v2 = -> { javascript_include_tag('https://static.filestackapi.com/v3/filestack.js', type: 'text/javascript') }
       v3 = -> { javascript_include_tag('https://static.filestackapi.com/filestack-js/1.x.x/filestack.min.js', type: 'text/javascript') }
 
-      load_filestack_js(v2: v2, v3: v3)
+      get_filestack_js_result(v2: v2, v3: v3)
     end
 
     def filestack_js_init_tag
@@ -62,7 +62,7 @@ module FilestackRails
                 "(function(){
                   #{client_name}.picker({#{json_string}, onUploadDone: data => #{callback}(data)}).open()
                 })()" }
-      load_filestack_js(v2: v2, v3: v3)
+      get_filestack_js_result(v2: v2, v3: v3)
     end
 
     def get_client_and_api_key
