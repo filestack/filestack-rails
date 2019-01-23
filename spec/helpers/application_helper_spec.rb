@@ -22,7 +22,7 @@ RSpec.describe FilestackRails::ApplicationHelper do
     end
 
     it "has correct src attribute" do
-      attribute = %{src="https://static.filestackapi.com/v3/filestack.js"}
+      attribute = %{src="https://static.filestackapi.com/filestack-js/1.x.x/filestack.min.js"}
       expect(filestack_js_include_tag).to include(attribute)
     end
   end
@@ -31,8 +31,8 @@ RSpec.describe FilestackRails::ApplicationHelper do
     it "has the right picker element" do
       html_string = filestack_picker_element "hello!", "console.log('hello!')"
       correct_string = '<button name="button" type="button" onclick="(function(){
-        rich_client.pick().then(function(data){console.log(&#39;hello!&#39;)(data)})
-      })()">hello!</button>'
+                  rich_client.picker({, onUploadDone: data =&gt; console.log(&#39;hello!&#39;)(data)}).open()
+                })()">hello!</button>'
       expect(html_string).to eq(correct_string)
     end
   end
