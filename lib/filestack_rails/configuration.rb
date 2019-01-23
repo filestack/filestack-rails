@@ -11,7 +11,7 @@ module FilestackRails
     end
 
     def version
-      @version or 'v2'
+      @version or 'v3'
     end
 
     def expiry
