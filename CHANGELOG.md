@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.0.1 (February 1, 2019)
+- Fixed the issue with not loaded lib module
+
 ## 4.0.0 (January 23, 2019)
 - Update Filestack Picker to ver. 1.x.x and add version configuration
 
