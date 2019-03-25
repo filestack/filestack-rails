@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.0.2 (March 25, 2019)
+- Update filestack-ruby gem to ver. 2.6.0
+
 ## 4.0.1 (February 1, 2019)
 - Fixed the issue with not loaded lib module
 
