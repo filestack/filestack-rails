@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.0.3 (March 25, 2019)
+- Fix gem version
+
 ## 4.0.2 (March 25, 2019)
 - Update filestack-ruby gem to ver. 2.6.0
 
