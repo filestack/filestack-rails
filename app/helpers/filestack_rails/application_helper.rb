@@ -50,7 +50,6 @@ module FilestackRails
     def create_javascript_for_picker(callback, options)
       client_name, = get_client_and_api_key
       callbacks_js = build_callbacks_js(options)
-      options.delete(:callback)
       json_string = if options.nil?
                       ''
                     else
