@@ -1,3 +1,5 @@
+require 'json'
+
 include FilestackRails::Transform
 include FilestackRails::Version
 
@@ -84,8 +86,17 @@ module FilestackRails
 
     def get_policy_and_signature_string
       signature, policy = get_policy_and_signature
-      return "{'signature': '#{signature}', 'policy': '#{policy}'}" if policy && signature
-      return "''"
+
+      if policy && signature
+        {
+          security: {
+            signature: signature,
+            policy: policy
+          }
+        }.to_json
+      else
+        "''"
+      end
     end
   end
 end
