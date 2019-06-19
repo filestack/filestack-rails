@@ -45,4 +45,19 @@ RSpec.describe FilestackRails::ApplicationHelper do
       expect(image).to eq(correct)
     end
   end
+
+  describe "#get_policy_and_signature_string" do
+    it "returns correct data" do
+      allow_any_instance_of(FilestackRails::ApplicationHelper).to receive(:get_policy_and_signature)
+        .and_return(["21312SDFSDF", "4234DSFSDFDSF"])
+
+      expect(get_policy_and_signature_string).to eq(
+        "{\"security\":{\"signature\":\"21312SDFSDF\",\"policy\":\"4234DSFSDFDSF\"}}"
+      )
+    end
+
+    it "returns empty data" do
+      expect(get_policy_and_signature_string).to eq("''")
+    end
+  end
 end
