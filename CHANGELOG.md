@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.0.4 (June 19, 2019)
+- Fix issue with security in v3
+- Update link to Github Issues
+
 ## 4.0.3 (March 25, 2019)
 - Fix gem version
 
