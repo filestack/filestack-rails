@@ -213,4 +213,4 @@ Filestack::Rails follows the [Semantic Versioning](http://semver.org/).
 
 ## Issues
 
-If you have problems, please create a [Github Issue](https://github.com/filepicker/filestack-rails/issues).
+If you have problems, please create a [Github Issue](https://github.com/filestack/filestack-rails/issues).

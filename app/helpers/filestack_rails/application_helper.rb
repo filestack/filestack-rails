@@ -1,3 +1,4 @@
+require 'json'
 include FilestackRails::Transform
 include FilestackRails::Version
 
@@ -48,20 +49,29 @@ module FilestackRails
     end
 
     def create_javascript_for_picker(callback, options)
-      client_name, = get_client_and_api_key
+      client_name, _api_key = get_client_and_api_key
       json_string = if options.nil?
                       ''
                     else
                       options.to_json
                     end
-      v2 = -> { "(function(){
-        #{client_name}.pick(#{json_string}).then(function(data){#{callback}(data)})
-      })()" }
+      v2 = -> do
+        <<~HTML
+          (function(){
+            #{client_name}.pick(#{json_string}).then(function(data){#{callback}(data)})
+          })()
+        HTML
+      end
 
-      v3 = -> { json_string = "#{json_string}".slice!(1, json_string.length-2) # removed curly brackets help to generate pickerOptions in js
-                "(function(){
-                  #{client_name}.picker({#{json_string}, onUploadDone: data => #{callback}(data)}).open()
-                })()" }
+      v3 = -> do
+        json_string = json_string[1..-2] # removed curly brackets help to generate pickerOptions in js
+
+        <<~HTML
+          (function(){
+            #{client_name}.picker({ onUploadDone: data => #{callback}(data), #{json_string} }).open()
+          })()
+        HTML
+      end
       get_filestack_js_result(v2: v2, v3: v3)
     end
 
@@ -84,8 +94,15 @@ module FilestackRails
 
     def get_policy_and_signature_string
       signature, policy = get_policy_and_signature
-      return "{'signature': '#{signature}', 'policy': '#{policy}'}" if policy && signature
-      return "''"
+
+      if policy && signature
+        signature_and_policy = { signature: signature, policy: policy }
+        v2 = -> { signature_and_policy.to_json }
+        v3 = -> { { security: signature_and_policy }.to_json }
+        get_filestack_js_result(v2: v2, v3: v3)
+      else
+        "''"
+      end
     end
   end
 end
