@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.0.5 (June 20, 2019)
+- Fix issue with creating security (policy and signature) per request
+
 ## 4.0.4 (June 19, 2019)
 - Fix issue with security in v3
 - Update link to Github Issues
