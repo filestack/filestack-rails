@@ -82,14 +82,11 @@ module FilestackRails
     end
 
     def get_policy_and_signature
-      if ::Rails.application.config.filestack_rails.security
-        signature = ::Rails.application.config.filestack_rails.security.signature
-        policy = ::Rails.application.config.filestack_rails.security.policy
-      else
-        signature = nil
-        policy = nil
+      if security
+        signature = security.signature
+        policy = security.policy
       end
-      return [signature, policy]
+      [signature, policy]
     end
 
     def get_policy_and_signature_string
@@ -103,6 +100,14 @@ module FilestackRails
       else
         "''"
       end
+    end
+
+    def security
+      security_options = ::Rails.application.config.filestack_rails.security
+      app_secret = ::Rails.application.config.filestack_rails.app_secret
+
+      return nil unless security_options
+      FilestackSecurity.new(app_secret, options: security_options)
     end
   end
 end

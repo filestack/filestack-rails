@@ -32,8 +32,7 @@ RSpec.describe FilestackRails::Configuration do
     it 'has security' do
       configuration.app_secret = 'somesecret'
       configuration.security = {}
-      expect(configuration.security.policy)
-      expect(configuration.security.signature)
+      expect(configuration.security).to eq({})
     end
 
     it 'has not defined @app_secret' do
@@ -82,6 +81,17 @@ RSpec.describe FilestackRails::Configuration do
       expiry = '1548244645'
       configuration.expiry = expiry
       expect(configuration.expiry).to eq expiry
+    end
+  end
+
+  describe '#app_secret' do
+    it 'has defined value' do
+      configuration.app_secret = "my app secret"
+      expect(configuration.app_secret).to eq("my app secret")
+    end
+
+    it 'has no @app_secret' do
+      expect(configuration.app_secret).to eq(nil)
     end
   end
 end
