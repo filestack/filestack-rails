@@ -47,17 +47,37 @@ RSpec.describe FilestackRails::ApplicationHelper do
   end
 
   describe "#get_policy_and_signature_string" do
+    let(:signature) { "signature123" }
+    let(:policy) { "policy321" }
+
     it "returns correct data" do
       allow_any_instance_of(FilestackRails::ApplicationHelper).to receive(:get_policy_and_signature)
-        .and_return(["21312SDFSDF", "4234DSFSDFDSF"])
+        .and_return([:signature, :policy])
 
       expect(get_policy_and_signature_string).to eq(
-        "{\"security\":{\"signature\":\"21312SDFSDF\",\"policy\":\"4234DSFSDFDSF\"}}"
+        {"security":{"signature": :signature, "policy": :policy}}.to_json
       )
     end
 
     it "returns empty data" do
       expect(get_policy_and_signature_string).to eq("''")
+    end
+  end
+
+  describe "#security" do
+    it "returns signature and policy" do
+      allow(Rails.application.config.filestack_rails).to receive(:security)
+        .and_return({call: %w[read store pick stat write], expiry: 60})
+      allow(Rails.application.config.filestack_rails).to receive(:app_secret)
+        .and_return('app_secret123')
+
+      expect(security.policy).to be
+      expect(security.signature).to be
+    end
+
+    it "does not return signature and policy" do
+      allow(::Rails.application.config.filestack_rails).to receive(:security).and_return(nil)
+      expect(security).to be(nil)
     end
   end
 end
