@@ -22,8 +22,11 @@ module FilestackRails
       if @app_secret.nil?
         raise 'You must have secret key to use security'
       end
-      @security = FilestackSecurity.new(@app_secret, options: security_options)
+      @security = security_options
     end
 
+    def app_secret
+      @app_secret or nil
+    end
   end
 end
