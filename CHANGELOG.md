@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.0.6 (June 26, 2019)
+- Add callbacks to pickerOptions in version v3
+
 ## 4.0.5 (June 20, 2019)
 - Fix issue with creating security (policy and signature) per request
 

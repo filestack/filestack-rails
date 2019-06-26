@@ -136,6 +136,13 @@ Each file that is uploaded will be represented as a single object within the fil
 ```javascript
 url = data.filesUploaded[0].url
 ```
+
+For version `v3`, you can add following callbacks: `onOpen`, `onClose`, `onFileUploadFinished`, `onFileSelected`, `onUploadStarted`, to `pickerOptions`.
+
+```erb
+<%= filestack_picker_element 'button test', 'callbackForButton', id: 'someuniqueid', input_id: 'someuniqueinputid', pickerOptions: { onClose: 'callbackOnClose', onOpen: 'callbackOnOpen' } %>
+```
+
 ### Filestack Form Helper
 The form helper wraps the generic Pick element and adds the value of the returned file to an invisible text element, in order to attach to the form. It accepts the same options as the Pick element and renders the same button.
 
