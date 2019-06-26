@@ -50,6 +50,7 @@ module FilestackRails
 
     def create_javascript_for_picker(callback, options)
       client_name, _api_key = get_client_and_api_key
+      other_callbacks = build_callbacks_js(options) if options
       json_string = if options.nil?
                       ''
                     else
@@ -68,11 +69,21 @@ module FilestackRails
 
         <<~HTML
           (function(){
-            #{client_name}.picker({ onUploadDone: data => #{callback}(data), #{json_string} }).open()
+            #{client_name}.picker({ onUploadDone: data => #{callback}(data)#{other_callbacks}, #{json_string} }).open()
           })()
         HTML
       end
       get_filestack_js_result(v2: v2, v3: v3)
+    end
+
+    def build_callbacks_js(options)
+      string = ""
+      string << ", onOpen: data => #{options.delete(:onOpen)}(data)" unless options[:onOpen].blank?
+      string << ", onClose: () => #{options.delete(:onClose)}()" unless options[:onClose].blank?
+      string << ", onFileUploadFinished: data => #{options.delete(:onFileUploadFinished)}(data)" unless options[:onFileUploadFinished].blank?
+      string << ", onFileSelected: data => #{options.delete(:onFileSelected)}(data)" unless options[:onFileSelected].blank?
+      string << ", onUploadStarted: data => #{options.delete(:onUploadStarted)}(data)" unless options[:onUploadStarted].blank?
+      string
     end
 
     def get_client_and_api_key

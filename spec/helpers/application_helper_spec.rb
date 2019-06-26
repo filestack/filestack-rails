@@ -46,6 +46,12 @@ RSpec.describe FilestackRails::ApplicationHelper do
     end
   end
 
+  describe "#get_policy_and_signature" do
+    it "returns empty data" do
+      expect(get_policy_and_signature).to eq([nil, nil])
+    end
+  end
+
   describe "#get_policy_and_signature_string" do
     let(:signature) { "signature123" }
     let(:policy) { "policy321" }
@@ -78,6 +84,22 @@ RSpec.describe FilestackRails::ApplicationHelper do
     it "does not return signature and policy" do
       allow(::Rails.application.config.filestack_rails).to receive(:security).and_return(nil)
       expect(security).to be(nil)
+    end
+  end
+
+  describe "#build_callbacks_js" do
+    expected_values = {
+      { onClose: 'callbackOnClose' } => ', onClose: () => callbackOnClose()',
+      { onOpen: 'callbackOnOpen' } => ', onOpen: data => callbackOnOpen(data)',
+      { onFileUploadFinished: 'callbackOnFileUploadFinished' } => ', onFileUploadFinished: data => callbackOnFileUploadFinished(data)',
+      { onFileSelected: 'callbackOnFileSelected' } => ', onFileSelected: data => callbackOnFileSelected(data)',
+      { onUploadStarted: 'callbackOnUploadStarted' } => ', onUploadStarted: data => callbackOnUploadStarted(data)'
+    }
+    expected_values.each do |val, expected|
+      it "returns correct string for #{val}" do
+        result = build_callbacks_js(val)
+        expect(result).to eq(expected)
+      end
     end
   end
 end
