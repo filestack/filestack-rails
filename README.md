@@ -140,7 +140,13 @@ url = data.filesUploaded[0].url
 For version `v3`, you can add following callbacks: `onOpen`, `onClose`, `onFileUploadFinished`, `onFileSelected`, `onUploadStarted`, to `pickerOptions`.
 
 ```erb
-<%= filestack_picker_element 'button test', 'callbackForButton', id: 'someuniqueid', input_id: 'someuniqueinputid', pickerOptions: { onClose: 'callbackOnClose', onOpen: 'callbackOnOpen' } %>
+<%= filestack_picker_element 'button test', 'callbackForButton', id: 'someuniqueid', input_id: 'someuniqueinputid', pickerOptions: { onClose: 'callbackOnClose', onOpen: 'callbackOnOpen', onFileUploadFinished: 'callbackOnFileUploadFinished' } %>
+```
+
+where following callbacks `callbackOnClose`, `callbackOnOpen`, `callbackOnFileUploadFinished` are javascript function's name and refer to your own created function. For instance:
+
+```js
+function onFileUploadFinishedCallback(data) {console.log(data);}
 ```
 
 ### Filestack Form Helper
