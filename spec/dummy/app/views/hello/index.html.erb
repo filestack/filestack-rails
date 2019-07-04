@@ -6,7 +6,7 @@
 <h2>Example of Filestack Form Field</h2>
 <%= form_for @user do |f| %>
     <%= f.label :picture %>
-    <%= f.filestack_field :picture, 'Upload a Picture', pickerOptions: {'accept' => 'image/*' } %>
+    <%= f.filestack_field :picture, 'Upload a Picture', pickerOptions: {'accept' => 'image/*', onFileUploadFinished: 'onFileUploadFinishedCallback' } %>
     <br />
     <%= f.submit %>
 <% end %>
