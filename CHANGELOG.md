@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.0.7 (June 26, 2019)
+- Update "dummy" application - add callbacks
+
 ## 4.0.6 (June 26, 2019)
 - Add callbacks to pickerOptions in version v3
 
