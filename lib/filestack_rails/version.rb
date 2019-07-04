@@ -14,7 +14,7 @@ class FilestackVersion
 end
 
 module FilestackRails
-  VERSION = '4.0.6'
+  VERSION = '4.0.7'
 
   module Version
     def get_filestack_js_result(results)
