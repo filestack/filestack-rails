@@ -57,11 +57,11 @@ RSpec.describe FilestackRails::Configuration do
 
   describe '#version' do
     it 'has no version' do
-      expect(configuration.version).to eq('v3')
+      expect(configuration.version).to eq('3.x.x')
     end
 
     it 'has version' do
-      version = 'v3'
+      version = '3.x.x'
       configuration.version = version
       expect(configuration.version).to eq version
     end
