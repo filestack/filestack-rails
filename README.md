@@ -64,6 +64,21 @@ config.filestack_rails.version = 'v2'
 # filestack-js (1.x.x)
 config.filestack_rails.version = 'v3'
 ```
+
+For Filestack Rails SDK v.5.0.0+, you have to provide picker version precisely. By default the picker version is setup to `3.x.x`. If you want to use older filestack-js version (0.11.5), you have to configure `version` to `0.11.5` in `config/application.rb`:
+```ruby
+# filestack-js (0.11.5)
+config.filestack_rails.version = '0.11.5'
+
+# filestack-js (1.x.x)
+config.filestack_rails.version = '1.x.x'
+
+# filestack-js (3.x.x)
+config.filestack_rails.version = '3.x.x'
+```
+
+You can find all available filestack-js versions in [`lib/filestack_rails/version.rb`](./lib/filestack_rails/version.rb)
+
 ### CNAME
 
 If you have set up a custom CNAME, you can add it to your configuration file. The Picker will modify all assets to formatted with your domain origin instead of Filestack's.

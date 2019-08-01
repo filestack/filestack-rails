@@ -22,7 +22,7 @@ RSpec.describe FilestackRails::ApplicationHelper do
     end
 
     it "has correct src attribute" do
-      attribute = %{src="https://static.filestackapi.com/filestack-js/1.x.x/filestack.min.js"}
+      attribute = %{src="https://static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"}
       expect(filestack_js_include_tag).to include(attribute)
     end
   end
