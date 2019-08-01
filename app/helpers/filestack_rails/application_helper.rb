@@ -1,14 +1,11 @@
 require 'json'
 include FilestackRails::Transform
-include FilestackRails::Version
+include FilestackRails::FilestackJs
 
 module FilestackRails
   module ApplicationHelper
     def filestack_js_include_tag
-      v2 = -> { javascript_include_tag('https://static.filestackapi.com/v3/filestack.js', type: 'text/javascript') }
-      v3 = -> { javascript_include_tag('https://static.filestackapi.com/filestack-js/1.x.x/filestack.min.js', type: 'text/javascript') }
-
-      get_filestack_js_result(v2: v2, v3: v3)
+      javascript_include_tag(get_filestack_js.url, type: 'text/javascript')
     end
 
     def filestack_js_init_tag
@@ -49,31 +46,15 @@ module FilestackRails
     end
 
     def create_javascript_for_picker(callback, options)
-      client_name, _api_key = get_client_and_api_key
+      client_name, api_key = get_client_and_api_key
       other_callbacks = build_callbacks_js(options) if options
-      json_string = if options.nil?
-                      ''
-                    else
-                      options.to_json
-                    end
-      v2 = -> do
-        <<~HTML
-          (function(){
-            #{client_name}.pick(#{json_string}).then(function(data){#{callback}(data)})
-          })()
-        HTML
-      end
+      options = if options.nil?
+                  ''
+                else
+                  options.to_json
+                end
 
-      v3 = -> do
-        json_string = json_string[1..-2] # removed curly brackets help to generate pickerOptions in js
-
-        <<~HTML
-          (function(){
-            #{client_name}.picker({ onUploadDone: data => #{callback}(data)#{other_callbacks}, #{json_string} }).open()
-          })()
-        HTML
-      end
-      get_filestack_js_result(v2: v2, v3: v3)
+      get_filestack_js.picker(client_name, api_key, options, callback, other_callbacks)
     end
 
     def build_callbacks_js(options)
@@ -104,10 +85,7 @@ module FilestackRails
       signature, policy = get_policy_and_signature
 
       if policy && signature
-        signature_and_policy = { signature: signature, policy: policy }
-        v2 = -> { signature_and_policy.to_json }
-        v3 = -> { { security: signature_and_policy }.to_json }
-        get_filestack_js_result(v2: v2, v3: v3)
+        get_filestack_js.security(signature, policy)
       else
         "''"
       end

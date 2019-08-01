@@ -1,6 +1,10 @@
+require 'net/http'
+
 module FilestackRails
   class Configuration
     attr_accessor :api_key, :client_name, :secret_key, :security, :expiry, :app_secret, :cname, :version
+
+    OUTDATED_VERSION = '0.11.5'
 
     def api_key
       @api_key or raise "Set config.filestack_rails.api_key"
@@ -11,7 +15,7 @@ module FilestackRails
     end
 
     def version
-      @version or 'v3'
+      @version or '3.x.x'
     end
 
     def expiry
