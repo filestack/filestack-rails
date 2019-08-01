@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.0.0 (August 1, 2019)
+- Improve choosing filestack-js version
+
 ## 4.0.7 (June 26, 2019)
 - Update "dummy" application - add callbacks
 
