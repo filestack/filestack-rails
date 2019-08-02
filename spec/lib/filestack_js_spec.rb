@@ -58,10 +58,6 @@ RSpec.describe FilestackRails::FilestackJs do
         security = get_filestack_js.security(signature, policy)
         expect(security).to eq({ security: { signature: signature, policy: policy } }.to_json)
       end
-
-      it 'considers url incorrect' do
-        expect(get_filestack_js.url_exists?('incorrect_url_format')).to eq(false)
-      end
     end
 
     context 'when version does not exist' do
