@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.2.0 (August 2, 2019)
+- Remove filestack-js version validation
+
 ## 5.1.0 (August 2, 2019)
 - Moved filestack_js_url to configuration to not valid it on every page load
 
