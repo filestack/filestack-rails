@@ -77,6 +77,8 @@ config.filestack_rails.version = '1.x.x'
 config.filestack_rails.version = '3.x.x'
 ```
 
+Please take a look on available versions in [filestack-js](https://github.com/filestack/filestack-js) repository.
+
 ### CNAME
 
 If you have set up a custom CNAME, you can add it to your configuration file. The Picker will modify all assets to formatted with your domain origin instead of Filestack's.

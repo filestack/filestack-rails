@@ -59,15 +59,5 @@ RSpec.describe FilestackRails::FilestackJs do
         expect(security).to eq({ security: { signature: signature, policy: policy } }.to_json)
       end
     end
-
-    context 'when version does not exist' do
-      before do
-        configuration.version = '0.6.0'
-      end
-
-      it 'considers incorrect version' do
-        expect{ get_filestack_js }.to raise_error(RuntimeError, 'Incorrect config.filestack_rails.version')
-      end
-    end
   end
 end

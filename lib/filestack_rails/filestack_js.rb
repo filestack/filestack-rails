@@ -2,7 +2,15 @@ class Picker
   attr_reader :url
 
   def initialize
-    @url = ::Rails.application.config.filestack_rails.url
+    @url = filestack_js_url
+  end
+
+  def filestack_js_url
+    "https://static.filestackapi.com/filestack-js/#{version}/filestack.min.js"
+  end
+
+  def version
+    ::Rails.application.config.filestack_rails.version
   end
 
   def picker(client_name, api_key, options, callback, other_callbacks = nil)
@@ -21,6 +29,10 @@ class Picker
 end
 
 class OutdatedPicker < Picker
+  def filestack_js_url
+    'https://static.filestackapi.com/v3/filestack.js'
+  end
+
   def picker(client_name, api_key, options, callback, other_callbacks = nil)
     <<~HTML
       (function(){
@@ -36,8 +48,10 @@ end
 
 module FilestackRails
   module FilestackJs
+    OUTDATED_VERSION = '0.11.5'
+
     def get_filestack_js
-      if ::Rails.application.config.filestack_rails.version == FilestackRails::OUTDATED_VERSION
+      if ::Rails.application.config.filestack_rails.version == OUTDATED_VERSION
         OutdatedPicker.new
       else
         Picker.new
