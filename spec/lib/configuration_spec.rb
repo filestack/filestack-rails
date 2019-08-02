@@ -60,6 +60,11 @@ RSpec.describe FilestackRails::Configuration do
       expect(configuration.version).to eq('3.x.x')
     end
 
+    it 'has incorrect version' do
+      configuration.version = "1.4.4.4"
+      expect { configuration.version }.to raise_error(RuntimeError, 'Incorrect config.filestack_rails.version')
+    end
+
     it 'has version' do
       version = '3.x.x'
       configuration.version = version
@@ -92,6 +97,14 @@ RSpec.describe FilestackRails::Configuration do
 
     it 'has no @app_secret' do
       expect(configuration.app_secret).to eq(nil)
+    end
+  end
+
+  describe '#url_exists?' do
+    it 'considers invalid url' do
+      expect do
+        configuration.url_exists?('invalid_url')
+      end.to raise_error(RuntimeError, 'Invalid URI')
     end
   end
 end
