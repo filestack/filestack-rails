@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.2.1 (October 10, 2019)
+- Updated sqlite3 version in Gemfile
+- Add link of available transformations in README
+
 ## 5.2.0 (August 2, 2019)
 - Remove filestack-js version validation
 

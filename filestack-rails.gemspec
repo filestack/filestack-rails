@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "filestack", '~> 2.6.0'
 
   s.add_development_dependency 'coveralls'
-  s.add_development_dependency 'sqlite3', '~> 1.3.6'
+  s.add_development_dependency 'sqlite3', '~> 1.3', '>= 1.3.6'
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'appraisal'
 end

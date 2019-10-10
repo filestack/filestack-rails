@@ -201,6 +201,7 @@ The `filestack_image` tag wraps the generic Rails `image_tag` and generates a ne
 ```erb
 <%= @user.filestack_url, transform: filestack_transform.resize(width:100, height:100).enhance %>
 ```
+For a list of valid transformations, please see [here](https://www.filestack.com/docs/api/processing/).
 
 ### Ruby SDK
 Filestack::Rails injects the Filestack Ruby SDK into your application for use anywhere. You can use it to access the rest of the Filestack API and find its documentation [here](https://github.com/filestack/filestack-ruby).
