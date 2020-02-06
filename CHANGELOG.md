@@ -1,5 +1,9 @@
 # Changelog
 
+## 5.2.2 (February 6, 2020)
+- Add options to image_tag
+- Add cname to filestack js URL
+
 ## 5.2.1 (October 10, 2019)
 - Updated sqlite3 version in Gemfile
 - Add link of available transformations in README

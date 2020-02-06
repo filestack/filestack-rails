@@ -6,11 +6,15 @@ class Picker
   end
 
   def filestack_js_url
-    "https://static.filestackapi.com/filestack-js/#{version}/filestack.min.js"
+    "https://static.#{domain}/filestack-js/#{version}/filestack.min.js"
   end
 
   def version
     ::Rails.application.config.filestack_rails.version
+  end
+
+  def domain
+    ::Rails.application.config.filestack_rails.cname || 'filestackapi.com'
   end
 
   def picker(client_name, api_key, options, callback, other_callbacks = nil)

@@ -35,7 +35,7 @@ module FilestackRails
         transform_object.add_external_url url
         image_tag transform_object.fs_url, options
       else
-        image_tag url
+        image_tag url, options
       end
     end
 
