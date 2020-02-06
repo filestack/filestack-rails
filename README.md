@@ -182,6 +182,12 @@ Filestack::Rails now has access to the full list of image transforms through our
 ```erb
 <%= filestack_image @user.filepicker_url, transform: filestack_transform.resize(width:100, height:100).flip.enhance %>
 ```
+
+You can also add attributes to `image_tag`, for instance:
+```erb
+<%= filestack_image @user.filepicker_url, size: "160x100", alt: "Picture" %>
+```
+
 ## Migrating from 2.x to 3.x
 Filestack::Rails 3.x is a significant and breaking change. Users wishing to upgrade will need to change their current implementation in order to use the plugin correctly.
 
