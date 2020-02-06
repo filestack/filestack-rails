@@ -59,5 +59,18 @@ RSpec.describe FilestackRails::FilestackJs do
         expect(security).to eq({ security: { signature: signature, policy: policy } }.to_json)
       end
     end
+
+    context 'when cname is configured' do
+      before do
+        configuration.cname = 'fs.domain.com'
+        configuration.version = '3.x.x'
+      end
+
+      it 'returns filestack-js url with cname' do
+        expect(get_filestack_js.url).to eq(
+          "https://static.#{configuration.cname}/filestack-js/#{configuration.version}/filestack.min.js"
+        )
+      end
+    end
   end
 end
