@@ -39,9 +39,15 @@ RSpec.describe FilestackRails::ApplicationHelper do
   end
 
   describe "#filestack_image" do
-    it "returns the correct tag" do
+    it "returns the image tag with transformation" do
       image = filestack_image 'www.example.com', transform: filestack_transform.resize(width: 100, height: 100)
       correct = '<img src="https://cdn.filestackcontent.com/API_KEY/resize=width:100,height:100/www.example.com" />'
+      expect(image).to eq(correct)
+    end
+
+    it "returns the image tag with attributes" do
+      image = filestack_image 'https://cdn.filestackcontent.com/7Djkxw9TPyEWdjxILnUQ', size: '16x10'
+      correct = '<img src="https://cdn.filestackcontent.com/7Djkxw9TPyEWdjxILnUQ" width="16" height="10" />'
       expect(image).to eq(correct)
     end
   end
