@@ -176,6 +176,7 @@ The form helper wraps the generic Pick element and adds the value of the returne
   <%= f.submit %>
 <% end %>
 ```
+
 ### Displaying an image with Filestack Transformations:
 Filestack::Rails now has access to the full list of image transforms through our custom Transformation Engine. This functionality is provided by the Filestack Ruby SDK and acts as a small wrapper around it. The `filestack_image` tag accepts the same options as the genric Rails `image_tag`, with the addition of a transform option, which accepts a `filestack_transform` chain:
 
@@ -186,6 +187,13 @@ Filestack::Rails now has access to the full list of image transforms through our
 You can also add attributes to `image_tag`, for instance:
 ```erb
 <%= filestack_image @user.filepicker_url, size: "160x100", alt: "Picture" %>
+```
+
+### Fetching a converted Filestack image URL with Filestack Transformations:
+Filestack::Rails now has access to the full list of image transforms through our custom Transformation Engine. This functionality is provided by the Filestack Ruby SDK and acts as a small wrapper around it. The `filestack_image_url` method accepts the original Filestack image URL and an optional `filestack_transform` chain:
+
+```erb
+<%= image_tag @user.filepicker_url, data: { transformed_image_url: filestack_image_url(@user.filepicker_url, filestack_transform.resize(width: 100, height: 100).flip.enhance) } %>
 ```
 
 ## Migrating from 2.x to 3.x
