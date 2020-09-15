@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.3.0 (September 15, 2020)
+- Add filestack_image_url application helper method
+
 ## 5.2.2 (February 6, 2020)
 - Add options to image_tag
 - Add cname to filestack js URL
