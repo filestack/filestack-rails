@@ -52,6 +52,14 @@ RSpec.describe FilestackRails::ApplicationHelper do
     end
   end
 
+  describe "#filestack_image_url" do
+    it "returns the image url with transformation" do
+      image_url = filestack_image_url 'www.example.com', filestack_transform.resize(width: 100, height: 100)
+      correct = "https://cdn.filestackcontent.com/API_KEY/resize=width:100,height:100/www.example.com"
+      expect(image_url).to eq(correct)
+    end
+  end
+
   describe "#get_policy_and_signature" do
     it "returns empty data" do
       expect(get_policy_and_signature).to eq([nil, nil])
