@@ -188,6 +188,13 @@ You can also add attributes to `image_tag`, for instance:
 <%= filestack_image @user.filepicker_url, size: "160x100", alt: "Picture" %>
 ```
 
+### Fetching a converted Filestack image URL with Filestack Transformations:
+The `filestack_image_url` method accepts the original Filestack image URL and an optional `filestack_transform` chain:
+
+```erb
+<%= image_tag @user.filepicker_url, data: { transformed_image_url: filestack_image_url(@user.filepicker_url, filestack_transform.resize(width: 100, height: 100).flip.enhance) } %>
+```
+
 ## Migrating from 2.x to 3.x
 Filestack::Rails 3.x is a significant and breaking change. Users wishing to upgrade will need to change their current implementation in order to use the plugin correctly.
 
