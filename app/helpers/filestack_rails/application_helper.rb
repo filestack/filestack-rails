@@ -29,14 +29,15 @@ module FilestackRails
     end
 
     def filestack_image(url, options = {})
-      transform_object = options[:transform]
-      options.delete(:transform)
-      if transform_object
-        transform_object.add_external_url url
-        image_tag transform_object.fs_url, options
-      else
-        image_tag url, options
-      end
+      transform_object = options.delete(:transform)
+
+      image_tag(filestack_image_url(url, transform_object), options)
+    end
+
+    def filestack_image_url(url, transform_object = nil)
+      return url unless transform_object
+      transform_object.add_external_url(url)
+      transform_object.fs_url
     end
 
     private
@@ -78,11 +79,11 @@ module FilestackRails
         signature = security.signature
         policy = security.policy
       end
-      [signature, policy]
+      [policy, signature]
     end
 
     def get_policy_and_signature_string
-      signature, policy = get_policy_and_signature
+      policy, signature = get_policy_and_signature
 
       if policy && signature
         get_filestack_js.security(signature, policy)
