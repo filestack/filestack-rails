@@ -189,6 +189,8 @@ You can also add attributes to `image_tag`, for instance:
 ```
 
 ### Fetching a converted Filestack image URL with Filestack Transformations:
+The `filestack_image_url` method accepts the original Filestack image URL and an optional `filestack_transform` chain:
+
 ```erb
 <%= image_tag @user.filepicker_url, data: { transformed_image_url: filestack_image_url(@user.filepicker_url, filestack_transform.resize(width: 100, height: 100).flip.enhance) } %>
 ```
