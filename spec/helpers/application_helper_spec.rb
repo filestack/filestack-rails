@@ -58,13 +58,21 @@ RSpec.describe FilestackRails::ApplicationHelper do
     end
   end
 
+  describe "#filestack_image_url" do
+    it "returns the image url with transformation" do
+      image_url = filestack_image_url 'www.example.com', filestack_transform.resize(width: 100, height: 100)
+      correct = "https://cdn.filestackcontent.com/API_KEY/resize=width:100,height:100/www.example.com"
+      expect(image_url).to eq(correct)
+    end
+  end
+
   describe "#get_policy_and_signature_string" do
     let(:signature) { "signature123" }
     let(:policy) { "policy321" }
 
     it "returns correct data" do
       allow_any_instance_of(FilestackRails::ApplicationHelper).to receive(:get_policy_and_signature)
-        .and_return([:signature, :policy])
+        .and_return([:policy, :signature])
 
       expect(get_policy_and_signature_string).to eq(
         {"security":{"signature": :signature, "policy": :policy}}.to_json
