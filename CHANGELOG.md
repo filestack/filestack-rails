@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.3.1 (October 20, 2020)
+- Update filestack-ruby version
+
 ## 5.3.0 (September 24, 2020)
 - Add filestack_image_url application helper method
 - Fix the issue with the constants autoloaded initialization
