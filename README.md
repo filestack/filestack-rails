@@ -119,7 +119,7 @@ You can also generate a new security object at any time, although this will only
 This is a generic button that can be added anywhere in your application and opens an instance of the File Picker. Once a user has chosen a file(s) and submitted, a callback will be executed, passing in the results. You can also pass in any options for the File Picker using the `pickerOptions` symbol:
 
 ```erb
-<%= filestack_picker_element 'button test', 'callbackForButton', id: 'someuniqueid', input_id: 'someuniqueinputid', pickerOptions: { 'fromSources' => 'facebook', 'maxFiles': 50 } %>
+<%= filestack_picker_element 'button test', 'callbackForButton', id: 'someuniqueid', input_id: 'someuniqueinputid', pickerOptions: { 'fromSources': 'facebook', 'maxFiles': 50 } %>
 ```
 File Picker options are exactly the same as in the Javscript SDK and can be found in the aforementioned documentation.
 
