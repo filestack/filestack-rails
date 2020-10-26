@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.4.0 (October 26, 2020)
+- Support for uploading multiple files
+
 ## 5.3.1 (October 20, 2020)
 - Update filestack-ruby version
 
