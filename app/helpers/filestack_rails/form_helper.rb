@@ -17,7 +17,7 @@ module FilestackRails
 
       form_field_callback_guts = 'const filestack_input_field' \
         "= document.getElementById('#{input_options[:id]}');" \
-        'filestack_input_field.value = data.filesUploaded[0].url;'
+        'filestack_input_field.value = data.filesUploaded.map(e => e.url);'
 
       unless user_callback.nil?
         form_field_callback_guts = "#{form_field_callback_guts}#{user_callback}(data)"
