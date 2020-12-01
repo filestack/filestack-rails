@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<h2>Example of Form with Picture Upload</h2>
+<div class='action-bar'>
+  <%= link_to '+ Add User', new_user_path, class: 'btn btn-primary' %>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Picture</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.name %></td>
+        <td><%= user.picture %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Example of Generic Picker Element</h2>
+<div class="field">
+  <%= filestack_picker_element "Pick!", "logIt", pickerOptions: {'accept' => 'image/*', onOpen: 'onDone', onClose: 'onClose' }, id: 'unique-id' %>
+</div>
+
+<h2>Example of Filestack Image Tag</h2>
+<%= filestack_image 'https://cdn.filestackcontent.com/N6MEurlS0qmWU8TRFOde', size: "260x150", alt: "Kitty!" %>
