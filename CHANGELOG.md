@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.4.1 (December 1, 2020)
+- Update "Dummy" App with examples
+
 ## 5.4.0 (October 26, 2020)
 - Support for uploading multiple files
 

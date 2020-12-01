@@ -29,10 +29,10 @@ RSpec.describe FilestackRails::ApplicationHelper do
 
   describe "#filestack_picker_element" do
     it "has the right picker element" do
-      html_string = filestack_picker_element("hello!", "console.log('hello!')").gsub(/\s+/, ' ')
+      html_string = filestack_picker_element("Pick!", "console.log('Pick!')").gsub(/\s+/, ' ')
       correct_string = '<button name="button" type="button" onclick="(function(){
-                          rich_client.picker({ onUploadDone: data =&gt; console.log(&#39;hello!&#39;)(data), }).open()
-                        })() ">hello!</button>'.gsub(/\s+/, ' ')
+                          filestack_client.picker({ onUploadDone: data =&gt; console.log(&#39;Pick!&#39;)(data), }).open()
+                        })() ">Pick!</button>'.gsub(/\s+/, ' ')
 
       expect(html_string).to eq(correct_string)
     end
