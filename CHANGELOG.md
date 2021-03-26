@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.5.0 (March 26, 2021)
+- Update filestack gem version to 2.9.1
+
 ## 5.4.1 (December 1, 2020)
 - Update "Dummy" App with examples
 
