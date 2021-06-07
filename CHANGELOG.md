@@ -1,5 +1,8 @@
 # Changelog
 
+## 5.5.2 (May 5, 2021)
+- Update filestack gem version to 2.9.3
+
 ## 5.5.1 (May 5, 2021)
 - Update filestack gem version to 2.9.2
 
