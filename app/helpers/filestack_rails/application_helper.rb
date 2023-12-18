@@ -59,12 +59,17 @@ module FilestackRails
     end
 
     def build_callbacks_js(options)
-      string = ""
+      string = ''
       string << ", onOpen: data => #{options.delete(:onOpen)}(data)" unless options[:onOpen].blank?
+      string << ", onCancel: data => #{options.delete(:onCancel)}(data)" unless options[:onCancel].blank?
       string << ", onClose: () => #{options.delete(:onClose)}()" unless options[:onClose].blank?
-      string << ", onFileUploadFinished: data => #{options.delete(:onFileUploadFinished)}(data)" unless options[:onFileUploadFinished].blank?
+      string << ", onFileUploadProgress: data => #{options.delete(:onFileUploadProgress)}(data)" unless options[:onFileUploadProgress].blank?
       string << ", onFileSelected: data => #{options.delete(:onFileSelected)}(data)" unless options[:onFileSelected].blank?
       string << ", onUploadStarted: data => #{options.delete(:onUploadStarted)}(data)" unless options[:onUploadStarted].blank?
+      string << ", onUploadDone: data => #{options.delete(:onUploadDone)}(data)" unless options[:onUploadDone].blank?
+      string << ", onFileUploadFinished: data => #{options.delete(:onFileUploadFinished)}(data)"   unless options[:onFileUploadFinished].blank?
+      string << ", onFileUploadFailed: data => #{options.delete(:onFileUploadFailed)}(data)"  unless options[:onFileUploadFailed].blank?
+      string << ", onFileUploadStarted: data => #{options.delete(:onFileUploadStarted)}(data)" unless options[:onFileUploadStarted].blank?
       string
     end
 
