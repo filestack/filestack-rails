@@ -16,6 +16,22 @@ RSpec.describe FilestackRails::ApplicationHelper do
       expect(init_tag).to include('filestack.init')
     end
 
+    context 'when using filestack-js version < 3' do
+      it 'generates the appropriate initialization code' do
+        allow(Rails.application.config.filestack_rails).to receive(:version)
+          .and_return('2.x.x')
+        expect(filestack_js_init_tag).to match(/var .* = filestack\.init\('.*', '.*', '.*'\);/)
+      end
+    end
+
+    context 'when using filestack-js version 3' do
+      it 'generates the appropriate initialization code' do
+        allow(Rails.application.config.filestack_rails).to receive(:version)
+          .and_return('3.x.x')
+        expect(filestack_js_init_tag).to match(/var .* = filestack\.init\('.*', \{.*\}\);/)
+      end
+    end
+
     it "includes the correct type" do
       attribute = %{type="text/javascript"}
       expect(filestack_js_include_tag).to include(attribute)

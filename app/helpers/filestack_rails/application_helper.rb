@@ -10,8 +10,21 @@ module FilestackRails
 
     def filestack_js_init_tag
       client_name, apikey = get_client_and_api_key
-      signature_and_policy = get_policy_and_signature_string
-      javascript_string = "var #{client_name} = filestack.init('#{apikey}', #{signature_and_policy}, '#{cname}');"
+      javascript_string =
+        if filestack_js_v3?
+          options = { cname: cname }
+          policy, signature = get_policy_and_signature
+          if policy && signature
+            options[:security] = {
+              policy: policy,
+              signature: signature
+            }
+          end
+          "var #{client_name} = filestack.init('#{apikey}', #{options.to_json});"
+        else
+          signature_and_policy = get_policy_and_signature_string
+          "var #{client_name} = filestack.init('#{apikey}', #{signature_and_policy}, '#{cname}');"
+        end
       javascript_tag javascript_string
     end
 
@@ -41,6 +54,10 @@ module FilestackRails
     end
 
     private
+
+    def filestack_js_v3?
+      get_filestack_js.version.to_s[0] == '3'
+    end
 
     def cname
       ::Rails.application.config.filestack_rails.cname
