@@ -1,7 +1,7 @@
 # Changelog
 
-## 5.5.4 (March 9, 2024)
-- Fixed the initialization of filestack client v3
+## 5.5.3 (Dec 18, 2023)
+- Added js callback function onCancel, onUploadDone, onFileUploadProgress, onUploadDone, onFileUploadFinished, onFileUploadFailed, onFileUploadStarted
 
 ## 5.5.2 (May 5, 2021)
 - Update filestack gem version to 2.9.3
